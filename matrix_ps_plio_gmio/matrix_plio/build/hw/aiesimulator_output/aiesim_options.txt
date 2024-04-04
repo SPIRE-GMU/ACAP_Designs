@@ -1,0 +1,9 @@
+AIE_PKG_DIR=/home/yzwu/Desktop/soc_test/matrix_plio/build/hw/./Work
+AIE_DUMP_VCD_STREAM_SWITCH=true
+AIE_DUMP_VCD_SHIM=true
+AIE_DUMP_VCD_CORE=true
+AIE_DUMP_VCD_IO=true
+=
+AIE_DUMP_VCD_DMA=true
+AIE_PROFILE=All
+AIE_DUMP_VCD_PIPE=/tmp/vcd_fifo_7f0130be-1d42-4dfa-ab3a-90e4ea4e7d04

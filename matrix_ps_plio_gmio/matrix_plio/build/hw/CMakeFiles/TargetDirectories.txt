@@ -1,0 +1,3 @@
+/home/yzwu/Desktop/soc_test/matrix_plio/build/hw/CMakeFiles/matrix_plio_libadf.a.dir
+/home/yzwu/Desktop/soc_test/matrix_plio/build/hw/CMakeFiles/edit_cache.dir
+/home/yzwu/Desktop/soc_test/matrix_plio/build/hw/CMakeFiles/rebuild_cache.dir

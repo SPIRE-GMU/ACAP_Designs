@@ -1,0 +1,8 @@
+/home/yzwu/Desktop/soc_test/vadd/build/sw_emu/CMakeFiles/edit_cache.dir
+/home/yzwu/Desktop/soc_test/vadd/build/sw_emu/CMakeFiles/rebuild_cache.dir
+/home/yzwu/Desktop/soc_test/vadd/build/sw_emu/hw_link/CMakeFiles/VppLink_binary_container_1.dir
+/home/yzwu/Desktop/soc_test/vadd/build/sw_emu/hw_link/CMakeFiles/edit_cache.dir
+/home/yzwu/Desktop/soc_test/vadd/build/sw_emu/hw_link/CMakeFiles/rebuild_cache.dir
+/home/yzwu/Desktop/soc_test/vadd/build/sw_emu/package/CMakeFiles/VppPackage_binary_container_1.dir
+/home/yzwu/Desktop/soc_test/vadd/build/sw_emu/package/CMakeFiles/edit_cache.dir
+/home/yzwu/Desktop/soc_test/vadd/build/sw_emu/package/CMakeFiles/rebuild_cache.dir

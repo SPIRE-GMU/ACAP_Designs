@@ -17,7 +17,7 @@ int main(int argc, char **argv)
     mygraph.init();
     
     
-    mygraph.run(50);
+    mygraph.run(1);
     mygraph.wait();
     mygraph.end();
  

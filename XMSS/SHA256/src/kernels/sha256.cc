@@ -85,9 +85,33 @@ inline uint32_t gen_2w(uint32_t * __restrict input,uint32_t * __restrict output)
         //according to the ug-1079,it seems previous paragraph the because in this way, we operate data in two buffer
     return 0;
 }
+/*******************************************************************************************************************/
+//replace the glibc function memcpy() and memset(), which takes much time and may cause mistakes
+inline void copy_u32_u8(unsigned char *__restrict buf, uint32_t data){
+    *(buf)   = (data&0xff000000) >> 24;
+    *(buf+1) = (data&0x00ff0000) >> 16;
+    *(buf+2) = (data&0x0000ff00) >> 8;
+    *(buf+3) = (data&0x000000ff) >> 0;
+}
+
+inline void copy_u8_u8(unsigned char *__restrict buf, const unsigned char *__restrict src, size_t len){
+   
+    for(int i=0;i<len;i++)chess_prepare_for_pipelining{
+        *(buf +i)   = *(src +i);
+    }
+    
+}
+
+inline void zero(unsigned char *__restrict buf, size_t len){
+   
+    for(int i=0;i<len;i++)chess_prepare_for_pipelining{
+        *(buf +i)   = 0;
+    }
+    
+}
 /******************************************************************************************************************/
 
-inline void sha256(const unsigned char *data, size_t len, unsigned char *out) {
+inline void sha256(const unsigned char *__restrict data, size_t len, unsigned char *out) {
     uint32_t h0 = 0x6a09e667;
     uint32_t h1 = 0xbb67ae85;
     uint32_t h2 = 0x3c6ef372;
@@ -101,9 +125,10 @@ inline void sha256(const unsigned char *data, size_t len, unsigned char *out) {
     size_t new_len = len + append + 8;// origin + padding + 64-bit length
     unsigned char buf[new_len];
     
-    memset(buf + len,0,append); //zero
+    //memset(buf + len,0,append); //zero
+    zero(buf+len,append);
     if (len > 0) {
-        memcpy(buf, data, len);
+        copy_u8_u8(buf, data, len);
     }
     buf[len] = (unsigned char)0x80;
     uint64_t bits_len = len * 8;
@@ -172,33 +197,28 @@ inline void sha256(const unsigned char *data, size_t len, unsigned char *out) {
 
 /*************************************************/
 
-// GMIO 送进来的数据必须是32的整数倍，否则会导致无法全部读取而死锁，所以决定在外面打包全部的sha数据后再送进来
+
 void prf(input_stream<uint32> * __restrict bufin,  output_stream<uint32>* __restrict bufout)
 {
     
-    int len = 96; //compress a large package of data which requires 100 times hash function
+    int len = 6368; //compress a large package of data which requires 100 times hash function
     unsigned char out[32];
     unsigned char buf[len];//; 
     
     
-    uint32_t temp[len/4]; //we read 32-bit in one cycle， while len infer the length of char
+    uint32_t temp[len/4]; //we read 32-bit in one cycle
    
-    for(int j=0;j<((len-1)/4)+1;j++)//I don't know why function ceil() doesn't work in AIE, so just manually extract the int. //wyz add in 2024.2.23
+    for(int j=0;j<((len-1)/4)+1;j++)//glibc function ceil(len) doesn't work in AIE, so just manually extract the int. //wyz add in 2024.2.23
     
         chess_prepare_for_pipelining
         chess_loop_range(2, )
         {  
         
-           temp[j]=readincr(bufin);  // important !! every instruction reads 32bit data, so DDR must instore the data in mltiple of 32-bit, or it causes deadlock!! //wyz add in 2024.2.23   	
-           //printf("\ntemp=%02x\n",temp[j]);
-           
+           temp[j]=readincr(bufin);  //    	
+           copy_u32_u8(buf+j*4,temp[j]);          
     }
     
 
-    if (len > 0) {
-        memcpy(buf, temp, len); //      readincr                                                                  
-    }
-   
    
     sha256(buf,len,out); //
     

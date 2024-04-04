@@ -1,0 +1,25 @@
+{
+    "Placement": [
+        {
+            "LogicalInstance": "datain1",
+            "PhysicalInstance": [
+                "AIE_NOC_X12Y0_AIE_NOC_M_AXI"
+            ],
+            "IsSoft": false
+        },
+        {
+            "LogicalInstance": "datain2",
+            "PhysicalInstance": [
+                "AIE_NOC_X12Y0_AIE_NOC_M_AXI"
+            ],
+            "IsSoft": false
+        },
+        {
+            "LogicalInstance": "dataout",
+            "PhysicalInstance": [
+                "AIE_NOC_X12Y0_AIE_NOC_M_AXI"
+            ],
+            "IsSoft": false
+        }
+    ]
+}

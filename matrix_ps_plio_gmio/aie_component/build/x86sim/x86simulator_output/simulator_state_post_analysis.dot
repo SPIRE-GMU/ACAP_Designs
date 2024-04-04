@@ -1,0 +1,18 @@
+digraph sim {
+rankdir=TB;
+n1 [shape=box, label="n1: progress_monitor\n(0) running", color=black];
+n2 [shape=box, label="n2: mygraph.first\n(2) running\nreading c1", color=red];
+n3 [shape=box, label="n3: platformIn_i0\n(0) waiting_on_run", color=red];
+n4 [shape=box, label="n4: platformIn_i1\n(0) waiting_on_run", color=black];
+n5 [shape=box, label="n5: platformOut_i2\n(0) waiting_on_run", color=black];
+c1 [shape=circle, label="c1", color=red];
+c2 [shape=circle, label="c2", color=black];
+c3 [shape=circle, label="c3", color=black];
+ps [shape=Msquare, label="ps\nwaiting", color=red];
+n2 -> c3 [label="out[0]", color=black];
+n3 -> c1 [label="out[0]", color=red];
+n4 -> c2 [label="out[0]", color=black];
+c1 -> n2 [label="in[0]", color=red];
+c2 -> n2 [label="in[1]", color=black];
+c3 -> n5 [label="in[0]", color=black];
+}

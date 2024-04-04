@@ -1,0 +1,293 @@
+{
+ "system_diagram_metadata": {
+  "schema_version": {
+   "major": "2",
+   "minor": "0",
+   "patch": "0"
+  },
+  "xsa": {
+   "vendor": "xilinx.com",
+   "board_id": "xd",
+   "name": "xilinx_vck190_base_202320_1",
+   "version_major": "202320",
+   "version_minor": "1",
+   "description": "\nA base platform targeting VCK190 which is the first Versal AI Core series evaluation kit, enabling designers to develop solutions using AI and DSP engines capable of delivering over 100X greater compute performance compared to current server class CPUs. This board includes 8GB of DDR4 UDIMM, 8GB LPDDR4 component, 400 AI engines, 1968 DSP engines, Dual-Core Arm® Cortex®-A72 and Dual-Core Cortex-R5. More information at https://www.xilinx.com/products/boards-and-kits/vck190.html\n    ",
+   "generated_by": {
+    "name": "Vivado",
+    "version": "2023.2",
+    "cl": "4028134",
+    "time_stamp": "Fri Oct 13 12:49:36 2023"
+   },
+   "board": {
+    "name": "xilinx.com:vck190:3.2",
+    "vendor": "xilinx.com",
+    "part": "xcvc1902-vsva2197-2MP-e-S",
+    "board_part": "xilinx.com:vck190:part0:3.2"
+   },
+   "available_resources": {
+    "LUT": "899840",
+    "REG": "",
+    "BRAM": "967",
+    "DSP": "1968",
+    "URAM": ""
+   },
+   "device_topology": [
+    {
+     "id": "0",
+     "type": "Ddr4",
+     "used": "yes",
+     "sizeKB": "17179869184",
+     "base_address": "0x00000000",
+     "tag": "DDR",
+     "slr": "",
+     "spTag": ""
+    },
+    {
+     "id": "1",
+     "type": "Ddr4",
+     "used": "yes",
+     "sizeKB": "17179869184",
+     "base_address": "0x00000001",
+     "tag": "LPDDR",
+     "slr": "",
+     "spTag": ""
+    }
+   ],
+   "design_intent": [
+    "embedded"
+   ],
+   "clocks": [
+    {
+     "name": "CPU",
+     "orig_name": "CPU",
+     "id": -1,
+     "default": false,
+     "type": "RESERVED",
+     "spec_frequency": 1,
+     "spec_period": 1000,
+     "requested_frequency": 0,
+     "achieved_frequency": 0,
+     "clock_domain": "",
+     "inst_ref": "",
+     "comp_ref": "",
+     "xclbin_name": ""
+    },
+    {
+     "name": "PL 1",
+     "orig_name": "clk_wizard_0_clk_out1",
+     "id": 1,
+     "default": false,
+     "type": "FIXED",
+     "spec_frequency": 104.166666,
+     "spec_period": 9.6,
+     "requested_frequency": 0,
+     "achieved_frequency": 0,
+     "clock_domain": "",
+     "inst_ref": "",
+     "comp_ref": "",
+     "xclbin_name": ""
+    },
+    {
+     "name": "PL 0",
+     "orig_name": "clk_wizard_0_clk_out2",
+     "id": 0,
+     "default": false,
+     "type": "FIXED",
+     "spec_frequency": 156.25,
+     "spec_period": 6.4,
+     "requested_frequency": 0,
+     "achieved_frequency": 0,
+     "clock_domain": "",
+     "inst_ref": "",
+     "comp_ref": "",
+     "xclbin_name": ""
+    },
+    {
+     "name": "PL 2",
+     "orig_name": "clk_wizard_0_clk_out3",
+     "id": 2,
+     "default": false,
+     "type": "FIXED",
+     "spec_frequency": 312.5,
+     "spec_period": 3.2,
+     "requested_frequency": 0,
+     "achieved_frequency": 0,
+     "clock_domain": "",
+     "inst_ref": "",
+     "comp_ref": "",
+     "xclbin_name": ""
+    },
+    {
+     "name": "PL 3",
+     "orig_name": "clk_wizard_0_clk_out4",
+     "id": 3,
+     "default": false,
+     "type": "FIXED",
+     "spec_frequency": 78.125,
+     "spec_period": 12.8,
+     "requested_frequency": 0,
+     "achieved_frequency": 0,
+     "clock_domain": "",
+     "inst_ref": "",
+     "comp_ref": "",
+     "xclbin_name": ""
+    },
+    {
+     "name": "PL 4",
+     "orig_name": "clk_wizard_0_clk_out5",
+     "id": 4,
+     "default": false,
+     "type": "FIXED",
+     "spec_frequency": 208.333333,
+     "spec_period": 4.8,
+     "requested_frequency": 0,
+     "achieved_frequency": 0,
+     "clock_domain": "",
+     "inst_ref": "",
+     "comp_ref": "",
+     "xclbin_name": ""
+    },
+    {
+     "name": "PL 5",
+     "orig_name": "clk_wizard_0_clk_out6",
+     "id": 5,
+     "default": false,
+     "type": "FIXED",
+     "spec_frequency": 416.666666,
+     "spec_period": 2.4,
+     "requested_frequency": 0,
+     "achieved_frequency": 0,
+     "clock_domain": "",
+     "inst_ref": "",
+     "comp_ref": "",
+     "xclbin_name": ""
+    },
+    {
+     "name": "PL 6",
+     "orig_name": "clk_wizard_0_clk_out7",
+     "id": 6,
+     "default": false,
+     "type": "FIXED",
+     "spec_frequency": 625,
+     "spec_period": 1.6,
+     "requested_frequency": 0,
+     "achieved_frequency": 0,
+     "clock_domain": "",
+     "inst_ref": "",
+     "comp_ref": "",
+     "xclbin_name": ""
+    }
+   ]
+  },
+  "xclbin": {
+   "generated_by": {
+    "name": "v++",
+    "version": "2023.2",
+    "cl": "4026344",
+    "time_stamp": "2023-10-11-15:42:10",
+    "options": "/tools/Xilinx/Vitis/2023.2/bin/unwrapped/lnx64.o/v++ --platform /tools/Xilinx/Vitis/2023.2/base_platforms/xilinx_vck190_base_202320_1/xilinx_vck190_base_202320_1.xpfm --target sw_emu --link /home/yzwu/Desktop/soc_test/vadd_krnl_vadd/krnl_vadd/sw_emu/krnl_vadd.xo --config /home/yzwu/Desktop/soc_test/vadd/hw_link/binary_container_1-link.cfg -o binary_container_1.xsa ",
+    "xclbin_name": "binary_container_1",
+    "uuid": "18d46a27-ab0e-46dc-b8ba-78c33ddb0053",
+    "link_uuid": "18d46a27-ab0e-46dc-b8ba-78c33ddb0053",
+    "package_uuid": "a83587ff-e8b6-4acf-b447-a0dd2434f2a9",
+    "system_compile_flow": false
+   },
+   "user_regions": [
+    {
+     "name": "OCL_REGION_0",
+     "type": "clc_region",
+     "instance_path": "",
+     "available_resources": {
+      "LUT": "",
+      "REG": "",
+      "BRAM": "",
+      "DSP": "",
+      "by_SLR": [],
+      "URAM": ""
+     },
+     "kernels": [],
+     "compute_units": [
+      {
+       "id": "0",
+       "kernel_name": "krnl_vadd",
+       "cu_name": "krnl_vadd_1",
+       "base_address": "",
+       "actual_resources": [],
+       "clock_name": "",
+       "clock_id": 0,
+       "clocks": [],
+       "reset_port_names": [],
+       "slr_resources": []
+      }
+     ],
+     "connectivity": [
+      {
+       "id": "0",
+       "node1": {
+        "type": "compute_unit",
+        "id": "0",
+        "kernel_argument_id": "0",
+        "arg_name": "in1",
+        "mode": "Master",
+        "name": "",
+        "port_name": ""
+       },
+       "node2": {
+        "type": "memory",
+        "id": "0",
+        "kernel_argument_id": "",
+        "arg_name": "",
+        "mode": "",
+        "name": "",
+        "port_name": ""
+       }
+      },
+      {
+       "id": "1",
+       "node1": {
+        "type": "compute_unit",
+        "id": "0",
+        "kernel_argument_id": "1",
+        "arg_name": "in2",
+        "mode": "Master",
+        "name": "",
+        "port_name": ""
+       },
+       "node2": {
+        "type": "memory",
+        "id": "0",
+        "kernel_argument_id": "",
+        "arg_name": "",
+        "mode": "",
+        "name": "",
+        "port_name": ""
+       }
+      },
+      {
+       "id": "2",
+       "node1": {
+        "type": "compute_unit",
+        "id": "0",
+        "kernel_argument_id": "2",
+        "arg_name": "out_r",
+        "mode": "Master",
+        "name": "",
+        "port_name": ""
+       },
+       "node2": {
+        "type": "memory",
+        "id": "0",
+        "kernel_argument_id": "",
+        "arg_name": "",
+        "mode": "",
+        "name": "",
+        "port_name": ""
+       }
+      }
+     ]
+    }
+   ]
+  }
+ }
+}
+

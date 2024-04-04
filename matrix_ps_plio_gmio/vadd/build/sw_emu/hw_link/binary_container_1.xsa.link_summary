@@ -1,0 +1,585 @@
+<ENTRY>
+{
+ "thisFile": "/home/yzwu/Desktop/soc_test/vadd/build/sw_emu/hw_link/binary_container_1.xsa.link_summary",
+ "connectId": "",
+ "serverToken": "",
+ "timestamp": "0"
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_CmdStep",
+ "dateTimestamp": "Thu Feb  8 20:54:42 2024",
+ "timestampMillis": "1707443682050",
+ "buildStep": {
+  "cmdId": "18d46a27-ab0e-46dc-b8ba-78c33ddb0053",
+  "name": "v++",
+  "logFile": "/home/yzwu/Desktop/soc_test/vadd/build/sw_emu/hw_link/binary_container_1/binary_container_1/binary_container_1.steps.log",
+  "commandLine": "/tools/Xilinx/Vitis/2023.2/bin/unwrapped/lnx64.o/v++  --vivado.prop \"run.__KERNEL__.{STEPS.SYNTH_DESIGN.ARGS.MORE OPTIONS}={-directive sdx_optimization_effort_high}\" --advanced.misc \"report=type report_timing_summary name impl_report_timing_summary_route_design_summary steps {route_design} runs {impl_1} options {-max_paths 10}\" --advanced.misc \"report=type report_timing_summary name impl_report_timing_summary_post_route_phys_opt_design_summary steps {post_route_phys_opt_design} runs {impl_1} options {-max_paths 10}\" --platform /tools/Xilinx/Vitis/2023.2/base_platforms/xilinx_vck190_base_202320_1/xilinx_vck190_base_202320_1.xpfm --target sw_emu --link /home/yzwu/Desktop/soc_test/vadd_krnl_vadd/krnl_vadd/sw_emu/krnl_vadd.xo --config /home/yzwu/Desktop/soc_test/vadd/hw_link/binary_container_1-link.cfg -o binary_container_1.xsa ",
+  "args": [
+   "--platform",
+   "/tools/Xilinx/Vitis/2023.2/base_platforms/xilinx_vck190_base_202320_1/xilinx_vck190_base_202320_1.xpfm",
+   "--target",
+   "sw_emu",
+   "--link",
+   "/home/yzwu/Desktop/soc_test/vadd_krnl_vadd/krnl_vadd/sw_emu/krnl_vadd.xo",
+   "--config",
+   "/home/yzwu/Desktop/soc_test/vadd/hw_link/binary_container_1-link.cfg",
+   "-o",
+   "binary_container_1.xsa"
+  ],
+  "iniFiles": [
+   {
+    "path": "/home/yzwu/Desktop/soc_test/vadd/hw_link/binary_container_1-link.cfg",
+    "content": "debug=1\nsave-temps=1\ntemp_dir=binary_container_1\nreport_dir=binary_container_1/reports\nlog_dir=binary_container_1/logs\n\n[advanced]\nmisc=solution_name=binary_container_1\n\n[connectivity]\nnk=krnl_vadd:1:krnl_vadd_1"
+   }
+  ],
+  "cwd": "/home/yzwu/Desktop/soc_test/vadd/build/sw_emu/hw_link"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Thu Feb  8 20:54:42 2024",
+ "timestampMillis": "1707443682050",
+ "status": {
+  "cmdId": "18d46a27-ab0e-46dc-b8ba-78c33ddb0053",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_FlowMetaData",
+ "dateTimestamp": "Thu Feb  8 20:54:42 2024",
+ "timestampMillis": "1707443682759",
+ "buildSummary": {
+  "hardwarePlatform": "xilinx_vck190_base_202320_1.xpfm",
+  "hardwareDsa": "hw.xsa",
+  "platformDirectory": "/tools/Xilinx/Vitis/2023.2/base_platforms/xilinx_vck190_base_202320_1",
+  "runtime": "OpenCL",
+  "systemConfig": "Linux",
+  "flow": "BF_LINK",
+  "target": "TT_SW_EMU",
+  "binaryContainer": {
+   "base": {
+    "type": "BT_UKNOWN",
+    "name": "binary_container_1",
+    "file": "/home/yzwu/Desktop/soc_test/vadd/build/sw_emu/hw_link/binary_container_1/binary_container_1/int/binary_container_1.xclbin",
+    "reports": [],
+    "uuid": ""
+   },
+   "kernels": []
+  },
+  "kernels": [
+   {
+    "base": {
+     "type": "KERNEL",
+     "name": "krnl_vadd",
+     "file": "/home/yzwu/Desktop/soc_test/vadd_krnl_vadd/krnl_vadd/sw_emu/krnl_vadd.xo",
+     "reports": [],
+     "uuid": ""
+    },
+    "sources": [
+     "/home/yzwu/Desktop/soc_test/vadd/build/sw_emu/hw_link/binary_container_1/binary_container_1/int/xo/krnl_vadd/krnl_vadd/cpu_sources/krnl_vadd.cpp"
+    ],
+    "psSources": [],
+    "cuNames": [
+     "krnl_vadd_1"
+    ],
+    "type": "HLS",
+    "frequency": 0,
+    "freqUnits": ""
+   }
+  ],
+  "toolVersion": "Vitis V++ Compiler Release 2023.2. SW Build 4026344 on 2023-10-11-15:42:10"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Thu Feb  8 20:54:42 2024",
+ "timestampMillis": "1707443682836",
+ "report": {
+  "path": "/home/yzwu/Desktop/soc_test/vadd/build/sw_emu/hw_link/binary_container_1/binary_container_1/int/systemDiagramModel.json",
+  "name": "",
+  "fileType": "JSON",
+  "reportType": "SYSTEM_DIAGRAM",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Thu Feb  8 20:54:42 2024",
+ "timestampMillis": "1707443682837",
+ "buildStep": {
+  "cmdId": "3147f150-7b3e-41de-a51b-de44bc3136d3",
+  "name": "regiongen",
+  "logFile": "/home/yzwu/Desktop/soc_test/vadd/build/sw_emu/hw_link/binary_container_1/binary_container_1/int/binary_container_1_regiongen.log",
+  "commandLine": "/tools/Xilinx/Vitis/2023.2/bin/../runtime/bin/regiongen_new -v -m /home/yzwu/Desktop/soc_test/vadd/build/sw_emu/hw_link/binary_container_1/binary_container_1/int/binary_container_1.xml -r /home/yzwu/Desktop/soc_test/vadd/build/sw_emu/hw_link/binary_container_1/binary_container_1/int/binary_container_1.rtd -t alg -o xcl_top",
+  "args": [
+   "-v",
+   "-m",
+   "/home/yzwu/Desktop/soc_test/vadd/build/sw_emu/hw_link/binary_container_1/binary_container_1/int/binary_container_1.xml",
+   "-r",
+   "/home/yzwu/Desktop/soc_test/vadd/build/sw_emu/hw_link/binary_container_1/binary_container_1/int/binary_container_1.rtd",
+   "-t",
+   "alg",
+   "-o",
+   "xcl_top"
+  ],
+  "iniFiles": [],
+  "cwd": "/home/yzwu/Desktop/soc_test/vadd/build/sw_emu/hw_link"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Thu Feb  8 20:54:42 2024",
+ "timestampMillis": "1707443682837",
+ "status": {
+  "cmdId": "3147f150-7b3e-41de-a51b-de44bc3136d3",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Thu Feb  8 20:54:43 2024",
+ "timestampMillis": "1707443683345",
+ "status": {
+  "cmdId": "3147f150-7b3e-41de-a51b-de44bc3136d3",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Thu Feb  8 20:54:43 2024",
+ "timestampMillis": "1707443683346",
+ "buildStep": {
+  "cmdId": "54d1a9c4-c814-4c59-ae46-b0a6dd795059",
+  "name": "gcc",
+  "logFile": "/home/yzwu/Desktop/soc_test/vadd/build/sw_emu/hw_link/binary_container_1/binary_container_1/int/krnl_vadd/krnl_vadd_kernel_gcc.log",
+  "commandLine": "/tools/Xilinx/Vivado/2023.2/tps/lnx64/gcc-8.3.0/bin/gcc -I . -I /tools/Xilinx/Vitis_HLS/2023.2/bin/../include -I /tools/Xilinx/Vitis_HLS/2023.2/bin/../lnx64/tools/auto_cc/include -I /tools/Xilinx/Vitis_HLS/2023.2/bin/../common/technology/autopilot/opencl -I /tools/Xilinx/Vitis/2023.2/bin/../common/technology/autopilot/opencl -I /tools/Xilinx/Vitis/2023.2/bin/../data/emulation/include -I /usr/include/x86_64-linux-gnu -std=c++14 -g -I /home/yzwu/Desktop/soc_test/vadd_common -g -fPIC -g -c -DHLS_STREAM_THREAD_SAFE -MD -MT obj/krnl_vadd.o -MP -MF obj/krnl_vadd.Cd /home/yzwu/Desktop/soc_test/vadd/build/sw_emu/hw_link/binary_container_1/binary_container_1/int/xo/krnl_vadd/krnl_vadd/cpu_sources/krnl_vadd.cpp -o obj/krnl_vadd.o",
+  "args": [
+   "-I",
+   ".",
+   "-I",
+   "/tools/Xilinx/Vitis_HLS/2023.2/bin/../include",
+   "-I",
+   "/tools/Xilinx/Vitis_HLS/2023.2/bin/../lnx64/tools/auto_cc/include",
+   "-I",
+   "/tools/Xilinx/Vitis_HLS/2023.2/bin/../common/technology/autopilot/opencl",
+   "-I",
+   "/tools/Xilinx/Vitis/2023.2/bin/../common/technology/autopilot/opencl",
+   "-I",
+   "/tools/Xilinx/Vitis/2023.2/bin/../data/emulation/include",
+   "-I",
+   "/usr/include/x86_64-linux-gnu",
+   "-std=c++14",
+   "-g",
+   "-I",
+   "/home/yzwu/Desktop/soc_test/vadd_common",
+   "-g",
+   "-fPIC",
+   "-g",
+   "-c",
+   "-DHLS_STREAM_THREAD_SAFE",
+   "-MD",
+   "-MT",
+   "obj/krnl_vadd.o",
+   "-MP",
+   "-MF",
+   "obj/krnl_vadd.Cd",
+   "/home/yzwu/Desktop/soc_test/vadd/build/sw_emu/hw_link/binary_container_1/binary_container_1/int/xo/krnl_vadd/krnl_vadd/cpu_sources/krnl_vadd.cpp",
+   "-o",
+   "obj/krnl_vadd.o"
+  ],
+  "iniFiles": [],
+  "cwd": "/home/yzwu/Desktop/soc_test/vadd/build/sw_emu/hw_link"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Thu Feb  8 20:54:43 2024",
+ "timestampMillis": "1707443683346",
+ "status": {
+  "cmdId": "54d1a9c4-c814-4c59-ae46-b0a6dd795059",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Thu Feb  8 20:54:43 2024",
+ "timestampMillis": "1707443683577",
+ "status": {
+  "cmdId": "54d1a9c4-c814-4c59-ae46-b0a6dd795059",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Thu Feb  8 20:54:43 2024",
+ "timestampMillis": "1707443683578",
+ "buildStep": {
+  "cmdId": "f5663e06-1f77-4e06-a67e-7b2446b68f86",
+  "name": "ar",
+  "logFile": "/home/yzwu/Desktop/soc_test/vadd/build/sw_emu/hw_link/binary_container_1/binary_container_1/int/krnl_vadd/krnl_vadd_ar.log",
+  "commandLine": "/tools/Xilinx/Vivado/2023.2/tps/lnx64/binutils-2.26/bin/ar -cr /home/yzwu/Desktop/soc_test/vadd/build/sw_emu/hw_link/binary_container_1/binary_container_1/int/krnl_vadd/krnl_vadd.csim_cu.a /home/yzwu/Desktop/soc_test/vadd/build/sw_emu/hw_link/binary_container_1/binary_container_1/int/krnl_vadd/obj/krnl_vadd.o",
+  "args": [
+   "-cr",
+   "/home/yzwu/Desktop/soc_test/vadd/build/sw_emu/hw_link/binary_container_1/binary_container_1/int/krnl_vadd/krnl_vadd.csim_cu.a",
+   "/home/yzwu/Desktop/soc_test/vadd/build/sw_emu/hw_link/binary_container_1/binary_container_1/int/krnl_vadd/obj/krnl_vadd.o"
+  ],
+  "iniFiles": [],
+  "cwd": "/home/yzwu/Desktop/soc_test/vadd/build/sw_emu/hw_link"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Thu Feb  8 20:54:43 2024",
+ "timestampMillis": "1707443683578",
+ "status": {
+  "cmdId": "f5663e06-1f77-4e06-a67e-7b2446b68f86",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Thu Feb  8 20:54:43 2024",
+ "timestampMillis": "1707443683582",
+ "status": {
+  "cmdId": "f5663e06-1f77-4e06-a67e-7b2446b68f86",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Thu Feb  8 20:54:43 2024",
+ "timestampMillis": "1707443683582",
+ "buildStep": {
+  "cmdId": "5b7dd130-5030-48ec-ab93-0169cd278a82",
+  "name": "g++",
+  "logFile": "/home/yzwu/Desktop/soc_test/vadd/build/sw_emu/hw_link/binary_container_1/binary_container_1/int/binary_container_1_xcl_top_gpp.log",
+  "commandLine": "/tools/Xilinx/Vivado/2023.2/tps/lnx64/gcc-8.3.0/bin/g++ -I . -I /tools/Xilinx/Vitis_HLS/2023.2/bin/../include -I /tools/Xilinx/Vitis_HLS/2023.2/bin/../common/technology/autopilot/opencl -I /tools/Xilinx/Vitis/2023.2/bin/../common/technology/autopilot/opencl -I /tools/Xilinx/Vitis/2023.2/bin/../data/emulation/include -I /tools/Xilinx/Vitis_HLS/2023.2/bin/../lnx64/tools/auto_cc/include -fPIC -g -DHLS_STREAM_THREAD_SAFE -std=c++14 -fpermissive -c -MD -MT obj/xcl_top.o -MP -MF obj/xcl_top.CXXd xcl_top.cpp -o obj/xcl_top.o",
+  "args": [
+   "-I",
+   ".",
+   "-I",
+   "/tools/Xilinx/Vitis_HLS/2023.2/bin/../include",
+   "-I",
+   "/tools/Xilinx/Vitis_HLS/2023.2/bin/../common/technology/autopilot/opencl",
+   "-I",
+   "/tools/Xilinx/Vitis/2023.2/bin/../common/technology/autopilot/opencl",
+   "-I",
+   "/tools/Xilinx/Vitis/2023.2/bin/../data/emulation/include",
+   "-I",
+   "/tools/Xilinx/Vitis_HLS/2023.2/bin/../lnx64/tools/auto_cc/include",
+   "-fPIC",
+   "-g",
+   "-DHLS_STREAM_THREAD_SAFE",
+   "-std=c++14",
+   "-fpermissive",
+   "-c",
+   "-MD",
+   "-MT",
+   "obj/xcl_top.o",
+   "-MP",
+   "-MF",
+   "obj/xcl_top.CXXd",
+   "xcl_top.cpp",
+   "-o",
+   "obj/xcl_top.o"
+  ],
+  "iniFiles": [],
+  "cwd": "/home/yzwu/Desktop/soc_test/vadd/build/sw_emu/hw_link"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Thu Feb  8 20:54:43 2024",
+ "timestampMillis": "1707443683582",
+ "status": {
+  "cmdId": "5b7dd130-5030-48ec-ab93-0169cd278a82",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Thu Feb  8 20:54:44 2024",
+ "timestampMillis": "1707443684104",
+ "status": {
+  "cmdId": "5b7dd130-5030-48ec-ab93-0169cd278a82",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Thu Feb  8 20:54:44 2024",
+ "timestampMillis": "1707443684105",
+ "buildStep": {
+  "cmdId": "9f47986b-d1a4-4537-b110-93b14fdfa35f",
+  "name": "g++",
+  "logFile": "/home/yzwu/Desktop/soc_test/vadd/build/sw_emu/hw_link/binary_container_1/binary_container_1/int/binary_container_1_top_gpp.log",
+  "commandLine": "/tools/Xilinx/Vivado/2023.2/tps/lnx64/gcc-8.3.0/bin/g++ -fPIC -DHLS_STREAM_THREAD_SAFE -std=c++14 -Wall -shared -Wl,--whole-archive,-soname,binary_container_1.so -o binary_container_1.so krnl_vadd/krnl_vadd.csim_cu.a obj/xcl_top.o -Wl,--no-whole-archive -Wl,--as-needed -L /tools/Xilinx/Vitis_HLS/2023.2/bin/../lib/lnx64.o -lhlsmathsim -L /tools/Xilinx/Vitis_HLS/2023.2/bin/../lnx64/tools/fpo_v7_1 -lgmp -lmpfr -lIp_floating_point_v7_1_bitacc_cmodel -Wl,-rpath,/tools/Xilinx/Vitis_HLS/2023.2/bin/../lnx64/tools/fpo_v7_1 -L /tools/Xilinx/Vitis_HLS/2023.2/bin/../lnx64/tools/fft_v9_1 -lIp_xfft_v9_1_bitacc_cmodel -L /tools/Xilinx/Vitis_HLS/2023.2/bin/../lnx64/tools/fir_v7_0 -lgmp -lIp_fir_compiler_v7_2_bitacc_cmodel -L /tools/Xilinx/Vitis_HLS/2023.2/bin/../lnx64/lib/csim -lhlsmc++-GCC46 -L /tools/Xilinx/Vivado/2023.2/tps/lnx64/gcc-8.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/6.2.0/ -lgcov",
+  "args": [
+   "-fPIC",
+   "-DHLS_STREAM_THREAD_SAFE",
+   "-std=c++14",
+   "-Wall",
+   "-shared",
+   "-Wl,--whole-archive,-soname,binary_container_1.so",
+   "-o",
+   "binary_container_1.so",
+   "krnl_vadd/krnl_vadd.csim_cu.a",
+   "obj/xcl_top.o",
+   "-Wl,--no-whole-archive",
+   "-Wl,--as-needed",
+   "-L",
+   "/tools/Xilinx/Vitis_HLS/2023.2/bin/../lib/lnx64.o",
+   "-lhlsmathsim",
+   "-L",
+   "/tools/Xilinx/Vitis_HLS/2023.2/bin/../lnx64/tools/fpo_v7_1",
+   "-lgmp",
+   "-lmpfr",
+   "-lIp_floating_point_v7_1_bitacc_cmodel",
+   "-Wl,-rpath,/tools/Xilinx/Vitis_HLS/2023.2/bin/../lnx64/tools/fpo_v7_1",
+   "-L",
+   "/tools/Xilinx/Vitis_HLS/2023.2/bin/../lnx64/tools/fft_v9_1",
+   "-lIp_xfft_v9_1_bitacc_cmodel",
+   "-L",
+   "/tools/Xilinx/Vitis_HLS/2023.2/bin/../lnx64/tools/fir_v7_0",
+   "-lgmp",
+   "-lIp_fir_compiler_v7_2_bitacc_cmodel",
+   "-L",
+   "/tools/Xilinx/Vitis_HLS/2023.2/bin/../lnx64/lib/csim",
+   "-lhlsmc++-GCC46",
+   "-L",
+   "/tools/Xilinx/Vivado/2023.2/tps/lnx64/gcc-8.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/6.2.0/",
+   "-lgcov"
+  ],
+  "iniFiles": [],
+  "cwd": "/home/yzwu/Desktop/soc_test/vadd/build/sw_emu/hw_link"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Thu Feb  8 20:54:44 2024",
+ "timestampMillis": "1707443684105",
+ "status": {
+  "cmdId": "9f47986b-d1a4-4537-b110-93b14fdfa35f",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Thu Feb  8 20:54:44 2024",
+ "timestampMillis": "1707443684143",
+ "status": {
+  "cmdId": "9f47986b-d1a4-4537-b110-93b14fdfa35f",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Thu Feb  8 20:54:44 2024",
+ "timestampMillis": "1707443684210",
+ "report": {
+  "path": "/home/yzwu/Desktop/soc_test/vadd/build/sw_emu/hw_link/binary_container_1/binary_container_1/int/binary_container_1_xml.rtd",
+  "name": "",
+  "fileType": "JSON",
+  "reportType": "XCLBIN_INFO",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Thu Feb  8 20:54:44 2024",
+ "timestampMillis": "1707443684218",
+ "buildStep": {
+  "cmdId": "dbc033a8-db64-4444-89ce-66abaa79e7ff",
+  "name": "xclbinutil",
+  "logFile": "/home/yzwu/Desktop/soc_test/vadd/build/sw_emu/hw_link/binary_container_1/binary_container_1/int/binary_container_1_xclbinutil.log",
+  "commandLine": "/tools/Xilinx/Vitis/2023.2/bin/xclbinutil --add-section BITSTREAM:RAW:/home/yzwu/Desktop/soc_test/vadd/build/sw_emu/hw_link/binary_container_1/binary_container_1/int/binary_container_1.so --force --target sw_emu --key-value SYS:dfx_enable:false --add-section :JSON:/home/yzwu/Desktop/soc_test/vadd/build/sw_emu/hw_link/binary_container_1/binary_container_1/int/binary_container_1.rtd --add-section CLOCK_FREQ_TOPOLOGY:JSON:/home/yzwu/Desktop/soc_test/vadd/build/sw_emu/hw_link/binary_container_1/binary_container_1/int/binary_container_1_xml.rtd --add-section BUILD_METADATA:JSON:/home/yzwu/Desktop/soc_test/vadd/build/sw_emu/hw_link/binary_container_1/binary_container_1/int/binary_container_1_build.rtd --add-section EMBEDDED_METADATA:RAW:/home/yzwu/Desktop/soc_test/vadd/build/sw_emu/hw_link/binary_container_1/binary_container_1/int/binary_container_1.xml --add-section DEBUG_DATA:RAW:/dev/null --add-section PDI:raw:/home/yzwu/Desktop/soc_test/vadd/build/sw_emu/hw_link/binary_container_1/binary_container_1/int/platform.pdi --add-section SYSTEM_METADATA:RAW:/home/yzwu/Desktop/soc_test/vadd/build/sw_emu/hw_link/binary_container_1/binary_container_1/int/systemDiagramModel.json --output /home/yzwu/Desktop/soc_test/vadd/build/sw_emu/hw_link/binary_container_1/binary_container_1/int/binary_container_1.xclbin",
+  "args": [
+   "--add-section",
+   "BITSTREAM:RAW:/home/yzwu/Desktop/soc_test/vadd/build/sw_emu/hw_link/binary_container_1/binary_container_1/int/binary_container_1.so",
+   "--force",
+   "--target",
+   "sw_emu",
+   "--key-value",
+   "SYS:dfx_enable:false",
+   "--add-section",
+   ":JSON:/home/yzwu/Desktop/soc_test/vadd/build/sw_emu/hw_link/binary_container_1/binary_container_1/int/binary_container_1.rtd",
+   "--add-section",
+   "CLOCK_FREQ_TOPOLOGY:JSON:/home/yzwu/Desktop/soc_test/vadd/build/sw_emu/hw_link/binary_container_1/binary_container_1/int/binary_container_1_xml.rtd",
+   "--add-section",
+   "BUILD_METADATA:JSON:/home/yzwu/Desktop/soc_test/vadd/build/sw_emu/hw_link/binary_container_1/binary_container_1/int/binary_container_1_build.rtd",
+   "--add-section",
+   "EMBEDDED_METADATA:RAW:/home/yzwu/Desktop/soc_test/vadd/build/sw_emu/hw_link/binary_container_1/binary_container_1/int/binary_container_1.xml",
+   "--add-section",
+   "DEBUG_DATA:RAW:/dev/null",
+   "--add-section",
+   "PDI:raw:/home/yzwu/Desktop/soc_test/vadd/build/sw_emu/hw_link/binary_container_1/binary_container_1/int/platform.pdi",
+   "--add-section",
+   "SYSTEM_METADATA:RAW:/home/yzwu/Desktop/soc_test/vadd/build/sw_emu/hw_link/binary_container_1/binary_container_1/int/systemDiagramModel.json",
+   "--output",
+   "/home/yzwu/Desktop/soc_test/vadd/build/sw_emu/hw_link/binary_container_1/binary_container_1/int/binary_container_1.xclbin"
+  ],
+  "iniFiles": [],
+  "cwd": "/home/yzwu/Desktop/soc_test/vadd/build/sw_emu/hw_link"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Thu Feb  8 20:54:44 2024",
+ "timestampMillis": "1707443684218",
+ "status": {
+  "cmdId": "dbc033a8-db64-4444-89ce-66abaa79e7ff",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Thu Feb  8 20:54:44 2024",
+ "timestampMillis": "1707443684244",
+ "status": {
+  "cmdId": "dbc033a8-db64-4444-89ce-66abaa79e7ff",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Thu Feb  8 20:54:44 2024",
+ "timestampMillis": "1707443684245",
+ "buildStep": {
+  "cmdId": "593ea17b-e5a4-47ec-b893-a1f3dd2994a0",
+  "name": "xclbinutil",
+  "logFile": "/home/yzwu/Desktop/soc_test/vadd/build/sw_emu/hw_link/binary_container_1/binary_container_1/int/binary_container_1.xclbin.info",
+  "commandLine": "/tools/Xilinx/Vitis/2023.2/bin/xclbinutil --quiet --info --input /home/yzwu/Desktop/soc_test/vadd/build/sw_emu/hw_link/binary_container_1/binary_container_1/int/binary_container_1.xclbin",
+  "args": [
+   "--quiet",
+   "--info",
+   "--input",
+   "/home/yzwu/Desktop/soc_test/vadd/build/sw_emu/hw_link/binary_container_1/binary_container_1/int/binary_container_1.xclbin"
+  ],
+  "iniFiles": [],
+  "cwd": "/home/yzwu/Desktop/soc_test/vadd/build/sw_emu/hw_link"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Thu Feb  8 20:54:44 2024",
+ "timestampMillis": "1707443684245",
+ "status": {
+  "cmdId": "593ea17b-e5a4-47ec-b893-a1f3dd2994a0",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Thu Feb  8 20:54:44 2024",
+ "timestampMillis": "1707443684340",
+ "status": {
+  "cmdId": "593ea17b-e5a4-47ec-b893-a1f3dd2994a0",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Thu Feb  8 20:54:44 2024",
+ "timestampMillis": "1707443684364",
+ "report": {
+  "path": "/home/yzwu/Desktop/soc_test/vadd/build/sw_emu/hw_link/binary_container_1/logs/optraceViewer.html",
+  "name": "",
+  "fileType": "HTML",
+  "reportType": "OPERATION_TRACE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Thu Feb  8 20:54:44 2024",
+ "timestampMillis": "1707443684365",
+ "status": {
+  "cmdId": "18d46a27-ab0e-46dc-b8ba-78c33ddb0053",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Thu Feb  8 20:54:44 2024",
+ "timestampMillis": "1707443684392",
+ "report": {
+  "path": "/home/yzwu/Desktop/soc_test/vadd/build/sw_emu/hw_link/binary_container_1/reports/binary_container_1/binary_container_1_guidance.html",
+  "name": "",
+  "fileType": "HTML",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Thu Feb  8 20:54:44 2024",
+ "timestampMillis": "1707443684393",
+ "report": {
+  "path": "/home/yzwu/Desktop/soc_test/vadd/build/sw_emu/hw_link/binary_container_1/binary_container_1_guidance.pb3",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>

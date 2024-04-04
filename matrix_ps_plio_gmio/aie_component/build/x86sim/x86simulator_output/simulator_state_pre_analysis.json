@@ -1,0 +1,195 @@
+{
+  "nodes": 
+  {
+    "n1": 
+    {
+      "label": "progress_monitor",
+      "name": "progress_monitor",
+      "kind": "progress monitor",
+      "inputs": 
+      [
+
+      ],
+      "outputs": 
+      [
+
+      ],
+      "state": 
+      {
+        "state": "running",
+        "iteration_count": 0,
+        "reading": 0
+      }
+    },
+    "n2": 
+    {
+      "label": "ker_i3",
+      "name": "mygraph.first",
+      "kind": "kernel",
+      "inputs": 
+      [
+        "c1",
+        "c2"
+      ],
+      "outputs": 
+      [
+        "c3"
+      ],
+      "state": 
+      {
+        "state": "running",
+        "iteration_count": 2,
+        "reading": 1,
+        "connector": "c1"
+      }
+    },
+    "n3": 
+    {
+      "label": "platformIn_i0",
+      "name": "platformIn_i0",
+      "kind": "GMIO input",
+      "inputs": 
+      [
+
+      ],
+      "outputs": 
+      [
+        "c1"
+      ],
+      "state": 
+      {
+        "state": "waiting_on_run",
+        "iteration_count": 0,
+        "reading": 0
+      }
+    },
+    "n4": 
+    {
+      "label": "platformIn_i1",
+      "name": "platformIn_i1",
+      "kind": "GMIO input",
+      "inputs": 
+      [
+
+      ],
+      "outputs": 
+      [
+        "c2"
+      ],
+      "state": 
+      {
+        "state": "waiting_on_run",
+        "iteration_count": 0,
+        "reading": 0
+      }
+    },
+    "n5": 
+    {
+      "label": "platformOut_i2",
+      "name": "platformOut_i2",
+      "kind": "GMIO output",
+      "inputs": 
+      [
+        "c3"
+      ],
+      "outputs": 
+      [
+
+      ],
+      "state": 
+      {
+        "state": "waiting_on_run",
+        "iteration_count": 0,
+        "reading": 1
+      }
+    }
+  },
+  "pkt_split_nodes": 
+  {
+
+  },
+  "connectors": 
+  {
+    "c1": 
+    {
+      "label": "scon_i0_po0_i3_pi0",
+      "source_name": "mygraph.datain1.out[0]",
+      "sink_name": "mygraph.first.in[0]",
+      "inputs": 
+      [
+        "n3"
+      ],
+      "outputs": 
+      [
+        "n2"
+      ],
+      "state": 
+      {
+        "num_stream_items": -1,
+        "cur_buf_id_r": -1,
+        "cur_buf_id_w": -1,
+        "bufAssignment": "xx"
+      }
+    },
+    "c2": 
+    {
+      "label": "scon_i1_po0_i3_pi1",
+      "source_name": "mygraph.datain2.out[0]",
+      "sink_name": "mygraph.first.in[1]",
+      "inputs": 
+      [
+        "n4"
+      ],
+      "outputs": 
+      [
+        "n2"
+      ],
+      "state": 
+      {
+        "num_stream_items": -1,
+        "cur_buf_id_r": -1,
+        "cur_buf_id_w": -1,
+        "bufAssignment": "xx"
+      }
+    },
+    "c3": 
+    {
+      "label": "scon_i3_po0_i2_pi0",
+      "source_name": "mygraph.first.out[0]",
+      "sink_name": "mygraph.dataout.in[0]",
+      "inputs": 
+      [
+        "n2"
+      ],
+      "outputs": 
+      [
+        "n5"
+      ],
+      "state": 
+      {
+        "num_stream_items": -1,
+        "cur_buf_id_r": -1,
+        "cur_buf_id_w": -1,
+        "bufAssignment": "xx"
+      }
+    }
+  },
+  "ps": 
+  {
+    "label": "ps",
+    "name": "ps",
+    "inputs": 
+    [
+
+    ],
+    "outputs": 
+    [
+
+    ],
+    "state": 
+    {
+      "state": "waiting",
+      "node": "n2"
+    }
+  }
+}

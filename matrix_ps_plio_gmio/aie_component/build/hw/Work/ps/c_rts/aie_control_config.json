@@ -1,0 +1,146 @@
+{
+    "schema_version": {
+        "major": "1",
+        "minor": "0",
+        "patch": "0"
+    },
+    "aie_metadata": {
+        "driver_config": {
+            "hw_gen": 1,
+            "base_address": 2199023255552,
+            "npi_address": 4144627712,
+            "column_shift": 23,
+            "row_shift": 18,
+            "num_rows": 9,
+            "num_columns": 50,
+            "shim_row": 0,
+            "mem_tile_row_start": 0,
+            "mem_tile_num_rows": 0,
+            "aie_tile_row_start": 1,
+            "aie_tile_num_rows": 8,
+            "partition_num_cols": 50,
+            "partition_overlay_start_cols": [
+                0
+            ]
+        },
+        "aiecompiler_options": {
+            "broadcast_enable_core": true,
+            "graph_iterator_event": false
+        },
+        "graphs": {
+            "graph0": {
+                "id": 0,
+                "name": "mygraph",
+                "core_columns": [
+                    26
+                ],
+                "core_rows": [
+                    0
+                ],
+                "iteration_memory_columns": [
+                    25
+                ],
+                "iteration_memory_rows": [
+                    0
+                ],
+                "iteration_memory_addresses": [
+                    4
+                ],
+                "multirate_triggers": [
+                    false
+                ],
+                "pl_kernel_instance_names": [],
+                "pl_axi_lite_modes": []
+            }
+        },
+        "TileMapping": {
+            "AIEKernelToTileMapping": [
+                {
+                    "graph": "mygraph",
+                    "tile": "aie",
+                    "column": 26,
+                    "row": 0,
+                    "schedule": 0,
+                    "function": "matrix256.first"
+                }
+            ],
+            "SharedBufferToTileMapping": []
+        },
+        "RTPs": {},
+        "GMIOs": {
+            "gmio0": {
+                "id": 0,
+                "name": "mygraph.datain1",
+                "logical_name": "datain1",
+                "type": 0,
+                "shim_column": 26,
+                "channel_number": 2,
+                "stream_id": 3,
+                "burst_length_in_16byte": 16,
+                "pl_kernel_instance_name": "",
+                "pl_parameter_index": -1
+            },
+            "gmio1": {
+                "id": 1,
+                "name": "mygraph.datain2",
+                "logical_name": "datain2",
+                "type": 0,
+                "shim_column": 26,
+                "channel_number": 3,
+                "stream_id": 7,
+                "burst_length_in_16byte": 16,
+                "pl_kernel_instance_name": "",
+                "pl_parameter_index": -1
+            },
+            "gmio2": {
+                "id": 2,
+                "name": "mygraph.dataout",
+                "logical_name": "dataout",
+                "type": 1,
+                "shim_column": 26,
+                "channel_number": 0,
+                "stream_id": 2,
+                "burst_length_in_16byte": 16,
+                "pl_kernel_instance_name": "",
+                "pl_parameter_index": -1
+            }
+        },
+        "PLIOs": {},
+        "EventGraphs": {
+            "graph0": {
+                "id": 0,
+                "name": "mygraph",
+                "core_columns": [
+                    26
+                ],
+                "core_rows": [
+                    0
+                ],
+                "dma_columns": [],
+                "dma_rows": []
+            }
+        },
+        "DeviceData": {
+            "AIEBaseAddress": "0x20000000000",
+            "AIEFrequency": 1250
+        },
+        "TraceGMIOs": {},
+        "AIEConfigsForTraceAndProfile": {
+            "GMIOs": {
+                "gmio0": {
+                    "logical_name": "datain1",
+                    "data_width": 32
+                },
+                "gmio1": {
+                    "logical_name": "datain2",
+                    "data_width": 32
+                },
+                "gmio2": {
+                    "logical_name": "dataout",
+                    "data_width": 32
+                }
+            },
+            "PLIOs": {}
+        }
+    }
+}

@@ -1,0 +1,66 @@
+{
+  "appId": "root",
+  "device": "xcvc1902",
+  "AIE": {
+    "ai_engine_0": {
+      "annotation": "AIE IP",
+      "logical_device": "${XILINX_VITIS_AIETOOLS}/data/devices/VC1902.json",
+      "aieshimPorts": {
+        "M00_AXI": {
+          "type": "mem",
+          "direction": "master",
+          "parameterIndex": 0,
+          "annotation": [
+            "datain1",
+            "datain2",
+            "dataout"
+          ],
+          "sdfioName": [
+            "i0_po0",
+            "i1_po0",
+            "i2_pi0"
+          ]
+        }
+      }
+    }
+  },
+  "NoC": {
+    "noc_0": {
+      "annotation": "NOC IP",
+      "type": "mem",
+      "nocPorts": {
+        "S00_AXI": {
+          "type": "mem",
+          "direction": "slave",
+          "parameterIndex": 0,
+          "annotation": [
+            "datain1",
+            "datain2",
+            "dataout"
+          ],
+          "sdfioName": [
+            "i0_po0",
+            "i1_po0",
+            "i2_pi0"
+          ]
+        }
+      }
+    }
+  },
+  "connections": {
+    "net0": {
+      "type": "mem",
+      "srcPort": {
+        "instName": "ai_engine_0",
+        "portName": "M00_AXI"
+      },
+      "dstPorts": [
+        {
+          "instName": "noc_0",
+          "portName": "S00_AXI"
+        }
+      ],
+      "direction": "aie_to_noc"
+    }
+  }
+}

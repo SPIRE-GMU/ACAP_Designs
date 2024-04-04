@@ -1,0 +1,75 @@
+{
+    "inputs": [
+        {
+            "type": "plio",
+            "dataFile": "data/inputmatrixa.txt",
+            "dataWidth": "32",
+            "frequency": 500.0,
+            "hex": false,
+            "logicalName": "datain1",
+            "direction": "input",
+            "index": 0,
+            "ports": [
+                {
+                    "portName": "in[0]",
+                    "qualifiedName": "mygraph.first",
+                    "graphName": "mygraph",
+                    "graphType": "simpleGraph",
+                    "type": "stream",
+                    "elementType": "int32",
+                    "direction": "in",
+                    "blockSize": 0
+                }
+            ],
+            "qualifiedGraphPortAliasNames": []
+        },
+        {
+            "type": "plio",
+            "dataFile": "data/inputmatrix.txt",
+            "dataWidth": "32",
+            "frequency": 500.0,
+            "hex": false,
+            "logicalName": "datain2",
+            "direction": "input",
+            "index": 1,
+            "ports": [
+                {
+                    "portName": "in[1]",
+                    "qualifiedName": "mygraph.first",
+                    "graphName": "mygraph",
+                    "graphType": "simpleGraph",
+                    "type": "stream",
+                    "elementType": "int32",
+                    "direction": "in",
+                    "blockSize": 0
+                }
+            ],
+            "qualifiedGraphPortAliasNames": []
+        }
+    ],
+    "outputs": [
+        {
+            "type": "plio",
+            "dataFile": "data/output_1.txt",
+            "dataWidth": "32",
+            "frequency": 500.0,
+            "hex": false,
+            "logicalName": "dataout",
+            "direction": "output",
+            "index": 0,
+            "ports": [
+                {
+                    "portName": "out[0]",
+                    "qualifiedName": "mygraph.first",
+                    "graphName": "mygraph",
+                    "graphType": "simpleGraph",
+                    "type": "stream",
+                    "elementType": "int32",
+                    "direction": "out",
+                    "blockSize": 0
+                }
+            ],
+            "qualifiedGraphPortAliasNames": []
+        }
+    ]
+}

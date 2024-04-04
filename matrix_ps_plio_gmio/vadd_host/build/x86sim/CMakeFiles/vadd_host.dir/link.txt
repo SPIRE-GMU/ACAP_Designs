@@ -1,0 +1,1 @@
+/usr/bin/g++ CMakeFiles/vadd_host.dir/vadd.cpp.o -o vadd_host   -L/opt/xilinx/xrt/lib  -L/tools/Xilinx/Vitis/2023.2/aietools/lib/lnx64.o  -Wl,-rpath,:/opt/xilinx/xrt/lib:/tools/Xilinx/Vitis_HLS/2023.2/lnx64/tools/fpo_v7_1 /opt/xilinx/xrt/lib/libxilinxopencl.so -lpthread -lrt -lstdc++ -lxrt_coreutil -ladf_api_xrt 

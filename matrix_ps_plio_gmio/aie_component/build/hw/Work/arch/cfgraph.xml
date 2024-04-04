@@ -1,0 +1,10 @@
+<cf:model  cf:cpu="cortex_a72" cf:name="root" cf:partition="0" cf:prefix="_p0_" xd:type="design" xmlns:cf="http_//www_xilinx_com/connections" xmlns:xd="http_//www_xilinx_com/xd" >
+  <cf:block  cf:name="aieip" >
+    <cf:port  cf:direction="out" cf:name="datain1_datain2_dataout" cf:portType="aximm" >    </cf:port>  
+  </cf:block>
+  <cf:comp  cf:name="ai_engine_0" xd:componentRef="ai_engine" >  
+  </cf:comp>
+  <cf:instance  cf:blockName="aieip" cf:compName="ai_engine_0" cf:name="ai_engine_0" >
+    <cf:portMap cf:blockPort="datain1_datain2_dataout" cf:compPort="M00_AXI" cf:paddedWidth="0" xd:isRegistered="false" xd:readBandwidth="2000" xd:writeBandwidth="1000" >    </cf:portMap>  
+  </cf:instance>
+</cf:model>

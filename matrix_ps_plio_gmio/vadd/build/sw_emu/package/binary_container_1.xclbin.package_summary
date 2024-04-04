@@ -1,0 +1,114 @@
+<ENTRY>
+{
+ "thisFile": "/home/yzwu/Desktop/soc_test/vadd/build/sw_emu/package/binary_container_1.xclbin.package_summary",
+ "connectId": "",
+ "serverToken": "",
+ "timestamp": "0"
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_CmdStep",
+ "dateTimestamp": "Fri Feb  9 23:24:44 2024",
+ "timestampMillis": "1707539084467",
+ "buildStep": {
+  "cmdId": "a83587ff-e8b6-4acf-b447-a0dd2434f2a9",
+  "name": "v++",
+  "logFile": "/home/yzwu/Desktop/soc_test/vadd/build/sw_emu/package/package.build/package/package.steps.log",
+  "commandLine": "/tools/Xilinx/Vitis/2023.2/bin/unwrapped/lnx64.o/v++  --vivado.prop \"run.__KERNEL__.{STEPS.SYNTH_DESIGN.ARGS.MORE OPTIONS}={-directive sdx_optimization_effort_high}\" --advanced.misc \"report=type report_timing_summary name impl_report_timing_summary_route_design_summary steps {route_design} runs {impl_1} options {-max_paths 10}\" --advanced.misc \"report=type report_timing_summary name impl_report_timing_summary_post_route_phys_opt_design_summary steps {post_route_phys_opt_design} runs {impl_1} options {-max_paths 10}\" --platform /tools/Xilinx/Vitis/2023.2/base_platforms/xilinx_vck190_base_202320_1/xilinx_vck190_base_202320_1.xpfm --target sw_emu --package --save-temps --temp_dir package.build /home/yzwu/Desktop/soc_test/vadd/build/sw_emu/hw_link/binary_container_1.xsa -o binary_container_1.xclbin ",
+  "args": [
+   "--platform",
+   "/tools/Xilinx/Vitis/2023.2/base_platforms/xilinx_vck190_base_202320_1/xilinx_vck190_base_202320_1.xpfm",
+   "--target",
+   "sw_emu",
+   "--package",
+   "--save-temps",
+   "--temp_dir",
+   "package.build",
+   "/home/yzwu/Desktop/soc_test/vadd/build/sw_emu/hw_link/binary_container_1.xsa",
+   "-o",
+   "binary_container_1.xclbin"
+  ],
+  "iniFiles": [],
+  "cwd": "/home/yzwu/Desktop/soc_test/vadd/build/sw_emu/package"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Feb  9 23:24:44 2024",
+ "timestampMillis": "1707539084467",
+ "status": {
+  "cmdId": "a83587ff-e8b6-4acf-b447-a0dd2434f2a9",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_FlowMetaData",
+ "dateTimestamp": "Fri Feb  9 23:24:45 2024",
+ "timestampMillis": "1707539085234",
+ "buildSummary": {
+  "hardwarePlatform": "xilinx_vck190_base_202320_1.xpfm",
+  "hardwareDsa": "hw.xsa",
+  "platformDirectory": "/tools/Xilinx/Vitis/2023.2/base_platforms/xilinx_vck190_base_202320_1",
+  "runtime": "OpenCL",
+  "systemConfig": "Linux",
+  "flow": "BF_PACKAGE",
+  "target": "TT_SW_EMU",
+  "binaryContainer": {
+   "base": {
+    "type": "BT_UKNOWN",
+    "name": "binary_container_1",
+    "file": "/home/yzwu/Desktop/soc_test/vadd/build/sw_emu/package/binary_container_1.xclbin",
+    "reports": [],
+    "uuid": ""
+   },
+   "kernels": []
+  },
+  "kernels": [],
+  "toolVersion": "Vitis V++ Compiler Release 2023.2. SW Build 4026344 on 2023-10-11-15:42:10"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Feb  9 23:24:45 2024",
+ "timestampMillis": "1707539085309",
+ "status": {
+  "cmdId": "a83587ff-e8b6-4acf-b447-a0dd2434f2a9",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Feb  9 23:24:45 2024",
+ "timestampMillis": "1707539085337",
+ "report": {
+  "path": "/home/yzwu/Desktop/soc_test/vadd/build/sw_emu/package/package.build/reports/package/v++_package_binary_container_1_guidance.html",
+  "name": "",
+  "fileType": "HTML",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Feb  9 23:24:45 2024",
+ "timestampMillis": "1707539085337",
+ "report": {
+  "path": "/home/yzwu/Desktop/soc_test/vadd/build/sw_emu/package/package.build/v++_package_binary_container_1_guidance.pb3",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>

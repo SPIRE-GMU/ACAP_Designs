@@ -1,0 +1,10 @@
+aiesimulator
+--pkg-dir ./Work
+--aiearch-version aie
+--i=../..
+--vcd-pipe /tmp/vcd_fifo_e6e97857-ca97-4ca1-8cd5-c62a372230e2
+--wdb
+--text
+--profile
+--aximm-port=12003
+--options-file /home/yzwu/Desktop/matrix_vec/matrix_vec/build/hw/aiesimTraceOptions.txt

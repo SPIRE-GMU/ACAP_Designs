@@ -1,0 +1,1137 @@
+{
+    "ModuleName": "i3_vitis_single_node_templates",
+    "SourceFileName": "/home/yzwu/Desktop/matrix_vec/matrix_vec/src/kernels/vitis_single_node_templates.cc",
+    "StructTypes": [
+        {
+            "Name": "class.anon",
+            "Size": 1
+        },
+        {
+            "Name": "struct.aie::detail::utils::unroll_context",
+            "Size": 1
+        },
+        {
+            "Name": "class.anon.7",
+            "Size": 1
+        },
+        {
+            "Name": "struct.aie::detail::utils::unroll_context.10",
+            "Size": 1
+        },
+        {
+            "Name": "struct.aie::detail::utils::unroll_context.18",
+            "Size": 1
+        },
+        {
+            "Name": "struct.input_stream",
+            "Size": 4
+        },
+        {
+            "Name": "union.anon",
+            "Size": 4
+        },
+        {
+            "Name": "struct.output_stream",
+            "Size": 4
+        },
+        {
+            "Name": "union.anon.0",
+            "Size": 4
+        },
+        {
+            "Name": "class.aie::vector",
+            "Size": 32
+        },
+        {
+            "Name": "class.aie::detail::vector_base",
+            "Size": 32
+        },
+        {
+            "Name": "struct.v8int32",
+            "Size": 32
+        },
+        {
+            "Name": "struct.ipd.custom_type.v32int8.v32int8",
+            "Size": 32
+        },
+        {
+            "Name": "class.aie::accum",
+            "Size": 96
+        },
+        {
+            "Name": "class.aie::detail::accum_base",
+            "Size": 96
+        },
+        {
+            "Name": "struct.v8acc80",
+            "Size": 96
+        },
+        {
+            "Name": "struct.ipd.custom_type.v16acc48.v16acc48",
+            "Size": 96
+        },
+        {
+            "Name": "struct.aie::unary_op",
+            "Size": 96
+        },
+        {
+            "Name": "struct.aie::unary_op_common",
+            "Size": 96
+        },
+        {
+            "Name": "struct.ipd.custom_type.uint1_t.uint1_t",
+            "Size": 1
+        },
+        {
+            "Name": "struct.ipd.custom_type.uint3_t.uint3_t",
+            "Size": 1
+        },
+        {
+            "Name": "struct.aie::unary_op.1",
+            "Size": 32
+        },
+        {
+            "Name": "struct.aie::unary_op_common.2",
+            "Size": 32
+        },
+        {
+            "Name": "class.anon.3",
+            "Size": 20
+        },
+        {
+            "Name": "class.aie::vector.4",
+            "Size": 64
+        },
+        {
+            "Name": "class.aie::detail::vector_base.5",
+            "Size": 64
+        },
+        {
+            "Name": "struct.v16int32",
+            "Size": 64
+        },
+        {
+            "Name": "struct.ipd.custom_type.v64int8.v64int8",
+            "Size": 64
+        },
+        {
+            "Name": "struct.me_primitive::chessout_v8int32_dssrs_v8acc80___uchar_uint1_t_uint1_t_uint1_t_uint3_t_uint1_t",
+            "Size": 33
+        },
+        {
+            "Name": "class.anon.6",
+            "Size": 12
+        },
+        {
+            "Name": "struct.ipd.custom_type.uint2_t.uint2_t",
+            "Size": 1
+        },
+        {
+            "Name": "struct.me_primitive::chessout_v8acc80_ups_w2b_sw_v8int32___uchar_uint1_t_uint2_t_uint1_t_uint1_t",
+            "Size": 97
+        },
+        {
+            "Name": "class.anon.9",
+            "Size": 8
+        },
+        {
+            "Name": "class.aie::vector.11",
+            "Size": 16
+        },
+        {
+            "Name": "class.aie::detail::vector_base.12",
+            "Size": 16
+        },
+        {
+            "Name": "struct.v4int32",
+            "Size": 16
+        },
+        {
+            "Name": "struct.ipd.custom_type.v16int8.v16int8",
+            "Size": 16
+        },
+        {
+            "Name": "class.anon.13",
+            "Size": 1
+        },
+        {
+            "Name": "struct.v8int16",
+            "Size": 16
+        },
+        {
+            "Name": "struct.input_stream.15",
+            "Size": 4
+        },
+        {
+            "Name": "union.anon.16",
+            "Size": 4
+        },
+        {
+            "Name": "struct.me_primitive::chessout_v4int32_stream_read128___PWSS_rsrc1__sint_uint1_t___sint",
+            "Size": 20
+        },
+        {
+            "Name": "struct.me_primitive::chessout_v4int32_stream_read128___PWSS_rsrc2__sint_uint1_t___sint",
+            "Size": 20
+        },
+        {
+            "Name": "struct.me_primitive::chessout_v4int32_stream_read128___PWSSMEM__sint_uint1_t___sint",
+            "Size": 20
+        },
+        {
+            "Name": "class.aie::detail::vector_base.17",
+            "Size": 64
+        },
+        {
+            "Name": "struct.v8cint32",
+            "Size": 64
+        },
+        {
+            "Name": "struct.v4cint32",
+            "Size": 32
+        },
+        {
+            "Name": "class.aie::vector_elem_ref",
+            "Size": 8
+        },
+        {
+            "Name": "vector<int, 4U>",
+            "Size": 16
+        },
+        {
+            "Name": "vector_base<int, 4U>",
+            "Size": 16
+        },
+        {
+            "Name": "vector_base<int, 16U>",
+            "Size": 64
+        },
+        {
+            "Name": "vector<int, 16U>",
+            "Size": 64
+        },
+        {
+            "Name": "accum_base<(aie::detail::AccumClass)0, 80U, 8U>",
+            "Size": 96
+        },
+        {
+            "Name": "vector_base<cint32, 8U>",
+            "Size": 64
+        },
+        {
+            "Name": "vector_base<int, 8U>",
+            "Size": 32
+        },
+        {
+            "Name": "accum<acc80, 8U>",
+            "Size": 96
+        },
+        {
+            "Name": "vector_elem_ref<int, 16U>",
+            "Size": 8
+        },
+        {
+            "Name": "vector<int, 8U>",
+            "Size": 32
+        }
+    ],
+    "Globals": [
+        {
+            "Name": "__const._ZN3aie6detail13mul_bits_implILNS0_10MulMacroOpE2ELj80ELj32EiLj32EiE3runILj8EJNS_5accumI5acc80Lj8EEEEEENS5_IS6_XT_EEERKNS_6vectorIiXT_EEEbSC_bDpRKT0_.mul_op",
+            "Size": 1,
+            "SoftFloat": false
+        },
+        {
+            "Name": "__const._ZN3aie6detail5utils17unroll_for_helperIjLj0ELj1ELj0ELj1EE7executeIZNS0_13mul_bits_implILNS0_10MulMacroOpE2ELj80ELj32EiLj32EiE3runILj8EJNS_5accumI5acc80Lj8EEEEEENS9_ISA_XT_EEERKNS_6vectorIiXT_EEEbSG_bDpRKT0_EUlT_E_EEvOSL_.ctx",
+            "Size": 1,
+            "SoftFloat": false
+        },
+        {
+            "Name": "__const._ZN3aie6detail10accum_baseILNS0_10AccumClassE0ELj80ELj8EE11from_vectorIiEEvRKNS_6vectorIT_Lj8EEEi.fn",
+            "Size": 1,
+            "SoftFloat": false
+        },
+        {
+            "Name": "ZERO",
+            "Size": 32,
+            "SoftFloat": false
+        },
+        {
+            "Name": "__const._ZN3aie6detail5utils17unroll_for_helperIjLj0ELj1ELj0ELj1EE7executeIZNS0_14zeros_acc_bitsILNS0_10AccumClassE0ELj80ELj8EE3runEvEUlT_E_EEvOS8_.ctx",
+            "Size": 1,
+            "SoftFloat": false
+        },
+        {
+            "Name": "__const._ZN3aie6detail5utils17unroll_for_helperIjLj0ELj2ELj0ELj1EE7executeIZNS0_3adf16stream_in_helperILj8EiL22aie_stream_resource_in0EE8readincrEP12input_streamIiEEUlT_E_EEvOSC_.ctx",
+            "Size": 1,
+            "SoftFloat": false
+        },
+        {
+            "Name": "me_primitive::ss0",
+            "MangledName": "_ZN12me_primitive3ss0E",
+            "Size": 4,
+            "SoftFloat": false
+        },
+        {
+            "Name": "me_primitive::ss1",
+            "MangledName": "_ZN12me_primitive3ss1E",
+            "Size": 4,
+            "SoftFloat": false
+        },
+        {
+            "Name": "__const._ZN3aie6detail5utils17unroll_for_helperIjLj0ELj2ELj1ELj1EE7executeIZNS0_3adf16stream_in_helperILj8EiL22aie_stream_resource_in0EE8readincrEP12input_streamIiEEUlT_E_EEvOSC_.ctx",
+            "Size": 1,
+            "SoftFloat": false
+        },
+        {
+            "Name": "me_primitive::ms0",
+            "MangledName": "_ZN12me_primitive3ms0E",
+            "Size": 4,
+            "SoftFloat": false
+        },
+        {
+            "Name": "me_primitive::ms1",
+            "MangledName": "_ZN12me_primitive3ms1E",
+            "Size": 4,
+            "SoftFloat": false
+        }
+    ],
+    "UsesCmathStaticVars": false,
+    "Functions": [
+        {
+            "FunctionName": "matrix256(input_stream<int>*, input_stream<int>*, output_stream<int>*)",
+            "StackSize": 3916,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::vector<int, 8u> readincr_v<8u, (aie_stream_resource_in)0, int>(input_stream<int>*)",
+            "StackSize": 1475,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::vector<int, 8u>::vector()",
+            "StackSize": 72,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::vector<int, 16u>::to_native() const",
+            "StackSize": 72,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::operand_base_type<aie::detail::utils::remove_all<aie::accum<acc80, 8u> >::type>::type aie::mac<aie::accum<acc80, 8u>, aie::vector<int, 8u>, aie::vector<int, 8u> >(aie::accum<acc80, 8u> const&, aie::vector<int, 8u> const&, aie::vector<int, 8u> const&)",
+            "StackSize": 2968,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::detail::accum_base<(aie::detail::AccumClass)0, 80u, 8u>::accum_base()",
+            "StackSize": 196,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::accum<acc80, 8u> aie::zeros<acc80, 8u>()",
+            "StackSize": 1069,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::accum<acc80, 8u>::accum()",
+            "StackSize": 200,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::unary_op_common<aie::accum<acc80, 8u>, (aie::Operation)1>::parent1() const",
+            "StackSize": 4,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::accum<acc80, 8u> aie::detail::mul_bits_impl<(aie::detail::MulMacroOp)2, 80u, 32u, int, 32u, int>::run<8u, aie::accum<acc80, 8u> >(aie::vector<int, 8u> const&, bool, aie::vector<int, 8u> const&, bool, aie::accum<acc80, 8u> const&)",
+            "StackSize": 2034,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "srs(v8acc80, int)",
+            "StackSize": 276,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::accum<acc80, 8u>::operator v8acc80() const",
+            "StackSize": 104,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::vector<int, 8u>::vector(v8int32)",
+            "StackSize": 72,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::vector<int, 8u>::value_type aie::reduce_add<aie::vector<int, 8u> >(aie::vector<int, 8u> const&)",
+            "StackSize": 1200,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "void writeincr<(aie_stream_resource_out)0, int>(output_stream<int>*, std::__2::type_identity<int>::type, bool)",
+            "StackSize": 56,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::operand_base_type<aie::detail::utils::remove_all<aie::unary_op<aie::accum<acc80, 8u>, (aie::Operation)1> >::type>::type aie::mac<aie::unary_op<aie::accum<acc80, 8u>, (aie::Operation)1>, aie::vector<int, 8u>, aie::vector<int, 8u> >(aie::unary_op<aie::accum<acc80, 8u>, (aie::Operation)1> const&, aie::vector<int, 8u> const&, aie::vector<int, 8u> const&)",
+            "StackSize": 2764,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::detail::accum_storage<(aie::detail::AccumClass)0, 80u, 8u>::undef()",
+            "StackSize": 192,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "undef_v8acc80()",
+            "StackSize": 96,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::unary_op<aie::accum<acc80, 8u>, (aie::Operation)1> aie::op_add<aie::accum<acc80, 8u> >(aie::accum<acc80, 8u> const&)",
+            "StackSize": 300,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::operand_base_type<aie::detail::utils::remove_all<aie::unary_op<aie::accum<acc80, 8u>, (aie::Operation)1> >::type>::type aie::mac<aie::unary_op<aie::accum<acc80, 8u>, (aie::Operation)1>, aie::unary_op<aie::vector<int, 8u>, (aie::Operation)0>, aie::vector<int, 8u> >(aie::unary_op<aie::accum<acc80, 8u>, (aie::Operation)1> const&, aie::unary_op<aie::vector<int, 8u>, (aie::Operation)0> const&, aie::vector<int, 8u> const&)",
+            "StackSize": 2624,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::unary_op<aie::vector<int, 8u>, (aie::Operation)0> aie::op_none<aie::vector<int, 8u> >(aie::vector<int, 8u> const&)",
+            "StackSize": 108,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::operand_base_type<aie::detail::utils::remove_all<aie::unary_op<aie::accum<acc80, 8u>, (aie::Operation)1> >::type>::type aie::mac<aie::unary_op<aie::accum<acc80, 8u>, (aie::Operation)1>, aie::unary_op<aie::vector<int, 8u>, (aie::Operation)0>, aie::unary_op<aie::vector<int, 8u>, (aie::Operation)0> >(aie::unary_op<aie::accum<acc80, 8u>, (aie::Operation)1> const&, aie::unary_op<aie::vector<int, 8u>, (aie::Operation)0> const&, aie::unary_op<aie::vector<int, 8u>, (aie::Operation)0> const&)",
+            "StackSize": 2484,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "auto aie::detail::mul_bits<(aie::detail::MulMacroOp)2, 80u, 32u, int, 32u, int>::run<8u, aie::accum<acc80, 8u> >(aie::vector<int, 8u> const&, bool, aie::vector<int, 8u> const&, bool, aie::accum<acc80, 8u> const&)",
+            "StackSize": 2144,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::unary_op_common<aie::vector<int, 8u>, (aie::Operation)0>::parent1() const",
+            "StackSize": 4,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "bool aie::detail::get_mul_sign<aie::unary_op<aie::vector<int, 8u>, (aie::Operation)0> >(aie::unary_op<aie::vector<int, 8u>, (aie::Operation)0>)",
+            "StackSize": 32,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::detail::accum_base<(aie::detail::AccumClass)0, 80u, 8u> aie::detail::accum_base<(aie::detail::AccumClass)0, 80u, 8u>::extract<8u>(unsigned int) const",
+            "StackSize": 112,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::accum<acc80, 8u>::accum(aie::detail::accum_base<(aie::detail::AccumClass)0, 80u, 8u> const&)",
+            "StackSize": 8,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "void aie::detail::utils::unroll_times<1u, aie::detail::mul_bits_impl<(aie::detail::MulMacroOp)2, 80u, 32u, int, 32u, int>::run<8u, aie::accum<acc80, 8u> >(aie::vector<int, 8u> const&, bool, aie::vector<int, 8u> const&, bool, aie::accum<acc80, 8u> const&)::{lambda(auto:1)#1}>(aie::detail::mul_bits_impl<(aie::detail::MulMacroOp)2, 80u, 32u, int, 32u, int>::run<8u, aie::accum<acc80, 8u> >(aie::vector<int, 8u> const&, bool, aie::vector<int, 8u> const&, bool, aie::accum<acc80, 8u> const&)::{lambda(auto:1)#1}&&)",
+            "StackSize": 1803,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "void aie::detail::utils::unroll_for<unsigned int, 0u, 1u, 1u, aie::detail::mul_bits_impl<(aie::detail::MulMacroOp)2, 80u, 32u, int, 32u, int>::run<8u, aie::accum<acc80, 8u> >(aie::vector<int, 8u> const&, bool, aie::vector<int, 8u> const&, bool, aie::accum<acc80, 8u> const&)::{lambda(auto:1)#1}>(aie::detail::mul_bits_impl<(aie::detail::MulMacroOp)2, 80u, 32u, int, 32u, int>::run<8u, aie::accum<acc80, 8u> >(aie::vector<int, 8u> const&, bool, aie::vector<int, 8u> const&, bool, aie::accum<acc80, 8u> const&)::{lambda(auto:1)#1}&&)",
+            "StackSize": 1799,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "void aie::detail::utils::unroll_for_helper<unsigned int, 0u, 1u, 0u, 1u>::execute<aie::detail::mul_bits_impl<(aie::detail::MulMacroOp)2, 80u, 32u, int, 32u, int>::run<8u, aie::accum<acc80, 8u> >(aie::vector<int, 8u> const&, bool, aie::vector<int, 8u> const&, bool, aie::accum<acc80, 8u> const&)::{lambda(auto:1)#1}>(aie::detail::mul_bits_impl<(aie::detail::MulMacroOp)2, 80u, 32u, int, 32u, int>::run<8u, aie::accum<acc80, 8u> >(aie::vector<int, 8u> const&, bool, aie::vector<int, 8u> const&, bool, aie::accum<acc80, 8u> const&)::{lambda(auto:1)#1}&&)",
+            "StackSize": 1795,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "auto aie::detail::mul_bits_impl<(aie::detail::MulMacroOp)2, 80u, 32u, int, 32u, int>::run<8u, aie::accum<acc80, 8u> >(aie::vector<int, 8u> const&, bool, aie::vector<int, 8u> const&, bool, aie::accum<acc80, 8u> const&)::{lambda(auto:1)#1}::operator()<aie::detail::utils::unroll_context<unsigned int, 0u, 1u, 0u> >(aie::detail::utils::unroll_context<unsigned int, 0u, 1u, 0u>) const",
+            "StackSize": 1785,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "void aie::detail::utils::unroll_for_helper<unsigned int, 0u, 1u, 1u, 1u>::execute<aie::detail::mul_bits_impl<(aie::detail::MulMacroOp)2, 80u, 32u, int, 32u, int>::run<8u, aie::accum<acc80, 8u> >(aie::vector<int, 8u> const&, bool, aie::vector<int, 8u> const&, bool, aie::accum<acc80, 8u> const&)::{lambda(auto:1)#1}>(aie::detail::mul_bits_impl<(aie::detail::MulMacroOp)2, 80u, 32u, int, 32u, int>::run<8u, aie::accum<acc80, 8u> >(aie::vector<int, 8u> const&, bool, aie::vector<int, 8u> const&, bool, aie::accum<acc80, 8u> const&)::{lambda(auto:1)#1}&&)",
+            "StackSize": 4,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "bool aie::detail::utils::is_same_object<aie::vector<int, 8u>, aie::vector<int, 8u> >(aie::vector<int, 8u> const&, aie::vector<int, 8u> const&)",
+            "StackSize": 8,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::detail::zeros_acc_bits<(aie::detail::AccumClass)0, 80u, 8u>::run()",
+            "StackSize": 973,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "undef_v8int32()",
+            "StackSize": 32,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "set_ups_sat_impl(uint1_t)",
+            "StackSize": 6,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "auto aie::detail::vector_cast<int, int, 8u>(aie::vector<int, 8u> const&)",
+            "StackSize": 248,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::accum<acc80, 8u> aie::accum<acc80, 8u>::grow_extract<8u>(unsigned int) const",
+            "StackSize": 416,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::detail::utils::unroll_context<unsigned int, 0u, 1u, 0u>::operator unsigned int() const",
+            "StackSize": 8,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::vector<int, 16u> aie::vector<int, 8u>::grow_extract<16u>(unsigned int) const",
+            "StackSize": 480,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::accum<acc80, 8u>::accum(v8acc80)",
+            "StackSize": 200,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::accum<acc80, 8u>& aie::accum<acc80, 8u>::insert<8u, acc80>(unsigned int, aie::accum<acc80, 8u> const&)",
+            "StackSize": 32,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::accum<acc80, 8u> aie::accum<acc80, 8u>::extract<8u>(unsigned int) const",
+            "StackSize": 312,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::vector<int, 4u>::vector(v4int32)",
+            "StackSize": 40,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::vector<int, 8u> aie::vector<int, 8u>::grow_extract<8u>(unsigned int) const",
+            "StackSize": 124,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "lmac8(v8acc80, v16int32, int, unsigned int, int, unsigned int)",
+            "StackSize": 272,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::vector<int, 16u>::operator v16int32() const",
+            "StackSize": 140,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::detail::vector_base<int, 16u>::to_native() const",
+            "StackSize": 4,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::detail::utils::unroll_context<unsigned int, 0u, 1u, 0u>::current() const",
+            "StackSize": 4,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::vector<int, 16u> aie::vector<int, 8u>::grow<16u>(unsigned int) const",
+            "StackSize": 408,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::detail::vector_base<int, 16u> aie::detail::vector_base<int, 8u>::grow<16u>(unsigned int) const",
+            "StackSize": 272,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "v8int16::v8int16(chessllvmInternal, v16int8)",
+            "StackSize": 24,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::vector<int, 16u>::vector(aie::detail::vector_base<int, 16u> const&)",
+            "StackSize": 8,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::detail::vector_base<int, 16u>::vector_base()",
+            "StackSize": 132,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "xset_w(int, v8int32)",
+            "StackSize": 100,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::detail::accum_base<(aie::detail::AccumClass)0, 80u, 8u>::accum_base(v8acc80)",
+            "StackSize": 100,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::detail::vector_storage<int, 16u>::undef()",
+            "StackSize": 128,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "undef_v16int32()",
+            "StackSize": 64,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::detail::accum_base<(aie::detail::AccumClass)0, 80u, 8u>& aie::detail::accum_base<(aie::detail::AccumClass)0, 80u, 8u>::insert<8u, 80u>(unsigned int, aie::detail::accum_base<(aie::detail::AccumClass)0, 80u, 8u> const&)",
+            "StackSize": 20,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "ext_w(v8cint32, int)",
+            "StackSize": 100,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::detail::utils::unroll_context<unsigned int, 0u, 2u, 0u>::current() const",
+            "StackSize": 4,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::detail::vector_storage<cint32, 8u>::undef()",
+            "StackSize": 128,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "undef_v8cint32()",
+            "StackSize": 64,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::detail::vector_storage<cint32, 8u>::type aie::detail::vector_cast_helper<cint32, 8u, v16int32 const&>(v16int32 const&)",
+            "StackSize": 268,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "as_v8cint32(v16int32)",
+            "StackSize": 200,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "v8cint32::v8cint32(chessllvmInternal, v64int8)",
+            "StackSize": 72,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "lmac8(v8acc80, v16int32, int, unsigned int, v8int32, unsigned int, unsigned int)",
+            "StackSize": 304,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::vector<int, 8u>::to_native() const",
+            "StackSize": 40,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::vector<int, 8u>::operator v8int32() const",
+            "StackSize": 76,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::detail::vector_base<int, 8u>::to_native() const",
+            "StackSize": 4,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::vector<int, 8u> aie::vector<int, 8u>::extract<8u>(unsigned int) const",
+            "StackSize": 84,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::detail::vector_base<int, 8u> aie::detail::vector_base<int, 8u>::extract<8u>(unsigned int) const",
+            "StackSize": 12,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::unary_op<aie::vector<int, 8u>, (aie::Operation)0>::unary_op_common(aie::vector<int, 8u>)",
+            "StackSize": 72,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::vector<int, 8u>::vector(aie::detail::vector_base<int, 8u> const&)",
+            "StackSize": 8,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::unary_op_common<aie::vector<int, 8u>, (aie::Operation)0>::unary_op_common(aie::vector<int, 8u>)",
+            "StackSize": 36,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::unary_op<aie::accum<acc80, 8u>, (aie::Operation)1>::unary_op_common(aie::accum<acc80, 8u>)",
+            "StackSize": 200,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::unary_op_common<aie::accum<acc80, 8u>, (aie::Operation)1>::unary_op_common(aie::accum<acc80, 8u>)",
+            "StackSize": 100,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "chessEnableIf<chessIsCompatible<chessRemoveQual<uint1_t>::type, uint1_t>::value, v8int32>::type me_primitive::dssrs<uint1_t>(v8acc80, unsigned char, uint1_t, uint1_t, uint1_t, uint3_t, uint1_t&)",
+            "StackSize": 138,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "auto aie::detail::adf::stream_in_helper<8u, int, (aie_stream_resource_in)0>::readincr(input_stream<int>*)::{lambda(auto:1)#1}::operator()<aie::detail::utils::unroll_context<unsigned int, 0u, 2u, 1u> >(aie::detail::utils::unroll_context<unsigned int, 0u, 2u, 1u>) const",
+            "StackSize": 1335,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "me_primitive::shft_nrm(int)",
+            "StackSize": 4,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "uint1_t::uint1_t(int)",
+            "StackSize": 8,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "get_sat_impl()",
+            "StackSize": 0,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "uint1_t const& chess_dont_warn_dead<uint1_t>(uint1_t const&)",
+            "StackSize": 4,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::detail::vector_storage<int, 8u>::undef()",
+            "StackSize": 64,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "get_sym_sat_impl()",
+            "StackSize": 0,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "get_rnd_impl()",
+            "StackSize": 0,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "set_srs_sat_impl(uint1_t)",
+            "StackSize": 6,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::vector_elem_ref<int, 16u>::operator int() const",
+            "StackSize": 92,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::vector<int, 16u>::elem_ref(unsigned int)",
+            "StackSize": 28,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "void aie::accum<acc80, 8u>::from_vector<int>(aie::vector<int, 8u> const&, int)",
+            "StackSize": 541,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::detail::zeros_bits<32u, int, 8u>::run()",
+            "StackSize": 344,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "void aie::detail::utils::unroll_for<unsigned int, 0u, 1u, 1u, aie::detail::zeros_acc_bits<(aie::detail::AccumClass)0, 80u, 8u>::run()::{lambda(auto:1)#1}>(aie::detail::zeros_acc_bits<(aie::detail::AccumClass)0, 80u, 8u>::run()::{lambda(auto:1)#1}&&)",
+            "StackSize": 51,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "void aie::detail::accum_base<(aie::detail::AccumClass)0, 80u, 8u>::from_vector<int>(aie::vector<int, 8u> const&, int)",
+            "StackSize": 529,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "auto aie::detail::accum_base<(aie::detail::AccumClass)0, 80u, 8u>::get_ups<int, 8u>()::{lambda(auto:1 const&, int)#1}::operator()<aie::vector<int, 8u> >(aie::vector<int, 8u> const&, int) const",
+            "StackSize": 416,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "lups(v8int32, int)",
+            "StackSize": 276,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "chessEnableIf<chessIsCompatible<chessRemoveQual<uint1_t>::type, uint1_t>::value, v8acc80>::type me_primitive::ups_w2b_sw<uint1_t>(v8int32, unsigned char, uint1_t, uint2_t, uint1_t, uint1_t&)",
+            "StackSize": 137,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "uint2_t::uint2_t(int)",
+            "StackSize": 8,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "auto aie::vector<int, 8u>::cast_to<int>() const",
+            "StackSize": 212,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "auto aie::detail::vector_base<int, 8u>::cast_to<int>() const",
+            "StackSize": 144,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::detail::vector_storage<int, 8u>::type aie::detail::vector_cast_helper<int, 8u, v4cint32>(v4cint32&&)",
+            "StackSize": 140,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::detail::vector_base<int, 8u>::vector_base()",
+            "StackSize": 68,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::detail::vector_storage<int, 8u>::type aie::detail::vector_cast_helper<int, 8u, v8int32 const&>(v8int32 const&)",
+            "StackSize": 68,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "as_v8int32(v8int32)",
+            "StackSize": 32,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "void aie::detail::utils::unroll_for_helper<unsigned int, 0u, 1u, 0u, 1u>::execute<aie::detail::zeros_acc_bits<(aie::detail::AccumClass)0, 80u, 8u>::run()::{lambda(auto:1)#1}>(aie::detail::zeros_acc_bits<(aie::detail::AccumClass)0, 80u, 8u>::run()::{lambda(auto:1)#1}&&)",
+            "StackSize": 47,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "auto aie::detail::zeros_acc_bits<(aie::detail::AccumClass)0, 80u, 8u>::run()::{lambda(auto:1)#1}::operator()<aie::detail::utils::unroll_context<unsigned int, 0u, 1u, 0u> >(aie::detail::utils::unroll_context<unsigned int, 0u, 1u, 0u>) const",
+            "StackSize": 37,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "void aie::detail::utils::unroll_for_helper<unsigned int, 0u, 1u, 1u, 1u>::execute<aie::detail::zeros_acc_bits<(aie::detail::AccumClass)0, 80u, 8u>::run()::{lambda(auto:1)#1}>(aie::detail::zeros_acc_bits<(aie::detail::AccumClass)0, 80u, 8u>::run()::{lambda(auto:1)#1}&&)",
+            "StackSize": 4,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::detail::adf::stream_in_helper<8u, int, (aie_stream_resource_in)0>::readincr(input_stream<int>*)",
+            "StackSize": 1439,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "void aie::detail::utils::unroll_times<2u, aie::detail::adf::stream_in_helper<8u, int, (aie_stream_resource_in)0>::readincr(input_stream<int>*)::{lambda(auto:1)#1}>(aie::detail::adf::stream_in_helper<8u, int, (aie_stream_resource_in)0>::readincr(input_stream<int>*)::{lambda(auto:1)#1}&&)",
+            "StackSize": 1363,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "void aie::detail::utils::unroll_for<unsigned int, 0u, 2u, 1u, aie::detail::adf::stream_in_helper<8u, int, (aie_stream_resource_in)0>::readincr(input_stream<int>*)::{lambda(auto:1)#1}>(aie::detail::adf::stream_in_helper<8u, int, (aie_stream_resource_in)0>::readincr(input_stream<int>*)::{lambda(auto:1)#1}&&)",
+            "StackSize": 1359,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "void aie::detail::utils::unroll_for_helper<unsigned int, 0u, 2u, 0u, 1u>::execute<aie::detail::adf::stream_in_helper<8u, int, (aie_stream_resource_in)0>::readincr(input_stream<int>*)::{lambda(auto:1)#1}>(aie::detail::adf::stream_in_helper<8u, int, (aie_stream_resource_in)0>::readincr(input_stream<int>*)::{lambda(auto:1)#1}&&)",
+            "StackSize": 1355,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "auto aie::detail::adf::stream_in_helper<8u, int, (aie_stream_resource_in)0>::readincr(input_stream<int>*)::{lambda(auto:1)#1}::operator()<aie::detail::utils::unroll_context<unsigned int, 0u, 2u, 0u> >(aie::detail::utils::unroll_context<unsigned int, 0u, 2u, 0u>) const",
+            "StackSize": 1335,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "void aie::detail::utils::unroll_for_helper<unsigned int, 0u, 2u, 1u, 1u>::execute<aie::detail::adf::stream_in_helper<8u, int, (aie_stream_resource_in)0>::readincr(input_stream<int>*)::{lambda(auto:1)#1}>(aie::detail::adf::stream_in_helper<8u, int, (aie_stream_resource_in)0>::readincr(input_stream<int>*)::{lambda(auto:1)#1}&&)",
+            "StackSize": 1345,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::vector<int, 4u>::vector()",
+            "StackSize": 40,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::detail::adf::stream_in_helper<8u, int, (aie_stream_resource_in)0>::get_op()",
+            "StackSize": 0,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::vector<int, 8u>& aie::vector<int, 8u>::insert<4u>(unsigned int, aie::vector<int, 4u> const&)",
+            "StackSize": 1264,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::detail::utils::unroll_context<unsigned int, 0u, 2u, 0u>::operator unsigned int() const",
+            "StackSize": 8,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::detail::vector_base<int, 4u>::vector_base()",
+            "StackSize": 36,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "v4int32 readincr_v4<(aie_stream_resource_in)0>(input_stream<int>*)",
+            "StackSize": 179,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::detail::vector_storage<int, 4u>::undef()",
+            "StackSize": 32,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "undef_v4int32()",
+            "StackSize": 16,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "as_v4int32(v8int16)",
+            "StackSize": 56,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "v8int16 readincr_v8<(aie_stream_resource_in)0>(input_stream<short>*)",
+            "StackSize": 143,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "v4int32::v4int32(chessllvmInternal, v16int8)",
+            "StackSize": 24,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "v8int16 stream_utils::aie_stream_get_wss<short>(input_stream<short>*)",
+            "StackSize": 123,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "get_wss(int)",
+            "StackSize": 103,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "as_v8int16(v4int32)",
+            "StackSize": 56,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "getl_wss(int)",
+            "StackSize": 67,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "chessEnableIf<chessIsCompatible<chessRemoveQual<int>::type, int>::value, v4int32>::type me_primitive::stream_read128<int>(int __protect_access AS25*, uint1_t, int&)",
+            "StackSize": 29,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "chessEnableIf<chessIsCompatible<chessRemoveQual<int>::type, int>::value, v4int32>::type me_primitive::stream_read128<int>(int __protect_access AS26*, uint1_t, int&)",
+            "StackSize": 29,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "chessEnableIf<chessIsCompatible<chessRemoveQual<int>::type, int>::value, v4int32>::type me_primitive::stream_read128<int>(int __protect_access AS17*, uint1_t, int&)",
+            "StackSize": 29,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::detail::vector_base<int, 4u>::vector_base(v4int32)",
+            "StackSize": 20,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::detail::vector_base<int, 8u>& aie::detail::vector_base<int, 8u>::insert<4u>(unsigned int, aie::detail::vector_base<int, 4u> const&)",
+            "StackSize": 1252,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "upd_v(v8int32, int, v4int32)",
+            "StackSize": 84,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::detail::vector_base<int, 4u>::to_native() const",
+            "StackSize": 4,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::detail::vector_base<int, 4u>::operator v4int32() const",
+            "StackSize": 24,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::detail::vector_base<cint32, 8u>::vector_base()",
+            "StackSize": 132,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "xset_v(int, v4int32)",
+            "StackSize": 84,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::detail::vector_base<int, 16u> aie::detail::vector_base<int, 4u>::grow<16u>(unsigned int) const",
+            "StackSize": 272,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "auto aie::detail::vector_base<int, 16u>::cast_to<cint32>() const",
+            "StackSize": 472,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "select8(unsigned int, v8cint32, int, unsigned int, v8cint32, int, unsigned int)",
+            "StackSize": 212,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::detail::vector_base<cint32, 8u>::to_native() const",
+            "StackSize": 4,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::detail::vector_base<cint32, 8u>::operator v8cint32() const",
+            "StackSize": 72,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::detail::vector_base<cint32, 8u>::vector_base(v8cint32)",
+            "StackSize": 68,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "as_v8int32(v4cint32)",
+            "StackSize": 104,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "v8int32::v8int32(chessllvmInternal, v32int8)",
+            "StackSize": 40,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "void aie::detail::utils::unroll_for_helper<unsigned int, 0u, 2u, 2u, 1u>::execute<aie::detail::adf::stream_in_helper<8u, int, (aie_stream_resource_in)0>::readincr(input_stream<int>*)::{lambda(auto:1)#1}>(aie::detail::adf::stream_in_helper<8u, int, (aie_stream_resource_in)0>::readincr(input_stream<int>*)::{lambda(auto:1)#1}&&)",
+            "StackSize": 4,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::detail::utils::unroll_context<unsigned int, 0u, 2u, 1u>::operator unsigned int() const",
+            "StackSize": 8,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::detail::utils::unroll_context<unsigned int, 0u, 2u, 1u>::current() const",
+            "StackSize": 4,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::detail::accum_base<(aie::detail::AccumClass)0, 80u, 8u>::operator v8acc80() const",
+            "StackSize": 4,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::detail::vector_base<int, 8u>::vector_base(v8int32)",
+            "StackSize": 36,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::detail::add_reduce_bits<32u, int, 8u>::run(aie::vector<int, 8u> const&)",
+            "StackSize": 1192,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::detail::add_reduce_bits_impl<32u, int, 8u>::run(aie::vector<int, 8u> const&)",
+            "StackSize": 1188,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::vector<int, 16u>::vector()",
+            "StackSize": 136,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "add16(v16int32, int, unsigned int, unsigned int, int, unsigned int, unsigned int)",
+            "StackSize": 152,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::detail::vector_base<int, 16u>::vector_base(v16int32)",
+            "StackSize": 68,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::vector<int, 16u>::vector(v16int32)",
+            "StackSize": 136,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::vector<int, 16u>::operator[](unsigned int)",
+            "StackSize": 44,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::vector_elem_ref<int, 16u>::vector_elem_ref(aie::vector<int, 16u>&, unsigned int)",
+            "StackSize": 12,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::vector_elem_ref<int, 16u>::get() const",
+            "StackSize": 88,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::vector<int, 16u>::get(unsigned int) const",
+            "StackSize": 84,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::detail::vector_base<int, 16u>::get(unsigned int) const",
+            "StackSize": 76,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "ext_elem(v16int32, unsigned int)",
+            "StackSize": 68,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "void stream_utils::aie_stream_put_ms<int, int>(output_stream<int>*, int, bool)",
+            "StackSize": 43,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "put_ms(int, int, int)",
+            "StackSize": 34,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "me_primitive::stream_write(int __protect_access AS27*, int, uint1_t, int __protect_access AS27*)",
+            "StackSize": 10,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "me_primitive::stream_write(int __protect_access AS28*, int, uint1_t, int __protect_access AS28*)",
+            "StackSize": 10,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "me_primitive::stream_write(int __protect_access AS16*, int, uint1_t, int __protect_access AS16*)",
+            "StackSize": 10,
+            "SoftFloat": false
+        }
+    ]
+}

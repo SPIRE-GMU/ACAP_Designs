@@ -1,0 +1,30 @@
+{
+  "partition": {
+    "startColumn": 0,
+    "numColumns": 50,
+    "aieshimPorts": {
+      "AIE_NOC_X12Y0_AIE_NOC_M_AXI": {
+        "PhysicalInstance": [
+          {
+            "name": "AIE_NOC_X12Y0_AIE_NOC_M_AXI",
+            "column": 26,
+            "channel": 0
+          }
+        ],
+        "type": "mem",
+        "direction": "master",
+        "parameterIndex": 0,
+        "annotation": [
+          "datain1",
+          "datain2",
+          "dataout"
+        ],
+        "sdfioName": [
+          "i0_po0",
+          "i1_po0",
+          "i2_pi0"
+        ]
+      }
+    }
+  }
+}

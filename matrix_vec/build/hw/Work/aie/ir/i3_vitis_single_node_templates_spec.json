@@ -1,0 +1,19 @@
+{
+    "KernelAnalysisSpec": {
+        "ModulePath": "/home/yzwu/Desktop/matrix_vec/matrix_vec/src/kernels/vitis_single_node_templates.cc",
+        "KernelSourcePath": "/home/yzwu/Desktop/matrix_vec/matrix_vec/src/kernels/vitis_single_node_templates.cc",
+        "SpecFile": "i3_vitis_single_node_templates_spec.json",
+        "ResultFile": "i3_vitis_single_node_templates_results.json",
+        "UseCases": [
+            {
+                "Index": 0,
+                "KernelFunction": "matrix256",
+                "InitializationFunction": "",
+                "KernelClassCtor": "",
+                "Instances": [
+                    "i3"
+                ]
+            }
+        ]
+    }
+}

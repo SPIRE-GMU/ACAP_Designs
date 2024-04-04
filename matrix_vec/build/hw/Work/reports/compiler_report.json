@@ -1,0 +1,406 @@
+{
+    "schema": "MEGraphSchema-0.4",
+    "id": "root",
+    "blockTypes": {
+        "b0": {
+            "type": "plio",
+            "ports": {
+                "po0": {
+                    "type": "stream",
+                    "elementType": "int32",
+                    "direction": "out",
+                    "portName": "datain1.out[0]"
+                }
+            }
+        },
+        "b1": {
+            "type": "plio",
+            "ports": {
+                "po0": {
+                    "type": "stream",
+                    "elementType": "int32",
+                    "direction": "out",
+                    "portName": "datain2.out[0]"
+                }
+            }
+        },
+        "b2": {
+            "type": "plio",
+            "ports": {
+                "pi0": {
+                    "type": "stream",
+                    "elementType": "int32",
+                    "direction": "in",
+                    "portName": "dataout.in[0]"
+                }
+            }
+        },
+        "b3": {
+            "type": "function",
+            "function": "matrix256",
+            "srcFile": "src/kernels/vitis_single_node_templates.cc",
+            "ports": {
+                "pi0": {
+                    "type": "stream",
+                    "elementType": "int32",
+                    "direction": "in",
+                    "parameterIndex": 0,
+                    "portName": "in[0]",
+                    "varName": "datain1",
+                    "cppDataType": "input_stream<int> *__restrict"
+                },
+                "pi1": {
+                    "type": "stream",
+                    "elementType": "int32",
+                    "direction": "in",
+                    "parameterIndex": 1,
+                    "portName": "in[1]",
+                    "varName": "datain2",
+                    "cppDataType": "input_stream<int> *__restrict"
+                },
+                "po0": {
+                    "type": "stream",
+                    "elementType": "int32",
+                    "direction": "out",
+                    "parameterIndex": 2,
+                    "portName": "out[0]",
+                    "varName": "dataout",
+                    "cppDataType": "output_stream<int> *__restrict"
+                }
+            }
+        },
+        "ps_b4": {
+            "type": "function",
+            "function": "ps_main",
+            "srcFile": "/home/yzwu/Desktop/matrix_vec/matrix_vec/src/project.cpp",
+            "implType": "unknown"
+        }
+    },
+    "blockInstances": {
+        "i0": {
+            "blockType": "b0",
+            "graphIds": [
+                0
+            ],
+            "graphName": "mygraph",
+            "graphType": "simpleGraph",
+            "qualifiedGraphName": "mygraph",
+            "qualifiedName": "mygraph.datain1",
+            "dataWidth": 32,
+            "dataFile": "data/inputmatrixa.txt",
+            "logicalName": "datain1",
+            "plFreq": 1250.0,
+            "instanceId": 0,
+            "loc": "/home/yzwu/Desktop/matrix_vec/matrix_vec/src/project.h:12:3"
+        },
+        "i1": {
+            "blockType": "b1",
+            "graphIds": [
+                0
+            ],
+            "graphName": "mygraph",
+            "graphType": "simpleGraph",
+            "qualifiedGraphName": "mygraph",
+            "qualifiedName": "mygraph.datain2",
+            "dataWidth": 32,
+            "dataFile": "data/inputmatrix.txt",
+            "logicalName": "datain2",
+            "plFreq": 1250.0,
+            "instanceId": 1,
+            "loc": "/home/yzwu/Desktop/matrix_vec/matrix_vec/src/project.h:12:3"
+        },
+        "i2": {
+            "blockType": "b2",
+            "graphIds": [
+                0
+            ],
+            "graphName": "mygraph",
+            "graphType": "simpleGraph",
+            "qualifiedGraphName": "mygraph",
+            "qualifiedName": "mygraph.dataout",
+            "dataWidth": 32,
+            "dataFile": "data/output_1.txt",
+            "logicalName": "dataout",
+            "plFreq": 1250.0,
+            "instanceId": 2,
+            "loc": "/home/yzwu/Desktop/matrix_vec/matrix_vec/src/project.h:15:3"
+        },
+        "i3": {
+            "blockType": "b3",
+            "graphIds": [
+                0
+            ],
+            "graphName": "mygraph",
+            "graphType": "simpleGraph",
+            "qualifiedGraphName": "mygraph",
+            "qualifiedName": "mygraph.first",
+            "runTime": 0.8999,
+            "fabric": "me",
+            "instanceId": 0,
+            "loc": "/home/yzwu/Desktop/matrix_vec/matrix_vec/src/project.h:28:13"
+        },
+        "ps_i4": {
+            "blockType": "ps_b4",
+            "graphIds": [
+                -1
+            ],
+            "fabric": "fpga",
+            "plAxiLite": "useDefault",
+            "plFreq": 312.5
+        }
+    },
+    "portInstances": {
+        "i0_po0": {
+            "margin": 0,
+            "port": "po0",
+            "graphName": "mygraph",
+            "graphType": "simpleGraph",
+            "portName": "datain1.out[0]",
+            "qualifiedName": "mygraph.datain1.out[0]",
+            "blockInstance": "i0"
+        },
+        "i1_po0": {
+            "margin": 0,
+            "port": "po0",
+            "graphName": "mygraph",
+            "graphType": "simpleGraph",
+            "portName": "datain2.out[0]",
+            "qualifiedName": "mygraph.datain2.out[0]",
+            "blockInstance": "i1"
+        },
+        "i2_pi0": {
+            "margin": 0,
+            "port": "pi0",
+            "graphName": "mygraph",
+            "graphType": "simpleGraph",
+            "portName": "dataout.in[0]",
+            "qualifiedName": "mygraph.dataout.in[0]",
+            "blockInstance": "i2"
+        },
+        "i3_pi0": {
+            "margin": 0,
+            "port": "pi0",
+            "graphName": "mygraph",
+            "graphType": "simpleGraph",
+            "portName": "first.in[0]",
+            "qualifiedName": "mygraph.first.in[0]",
+            "instanceId": 3,
+            "blockInstance": "i3"
+        },
+        "i3_pi1": {
+            "margin": 0,
+            "port": "pi1",
+            "graphName": "mygraph",
+            "graphType": "simpleGraph",
+            "portName": "first.in[1]",
+            "qualifiedName": "mygraph.first.in[1]",
+            "instanceId": 4,
+            "blockInstance": "i3"
+        },
+        "i3_po0": {
+            "margin": 0,
+            "port": "po0",
+            "graphName": "mygraph",
+            "graphType": "simpleGraph",
+            "portName": "first.out[0]",
+            "qualifiedName": "mygraph.first.out[0]",
+            "instanceId": 5,
+            "blockInstance": "i3"
+        }
+    },
+    "nets": {
+        "net0": {
+            "srcInstance": "i0",
+            "srcPort": "i0_po0",
+            "dstInstance": "i3",
+            "dstPort": "i3_pi0",
+            "varNames": [
+                "net0"
+            ],
+            "locs": [
+                "/home/yzwu/Desktop/matrix_vec/matrix_vec/src/project.h:38:5"
+            ]
+        },
+        "net1": {
+            "srcInstance": "i1",
+            "srcPort": "i1_po0",
+            "dstInstance": "i3",
+            "dstPort": "i3_pi1",
+            "varNames": [
+                "net1"
+            ],
+            "locs": [
+                "/home/yzwu/Desktop/matrix_vec/matrix_vec/src/project.h:39:5"
+            ]
+        },
+        "net2": {
+            "srcInstance": "i3",
+            "srcPort": "i3_po0",
+            "dstInstance": "i2",
+            "dstPort": "i2_pi0",
+            "varNames": [
+                "net2"
+            ],
+            "locs": [
+                "/home/yzwu/Desktop/matrix_vec/matrix_vec/src/project.h:40:5"
+            ]
+        }
+    },
+    "debugInfo": {
+        "i0": {
+            "varName": "datain1"
+        },
+        "i1": {
+            "varName": "datain2"
+        },
+        "i2": {
+            "varName": "dataout"
+        },
+        "i3": {
+            "varName": "first"
+        },
+        "ps_i4": {
+            "varName": ""
+        },
+        "i0_po0": {
+            "varName": "datain1.out[0]"
+        },
+        "i1_po0": {
+            "varName": "datain2.out[0]"
+        },
+        "i2_pi0": {
+            "varName": "dataout.in[0]"
+        },
+        "i3_pi0": {
+            "varName": "first.in[0]"
+        },
+        "i3_pi1": {
+            "varName": "first.in[1]"
+        },
+        "i3_po0": {
+            "varName": "first.out[0]"
+        }
+    },
+    "graphFilesInfo": {
+        "headerFiles": [
+            "/home/yzwu/Desktop/matrix_vec/matrix_vec/src/project.h"
+        ]
+    },
+    "mapping": {
+        "blockInstanceMapping": {
+            "i0": {
+                "plioInfo": {
+                    "tile": "shim",
+                    "column": 24,
+                    "direction": "pl2aie",
+                    "channel": 1
+                }
+            },
+            "i1": {
+                "plioInfo": {
+                    "tile": "shim",
+                    "column": 24,
+                    "direction": "pl2aie",
+                    "channel": 2
+                }
+            },
+            "i2": {
+                "plioInfo": {
+                    "tile": "shim",
+                    "column": 24,
+                    "direction": "aie2pl",
+                    "channel": 1
+                }
+            },
+            "i3": {
+                "coreInfo": {
+                    "tile": "aie",
+                    "column": 24,
+                    "row": 0,
+                    "schedule": 0
+                }
+            }
+        },
+        "portInstanceMapping": {
+            "i0_po0": {},
+            "i1_po0": {},
+            "i2_pi0": {},
+            "i3_pi0": {
+                "streamInfo": {
+                    "direction": "slave",
+                    "channel": 0
+                }
+            },
+            "i3_pi1": {
+                "streamInfo": {
+                    "direction": "slave",
+                    "channel": 1
+                }
+            },
+            "i3_po0": {
+                "streamInfo": {
+                    "direction": "master",
+                    "channel": 0
+                }
+            }
+        },
+        "graphInstanceMapping": {
+            "mygraph": {
+                "graphInfo": {
+                    "core_columns": [
+                        24
+                    ],
+                    "core_rows": [
+                        0
+                    ],
+                    "iteration_memory_columns": [
+                        24
+                    ],
+                    "iteration_memory_rows": [
+                        0
+                    ],
+                    "iteration_memory_addresses": [
+                        4
+                    ],
+                    "multirate_triggers": [
+                        0
+                    ]
+                }
+            }
+        },
+        "DMAFIFO": {},
+        "systemMemory": [
+            {
+                "tile": "aie",
+                "column": 24,
+                "row": 0,
+                "offset": 0,
+                "size": 1210
+            }
+        ]
+    },
+    "scheduling": {
+        "i3": {
+            "repetition_count": 1
+        }
+    },
+    "event_trace_graph": {
+        "trace_ports": {}
+    },
+    "aie_driver_config": {
+        "hw_gen": 1,
+        "base_address": 2199023255552,
+        "npi_address": 4144627712,
+        "column_shift": 23,
+        "row_shift": 18,
+        "num_rows": 9,
+        "num_columns": 50,
+        "shim_row": 0,
+        "mem_row_start": 0,
+        "mem_num_rows": 0,
+        "aie_tile_row_start": 1,
+        "aie_tile_num_rows": 8
+    },
+    "part": "xcvc1902-vsva2197-2MP-e-S",
+    "platform": "/tools/Xilinx/Vitis/2023.2/base_platforms/xilinx_vck190_base_202320_1/xilinx_vck190_base_202320_1.xpfm"
+}

@@ -1,0 +1,13 @@
+{
+  "GlobalConstraints": {
+    "areaGroup": {
+      "name": "partition_area_group_0",
+      "contain_routing": true,
+      "exclusive_routing": true,
+      "exclusive_placement": true,
+      "nodeGroup": ["datain1", "datain2", "dataout", "mygraph.first"],
+      "tileGroup": ["(0,0):(49,7)"],
+      "shimGroup": ["0:49"]
+    }
+  }
+}

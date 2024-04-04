@@ -1,0 +1,6 @@
+OUTPUTDIR=./x86simulator_output
+INPUTDIR=../../
+ASAN_SYMBOLIZER_PATH=/tools/Xilinx/Vitis/2023.2/aietools/lnx64.o/tools/clang/bin/llvm-symbolizer
+ASAN_OPTIONS=detect_leaks=0
+LD_LIBRARY_PATH=/tools/Xilinx/Vitis/2023.2/tps/lnx64/python-3.8.3/lib:/tools/Xilinx/Vitis/2023.2/aietools/tps/lnx64/gcc/lib64/:/tools/Xilinx/Vitis/2023.2/tps/lnx64/cmake-3.24.2/libs/Ubuntu/22:/tools/Xilinx/Vitis/2023.2/tps/lnx64/cmake-3.24.2/libs/Ubuntu:/tools/Xilinx/Vitis/2023.2/tps/lnx64/cmake-3.24.2/libs:/tools/Xilinx/Vitis/2023.2/lib/lnx64.o:/tools/Xilinx/Vitis/2023.2/lib/lnx64.o/Ubuntu/22:/tools/Xilinx/Vitis/2023.2/lib/lnx64.o/Ubuntu:/tools/Xilinx/Vitis/2023.2/lib/lnx64.o:/tools/Xilinx/Vitis/2023.2/tps/lnx64/python-3.8.3/lib:/tools/Xilinx/Vitis/2023.2/aietools/lib/lnx64.o:/opt/xilinx/xrt/lib
+PACKAGEDIR=./Work

@@ -1,0 +1,231 @@
+<ENTRY>
+{
+ "thisFile": "/home/yzwu/Desktop/soc_test/aie_component/build/hw/aiesimulator_output/default.aierun_summary",
+ "connectId": "",
+ "serverToken": "",
+ "timestamp": "0"
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Mon Feb 12 11:39:51 2024",
+ "timestampMillis": "1707755991680",
+ "report": {
+  "path": "/home/yzwu/Desktop/soc_test/aie_component/build/hw/Work",
+  "name": "",
+  "fileType": "DIR",
+  "reportType": "AIE_COMPILER_WORKDIR",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_CmdStep",
+ "dateTimestamp": "Mon Feb 12 11:39:51 2024",
+ "timestampMillis": "1707755991680",
+ "buildStep": {
+  "cmdId": "138379ae-a24f-4169-ac82-0208ce532026",
+  "name": "aiesim",
+  "logFile": "/home/yzwu/Desktop/soc_test/aie_component/build/hw/AIESimulator.log",
+  "commandLine": "aiesimulator --pkg-dir ./Work --aiearch-version aie --i=../.. --profile --aximm-port=12002 --options-file /home/yzwu/Desktop/soc_test/aie_component/build/hw/aiesimTraceOptions.txt --online -wdb -ctf ",
+  "args": [
+   "aiesimulator",
+   "--pkg-dir ./Work",
+   "--aiearch-version aie",
+   "--i=../..",
+   "--profile",
+   "--aximm-port=12002",
+   "--options-file /home/yzwu/Desktop/soc_test/aie_component/build/hw/aiesimTraceOptions.txt",
+   "--online -wdb -ctf"
+  ],
+  "iniFiles": [],
+  "cwd": "/home/yzwu/Desktop/soc_test/aie_component/build/hw"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Mon Feb 12 11:39:51 2024",
+ "timestampMillis": "1707755991680",
+ "status": {
+  "cmdId": "138379ae-a24f-4169-ac82-0208ce532026",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_FlowMetaData",
+ "dateTimestamp": "Mon Feb 12 11:39:51 2024",
+ "timestampMillis": "1707755991680",
+ "buildSummary": {
+  "hardwarePlatform": "xcvc1902-vsva2197-2MP-e-S",
+  "hardwareDsa": "VC1902",
+  "platformDirectory": "",
+  "runtime": "",
+  "systemConfig": "",
+  "flow": "BF_COMPILE",
+  "target": "TT_AIESIM",
+  "kernels": [
+   {
+    "base": {
+     "type": "KERNEL",
+     "name": "",
+     "file": "/home/yzwu/Desktop/soc_test/aie_component/build/hw/Work/temp/project.json",
+     "reports": [],
+     "uuid": ""
+    },
+    "sources": [
+     "/home/yzwu/Desktop/soc_test/aie_component/src/project.cpp"
+    ],
+    "psSources": [],
+    "cuNames": [],
+    "type": "AIE",
+    "frequency": 1250,
+    "freqUnits": ""
+   }
+  ],
+  "toolVersion": "2023.2"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Mon Feb 12 11:39:51 2024",
+ "timestampMillis": "1707755991681",
+ "report": {
+  "path": "/home/yzwu/Desktop/soc_test/aie_component/build/hw/AIESim_FIFO_Guidance.json",
+  "name": "",
+  "fileType": "JSON",
+  "reportType": "AIE_SIM_FIFO_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Mon Feb 12 11:39:51 2024",
+ "timestampMillis": "1707755991681",
+ "report": {
+  "path": "/home/yzwu/Desktop/soc_test/aie_component/build/hw/AIESim_Guidance.json",
+  "name": "",
+  "fileType": "JSON",
+  "reportType": "AIE_SIM_MEMORY_ACCESS_VIOLATION_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Mon Feb 12 11:40:14 2024",
+ "timestampMillis": "1707756014899",
+ "report": {
+  "path": "/home/yzwu/Desktop/soc_test/aie_component/build/hw/aiesimulator_output/profile_instr_26_0.txt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "AIE_INSTR_PROFILE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Mon Feb 12 11:40:14 2024",
+ "timestampMillis": "1707756014900",
+ "report": {
+  "path": "/home/yzwu/Desktop/soc_test/aie_component/build/hw/aiesimulator_output/profile_instr_26_0.xml",
+  "name": "",
+  "fileType": "XML",
+  "reportType": "AIE_INSTR_PROFILE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Mon Feb 12 11:40:14 2024",
+ "timestampMillis": "1707756014900",
+ "report": {
+  "path": "/home/yzwu/Desktop/soc_test/aie_component/build/hw/aiesimulator_output/profile_funct_26_0.xml",
+  "name": "",
+  "fileType": "XML",
+  "reportType": "AIE_FUNCT_PROFILE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Mon Feb 12 11:40:14 2024",
+ "timestampMillis": "1707756014900",
+ "report": {
+  "path": "/home/yzwu/Desktop/soc_test/aie_component/build/hw/aiesimulator_output/profile_funct_26_0.txt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "AIE_FUNCT_PROFILE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Mon Feb 12 11:40:14 2024",
+ "timestampMillis": "1707756014900",
+ "report": {
+  "path": "/home/yzwu/Desktop/soc_test/aie_component/build/hw/system.wdb",
+  "name": "",
+  "fileType": "BINARY",
+  "reportType": "WAVEFORM_DATABASE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Mon Feb 12 11:40:14 2024",
+ "timestampMillis": "1707756014900",
+ "report": {
+  "path": "/home/yzwu/Desktop/soc_test/aie_component/build/hw/system.wcfg",
+  "name": "",
+  "fileType": "XML",
+  "reportType": "WAVEFORM_CONFIGURATION",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Mon Feb 12 11:40:14 2024",
+ "timestampMillis": "1707756014900",
+ "report": {
+  "path": "/home/yzwu/Desktop/soc_test/aie_component/build/hw/trdata.aiesim/events.txt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "AIE_EVENT_TRACE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Mon Feb 12 11:40:14 2024",
+ "timestampMillis": "1707756014900",
+ "status": {
+  "cmdId": "138379ae-a24f-4169-ac82-0208ce532026",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>

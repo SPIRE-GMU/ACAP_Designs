@@ -1,0 +1,685 @@
+<ENTRY>
+{
+ "thisFile": "/home/yzwu/Desktop/matrix_vec/matrix_vec/build/hw/Work/project.aiecompile_summary",
+ "connectId": "",
+ "serverToken": "",
+ "timestamp": "0"
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_CmdStep",
+ "dateTimestamp": "Mon Feb 12 17:17:20 2024",
+ "timestampMillis": "1707776240107",
+ "buildStep": {
+  "cmdId": "578391f3-ecbb-4d7c-9bac-4357d81d3913",
+  "name": "aiecompiler",
+  "logFile": "/home/yzwu/Desktop/matrix_vec/matrix_vec/build/hw/AIECompiler.log",
+  "commandLine": "/tools/Xilinx/Vitis/2023.2/aietools/bin/unwrapped/lnx64.o/aiecompiler --config /home/yzwu/Desktop/matrix_vec/matrix_vec/build/hw/Work/aie_hw.cfg ",
+  "args": [
+   "/tools/Xilinx/Vitis/2023.2/aietools/bin/unwrapped/lnx64.o/aiecompiler",
+   "--config",
+   "/home/yzwu/Desktop/matrix_vec/matrix_vec/build/hw/Work/aie_hw.cfg"
+  ],
+  "iniFiles": [
+   {
+    "path": "/home/yzwu/Desktop/matrix_vec/matrix_vec/build/hw/Work/aie_hw.cfg",
+    "content": "--workdir=/home/yzwu/Desktop/matrix_vec/matrix_vec/build/hw/./Work\n--Xchess=main:darts.xargs=-nb\n--pl-freq=312.500000\n--enable-partition=0:50\n--include=/home/yzwu/Desktop/matrix_vec/matrix_vec\n--include=/home/yzwu/Desktop/matrix_vec/matrix_vec/src\n/home/yzwu/Desktop/matrix_vec/matrix_vec/src/project.cpp\n--platform=/tools/Xilinx/Vitis/2023.2/base_platforms/xilinx_vck190_base_202320_1/xilinx_vck190_base_202320_1.xpfm\n--target=hw\n\n"
+   }
+  ],
+  "cwd": "/home/yzwu/Desktop/matrix_vec/matrix_vec/build/hw"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Mon Feb 12 17:17:20 2024",
+ "timestampMillis": "1707776240107",
+ "status": {
+  "cmdId": "578391f3-ecbb-4d7c-9bac-4357d81d3913",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_FlowMetaData",
+ "dateTimestamp": "Mon Feb 12 17:17:20 2024",
+ "timestampMillis": "1707776240107",
+ "buildSummary": {
+  "hardwarePlatform": "",
+  "hardwareDsa": "",
+  "platformDirectory": "",
+  "runtime": "",
+  "systemConfig": "",
+  "flow": "BF_UNKNOWN",
+  "target": "TT_UNKNOWN",
+  "kernels": [],
+  "toolVersion": "Vitis AI Engine Compiler Release 2023.2. SW Build 4023990 on 2023-10-12-17:44:32"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Mon Feb 12 17:17:20 2024",
+ "timestampMillis": "1707776240107",
+ "report": {
+  "path": "/home/yzwu/Desktop/matrix_vec/matrix_vec/build/hw/Work",
+  "name": "",
+  "fileType": "DIR",
+  "reportType": "AIE_COMPILER_WORKDIR",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Mon Feb 12 17:17:20 2024",
+ "timestampMillis": "1707776240107",
+ "report": {
+  "path": "/home/yzwu/Desktop/matrix_vec/matrix_vec/build/hw/Work/reports/guidance.html",
+  "name": "",
+  "fileType": "HTML",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Mon Feb 12 17:17:20 2024",
+ "timestampMillis": "1707776240108",
+ "report": {
+  "path": "/home/yzwu/Desktop/matrix_vec/matrix_vec/build/hw/Work/reports/guidance.pb3",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_CmdStep",
+ "dateTimestamp": "Mon Feb 12 17:17:22 2024",
+ "timestampMillis": "1707776242096",
+ "buildStep": {
+  "cmdId": "58dbbc2f-ea3e-43b9-854d-7c6b0f0308d8",
+  "name": "aieir_be",
+  "logFile": "",
+  "commandLine": "/tools/Xilinx/Vitis/2023.2/aietools/bin/unwrapped/lnx64.o/aieir_be --time-passes=0 --disable-om-fifo-insertion=false --logcfg-file= --trace-plio-width=64 --aie2ipu-base-addr=1073741824 --pl-freq=312.5 --enable-light-cdo=false --show-loggers=false --fast-nonlinearfloats=false --broadcast-enable-core=true --high-performance=false --multi-layer-opt=0 --kernel-address-location=false --target=hw --swfifo-threshold=40 --single-mm2s-channel=false --workdir=/home/yzwu/Desktop/matrix_vec/matrix_vec/build/hw/./Work --multi-layer-enable-shared-channel-opt=true --exit-after=complete --event-trace-config= --test-iterations=-1 --stacksize=1024 --known-tripcount=false --enable-core-processor-bus=false --platform=/tools/Xilinx/Vitis/2023.2/base_platforms/xilinx_vck190_base_202320_1/xilinx_vck190_base_202320_1.xpfm --large-program-memory=false --event-trace-custom-config= --disable-dma-cmd-alignment=false --enable-ecc-scrubbing=true --float-accuracy=fast --output-archive=libadf.a --write-partitioned-file=true --print-timer-multi-layer-ctrl=false --schemafile=AIEGraphSchema.json --disable-multirate=false --multi-layer-controller-parallel=false --include=/home/yzwu/Desktop/matrix_vec/matrix_vec --include=/home/yzwu/Desktop/matrix_vec/matrix_vec/src --verify-switchconfig=true --enable-peano-flow=false --partition-isolation=true --disable-multirate-analysis=false --fastmath=false --multi-layer-ctrl-pkt=false --cpp-std=-std=c++17 --max-layer-ctrl-param-size=256 --enable-mapper-hints-constraints=false --multi-layer-auto-phase=false --event-trace-advanced-mapping=0 --multi-layer-plc-constraints= --lock-fence-mode=1 --enable-reconfig=false --compute-heapsize=true --log-level=1 --aiesim-xrt-api=false --evaluate-fifo-depth=false --gen-graph-cleanup=false --use-canonical-net-names=false --event-trace-port=gmio --use-phy-shim=true --print-timer-multi-layer-core=false --xlopt=1 --graph-iterator-event=false --pre-compile-kernels=false --gen-elf-ctrl-pkts=false --trace-aiesim-option=0 --mapped-soln-udm= --optimize-pktids=false --no-init=false --adf-api-log-level=2 --num-trace-streams=16 --aie-heat-map=false --enable-partition=0:50 --multi-layer-enable-tct=false --fast-floats=true --quiet=false --enable-multi-layer=false --multi-layer-pipelining=false --llvmRelease=15 --exec-timed=0 --Xchess=main:darts.xargs=-nb --pl-auto-restart=false --routed-soln-udm= --large-kernel-program=false --read-mem-multi-layer=false --enable-profiling=false --runtime-opt=false --part= --disable-transform-merge-broadcast=false --multi-layer-ext-buf-file= --verbose=false --use-async-rtp-locks=true --repo-path= --genArchive=false --kernel-compile-replacement= --pl-axi-lite=false --event-trace-bounding-box= --multi-layer-shim-dma-bandwidth=0 --heapsize=1024 --logical-arch= --enable-reconfig-dma-autostart=false --nodot-graph=false --use-core-control-api=false --enable-txn-bin=false --debug-runtime-opt=false --disable-dma-autostart=false --include-mem-tile= --disable-transform-broadcast-split=true --json=/home/yzwu/Desktop/matrix_vec/matrix_vec/build/hw/./Work/temp/project.json --aiearch aie --frontend-warning=0 --frontend-critical-warning=0 --frontend-summary-name=/home/yzwu/Desktop/matrix_vec/matrix_vec/build/hw/./Work/project.aiecompile_summary --frontend-files-to-report=Guidance:/home/yzwu/Desktop/matrix_vec/matrix_vec/build/hw/./Work/reports/guidance.html --sdf-graph=/home/yzwu/Desktop/matrix_vec/matrix_vec/src/project.cpp ",
+  "args": [
+   "/tools/Xilinx/Vitis/2023.2/aietools/bin/unwrapped/lnx64.o/aieir_be",
+   "--time-passes=0",
+   "--disable-om-fifo-insertion=false",
+   "--logcfg-file=",
+   "--trace-plio-width=64",
+   "--aie2ipu-base-addr=1073741824",
+   "--pl-freq=312.5",
+   "--enable-light-cdo=false",
+   "--show-loggers=false",
+   "--fast-nonlinearfloats=false",
+   "--broadcast-enable-core=true",
+   "--high-performance=false",
+   "--multi-layer-opt=0",
+   "--kernel-address-location=false",
+   "--target=hw",
+   "--swfifo-threshold=40",
+   "--single-mm2s-channel=false",
+   "--workdir=/home/yzwu/Desktop/matrix_vec/matrix_vec/build/hw/./Work",
+   "--multi-layer-enable-shared-channel-opt=true",
+   "--exit-after=complete",
+   "--event-trace-config=",
+   "--test-iterations=-1",
+   "--stacksize=1024",
+   "--known-tripcount=false",
+   "--enable-core-processor-bus=false",
+   "--platform=/tools/Xilinx/Vitis/2023.2/base_platforms/xilinx_vck190_base_202320_1/xilinx_vck190_base_202320_1.xpfm",
+   "--large-program-memory=false",
+   "--event-trace-custom-config=",
+   "--disable-dma-cmd-alignment=false",
+   "--enable-ecc-scrubbing=true",
+   "--float-accuracy=fast",
+   "--output-archive=libadf.a",
+   "--write-partitioned-file=true",
+   "--print-timer-multi-layer-ctrl=false",
+   "--schemafile=AIEGraphSchema.json",
+   "--disable-multirate=false",
+   "--multi-layer-controller-parallel=false",
+   "--include=/home/yzwu/Desktop/matrix_vec/matrix_vec",
+   "--include=/home/yzwu/Desktop/matrix_vec/matrix_vec/src",
+   "--verify-switchconfig=true",
+   "--enable-peano-flow=false",
+   "--partition-isolation=true",
+   "--disable-multirate-analysis=false",
+   "--fastmath=false",
+   "--multi-layer-ctrl-pkt=false",
+   "--cpp-std=-std=c++17",
+   "--max-layer-ctrl-param-size=256",
+   "--enable-mapper-hints-constraints=false",
+   "--multi-layer-auto-phase=false",
+   "--event-trace-advanced-mapping=0",
+   "--multi-layer-plc-constraints=",
+   "--lock-fence-mode=1",
+   "--enable-reconfig=false",
+   "--compute-heapsize=true",
+   "--log-level=1",
+   "--aiesim-xrt-api=false",
+   "--evaluate-fifo-depth=false",
+   "--gen-graph-cleanup=false",
+   "--use-canonical-net-names=false",
+   "--event-trace-port=gmio",
+   "--use-phy-shim=true",
+   "--print-timer-multi-layer-core=false",
+   "--xlopt=1",
+   "--graph-iterator-event=false",
+   "--pre-compile-kernels=false",
+   "--gen-elf-ctrl-pkts=false",
+   "--trace-aiesim-option=0",
+   "--mapped-soln-udm=",
+   "--optimize-pktids=false",
+   "--no-init=false",
+   "--adf-api-log-level=2",
+   "--num-trace-streams=16",
+   "--aie-heat-map=false",
+   "--enable-partition=0:50",
+   "--multi-layer-enable-tct=false",
+   "--fast-floats=true",
+   "--quiet=false",
+   "--enable-multi-layer=false",
+   "--multi-layer-pipelining=false",
+   "--llvmRelease=15",
+   "--exec-timed=0",
+   "--Xchess=main:darts.xargs=-nb",
+   "--pl-auto-restart=false",
+   "--routed-soln-udm=",
+   "--large-kernel-program=false",
+   "--read-mem-multi-layer=false",
+   "--enable-profiling=false",
+   "--runtime-opt=false",
+   "--part=",
+   "--disable-transform-merge-broadcast=false",
+   "--multi-layer-ext-buf-file=",
+   "--verbose=false",
+   "--use-async-rtp-locks=true",
+   "--repo-path=",
+   "--genArchive=false",
+   "--kernel-compile-replacement=",
+   "--pl-axi-lite=false",
+   "--event-trace-bounding-box=",
+   "--multi-layer-shim-dma-bandwidth=0",
+   "--heapsize=1024",
+   "--logical-arch=",
+   "--enable-reconfig-dma-autostart=false",
+   "--nodot-graph=false",
+   "--use-core-control-api=false",
+   "--enable-txn-bin=false",
+   "--debug-runtime-opt=false",
+   "--disable-dma-autostart=false",
+   "--include-mem-tile=",
+   "--disable-transform-broadcast-split=true",
+   "--json=/home/yzwu/Desktop/matrix_vec/matrix_vec/build/hw/./Work/temp/project.json",
+   "--aiearch",
+   "aie",
+   "--frontend-warning=0",
+   "--frontend-critical-warning=0",
+   "--frontend-summary-name=/home/yzwu/Desktop/matrix_vec/matrix_vec/build/hw/./Work/project.aiecompile_summary",
+   "--frontend-files-to-report=Guidance:/home/yzwu/Desktop/matrix_vec/matrix_vec/build/hw/./Work/reports/guidance.html",
+   "--sdf-graph=/home/yzwu/Desktop/matrix_vec/matrix_vec/src/project.cpp"
+  ],
+  "iniFiles": [],
+  "cwd": "/home/yzwu/Desktop/matrix_vec/matrix_vec/build/hw"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Mon Feb 12 17:17:22 2024",
+ "timestampMillis": "1707776242097",
+ "status": {
+  "cmdId": "58dbbc2f-ea3e-43b9-854d-7c6b0f0308d8",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Mon Feb 12 17:17:29 2024",
+ "timestampMillis": "1707776249971",
+ "report": {
+  "path": "/home/yzwu/Desktop/matrix_vec/matrix_vec/build/hw/Work",
+  "name": "",
+  "fileType": "DIR",
+  "reportType": "AIE_COMPILER_WORKDIR",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Mon Feb 12 17:17:30 2024",
+ "timestampMillis": "1707776250016",
+ "report": {
+  "path": "/home/yzwu/Desktop/matrix_vec/matrix_vec/build/hw/Work/temp/debug_config.json",
+  "name": "",
+  "fileType": "JSON",
+  "reportType": "AIE_DEBUG_CONFIG",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_FlowMetaData",
+ "dateTimestamp": "Mon Feb 12 17:17:30 2024",
+ "timestampMillis": "1707776250016",
+ "buildSummary": {
+  "hardwarePlatform": "xcvc1902-vsva2197-2MP-e-S",
+  "hardwareDsa": "VC1902",
+  "platformDirectory": "",
+  "runtime": "",
+  "systemConfig": "",
+  "flow": "BF_COMPILE",
+  "target": "TT_HW",
+  "kernels": [
+   {
+    "base": {
+     "type": "KERNEL",
+     "name": "",
+     "file": "/home/yzwu/Desktop/matrix_vec/matrix_vec/build/hw/Work/temp/project.json",
+     "reports": [],
+     "uuid": ""
+    },
+    "sources": [
+     "/home/yzwu/Desktop/matrix_vec/matrix_vec/src/project.cpp"
+    ],
+    "psSources": [],
+    "cuNames": [],
+    "type": "AIE",
+    "frequency": 1250,
+    "freqUnits": ""
+   }
+  ],
+  "toolVersion": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Mon Feb 12 17:17:30 2024",
+ "timestampMillis": "1707776250018",
+ "report": {
+  "path": "/home/yzwu/Desktop/matrix_vec/matrix_vec/build/hw/Work/temp/project.json",
+  "name": "",
+  "fileType": "JSON",
+  "reportType": "AIE_GRAPH",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Mon Feb 12 17:17:32 2024",
+ "timestampMillis": "1707776252565",
+ "report": {
+  "path": "/home/yzwu/Desktop/matrix_vec/matrix_vec/build/hw/Work/reports/project.png",
+  "name": "",
+  "fileType": "PNG",
+  "reportType": "AIE_LOGICAL_VIEW",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Mon Feb 12 17:17:32 2024",
+ "timestampMillis": "1707776252577",
+ "report": {
+  "path": "/home/yzwu/Desktop/matrix_vec/matrix_vec/build/hw/Work/temp/project_partition.json",
+  "name": "",
+  "fileType": "JSON",
+  "reportType": "AIE_GRAPH_PARTITION",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Mon Feb 12 17:17:33 2024",
+ "timestampMillis": "1707776253149",
+ "report": {
+  "path": "/home/yzwu/Desktop/matrix_vec/matrix_vec/build/hw/Work/temp/project_aie_constraints_for_placer.aiecst",
+  "name": "",
+  "fileType": "JSON",
+  "reportType": "AIE_CONSTRAINTS_PLACER",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Mon Feb 12 17:17:33 2024",
+ "timestampMillis": "1707776253288",
+ "report": {
+  "path": "/home/yzwu/Desktop/matrix_vec/matrix_vec/build/hw/Work/temp/project_aie_mapped.aiecst",
+  "name": "",
+  "fileType": "JSON",
+  "reportType": "AIE_CONSTRAINTS_MAPPED",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Mon Feb 12 17:17:33 2024",
+ "timestampMillis": "1707776253289",
+ "report": {
+  "path": "/home/yzwu/Desktop/matrix_vec/matrix_vec/build/hw/Work/temp/project_mapped.json",
+  "name": "",
+  "fileType": "JSON",
+  "reportType": "AIE_GRAPH_MAPPED",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Mon Feb 12 17:17:33 2024",
+ "timestampMillis": "1707776253289",
+ "report": {
+  "path": "/home/yzwu/Desktop/matrix_vec/matrix_vec/build/hw/Work/reports/project_mapping_analysis_report.txt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "AIE_MAPPING_ANALYSIS",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Mon Feb 12 17:17:33 2024",
+ "timestampMillis": "1707776253289",
+ "report": {
+  "path": "/home/yzwu/Desktop/matrix_vec/matrix_vec/build/hw/Work/reports/sync_buffer_address.json",
+  "name": "",
+  "fileType": "JSON",
+  "reportType": "AIE_SYNC_BUFFER_ADDRESS",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Mon Feb 12 17:17:33 2024",
+ "timestampMillis": "1707776253290",
+ "report": {
+  "path": "/home/yzwu/Desktop/matrix_vec/matrix_vec/build/hw/Work/reports/Interposer_analysis_report.txt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "AIE_INTERPOSER_ANALYSIS",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Mon Feb 12 17:17:33 2024",
+ "timestampMillis": "1707776253290",
+ "report": {
+  "path": "/home/yzwu/Desktop/matrix_vec/matrix_vec/build/hw/Work/reports/Lock_report.txt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "AIE_DMA_LOCK",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Mon Feb 12 17:17:33 2024",
+ "timestampMillis": "1707776253290",
+ "report": {
+  "path": "/home/yzwu/Desktop/matrix_vec/matrix_vec/build/hw/Work/reports/Stream_report.txt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "AIE_STREAM",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Mon Feb 12 17:17:33 2024",
+ "timestampMillis": "1707776253291",
+ "report": {
+  "path": "/home/yzwu/Desktop/matrix_vec/matrix_vec/build/hw/Work/reports/DMA_report.txt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "AIE_DMA_ANALYSIS",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Mon Feb 12 17:17:33 2024",
+ "timestampMillis": "1707776253291",
+ "report": {
+  "path": "/home/yzwu/Desktop/matrix_vec/matrix_vec/build/hw/Work/reports/dma_lock_report.json",
+  "name": "",
+  "fileType": "JSON",
+  "reportType": "AIE_DMA_LOCK",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Mon Feb 12 17:17:37 2024",
+ "timestampMillis": "1707776257524",
+ "report": {
+  "path": "/home/yzwu/Desktop/matrix_vec/matrix_vec/build/hw/Work/temp/DMA_FIFO_info_report.json",
+  "name": "",
+  "fileType": "JSON",
+  "reportType": "AIE_DMA_FIFO",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Mon Feb 12 17:17:37 2024",
+ "timestampMillis": "1707776257553",
+ "report": {
+  "path": "/home/yzwu/Desktop/matrix_vec/matrix_vec/build/hw/Work/temp/router_soln.png",
+  "name": "",
+  "fileType": "PNG",
+  "reportType": "AIE_ROUTER_SOLUTION",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Mon Feb 12 17:17:37 2024",
+ "timestampMillis": "1707776257566",
+ "report": {
+  "path": "/home/yzwu/Desktop/matrix_vec/matrix_vec/build/hw/Work/temp/router_soln.json",
+  "name": "",
+  "fileType": "JSON",
+  "reportType": "AIE_ROUTER_SOLUTION",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Mon Feb 12 17:17:37 2024",
+ "timestampMillis": "1707776257608",
+ "report": {
+  "path": "/home/yzwu/Desktop/matrix_vec/matrix_vec/build/hw/Work/reports/project_mapped_post.png",
+  "name": "",
+  "fileType": "PNG",
+  "reportType": "AIE_MAPPING_ANALYSIS",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Mon Feb 12 17:17:37 2024",
+ "timestampMillis": "1707776257609",
+ "report": {
+  "path": "/home/yzwu/Desktop/matrix_vec/matrix_vec/build/hw/Work/reports/project.xpe",
+  "name": "",
+  "fileType": "XML",
+  "reportType": "AIE_POWER",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Mon Feb 12 17:17:37 2024",
+ "timestampMillis": "1707776257610",
+ "report": {
+  "path": "/home/yzwu/Desktop/matrix_vec/matrix_vec/build/hw/Work/aie/24_0/scripts/24_0.prx",
+  "name": "",
+  "fileType": "XML",
+  "reportType": "AIE_CORE_PROJECT",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Mon Feb 12 17:17:37 2024",
+ "timestampMillis": "1707776257610",
+ "report": {
+  "path": "/home/yzwu/Desktop/matrix_vec/matrix_vec/build/hw/Work/aie/24_0/src/24_0.cc",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "AIE_CORE_PROJECT",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Mon Feb 12 17:17:37 2024",
+ "timestampMillis": "1707776257612",
+ "report": {
+  "path": "/home/yzwu/Desktop/matrix_vec/matrix_vec/build/hw/Work/aie/24_0/24_0.log",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "AIE_CORE_COMPILE_LOG",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Mon Feb 12 17:17:39 2024",
+ "timestampMillis": "1707776259145",
+ "report": {
+  "path": "/home/yzwu/Desktop/matrix_vec/matrix_vec/build/hw/Work/ps/c_rts/aie_control.cpp",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "AIE_CONTROL_SOURCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Mon Feb 12 17:17:41 2024",
+ "timestampMillis": "1707776261418",
+ "report": {
+  "path": "/home/yzwu/Desktop/matrix_vec/matrix_vec/build/hw/Work/ps/c_rts/aie_control_config.json",
+  "name": "",
+  "fileType": "JSON",
+  "reportType": "AIE_CONTROL_CONFIG",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Mon Feb 12 17:17:41 2024",
+ "timestampMillis": "1707776261419",
+ "report": {
+  "path": "/home/yzwu/Desktop/matrix_vec/matrix_vec/build/hw/Work/reports/compiler_report.json",
+  "name": "",
+  "fileType": "JSON",
+  "reportType": "AIE_COMPILER_REPORT",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Mon Feb 12 17:17:41 2024",
+ "timestampMillis": "1707776261421",
+ "report": {
+  "path": "/home/yzwu/Desktop/matrix_vec/matrix_vec/build/hw/Work/temp/project_aie_constraints.aiecst",
+  "name": "",
+  "fileType": "JSON",
+  "reportType": "AIE_CONSTRAINTS",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Mon Feb 12 17:17:41 2024",
+ "timestampMillis": "1707776261465",
+ "status": {
+  "cmdId": "58dbbc2f-ea3e-43b9-854d-7c6b0f0308d8",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Mon Feb 12 17:17:41 2024",
+ "timestampMillis": "1707776261881",
+ "status": {
+  "cmdId": "578391f3-ecbb-4d7c-9bac-4357d81d3913",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>

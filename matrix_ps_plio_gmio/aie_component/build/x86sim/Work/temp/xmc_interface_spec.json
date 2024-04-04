@@ -1,0 +1,69 @@
+{
+    "inputs": [
+        {
+            "type": "gmio",
+            "bandWidth": 1000,
+            "burstSize": 256,
+            "logicalName": "datain1",
+            "direction": "input",
+            "index": 0,
+            "ports": [
+                {
+                    "portName": "in[0]",
+                    "qualifiedName": "mygraph.first",
+                    "graphName": "mygraph",
+                    "graphType": "simpleGraph",
+                    "type": "stream",
+                    "elementType": "int32",
+                    "direction": "in",
+                    "blockSize": 0
+                }
+            ],
+            "qualifiedGraphPortAliasNames": []
+        },
+        {
+            "type": "gmio",
+            "bandWidth": 1000,
+            "burstSize": 256,
+            "logicalName": "datain2",
+            "direction": "input",
+            "index": 1,
+            "ports": [
+                {
+                    "portName": "in[1]",
+                    "qualifiedName": "mygraph.first",
+                    "graphName": "mygraph",
+                    "graphType": "simpleGraph",
+                    "type": "stream",
+                    "elementType": "int32",
+                    "direction": "in",
+                    "blockSize": 0
+                }
+            ],
+            "qualifiedGraphPortAliasNames": []
+        }
+    ],
+    "outputs": [
+        {
+            "type": "gmio",
+            "bandWidth": 1000,
+            "burstSize": 256,
+            "logicalName": "dataout",
+            "direction": "output",
+            "index": 0,
+            "ports": [
+                {
+                    "portName": "out[0]",
+                    "qualifiedName": "mygraph.first",
+                    "graphName": "mygraph",
+                    "graphType": "simpleGraph",
+                    "type": "stream",
+                    "elementType": "int32",
+                    "direction": "out",
+                    "blockSize": 0
+                }
+            ],
+            "qualifiedGraphPortAliasNames": []
+        }
+    ]
+}

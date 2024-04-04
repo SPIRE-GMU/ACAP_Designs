@@ -1,0 +1,8 @@
+Deadlock diagnosis:
+  1. main() is waiting on kernel 'mygraph.first'
+     because Node 'mygraph.first' is blocked while reading port 'mygraph.first.in[0]'
+  2. Node 'mygraph.first' is blocked while reading port 'mygraph.first.in[0]'
+     because Data unavailable from port 'mygraph.first.in[0]'
+  3. Data unavailable from port 'mygraph.first.in[0]'
+     because GMIO input 'platformIn_i0' is done.
+Consider rerunning x86simulator with the --trace option.

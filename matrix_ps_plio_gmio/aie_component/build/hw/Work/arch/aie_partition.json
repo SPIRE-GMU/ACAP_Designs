@@ -1,0 +1,17 @@
+{
+  "AIE": {
+    "ai_engine_0": {
+      "startColumn": 0,
+      "numColumns": 50,
+      "partitions": [
+        {
+          "startColumn": 0,
+          "numColumns": 50,
+          "uuid": "0x5c943fba1a762722d625c933d38f1a9a",
+          "aie_pl_intf_id": "0xd38f1a9a",
+          "namespace": ""
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,39 @@
+{
+    "ModulePath": "/home/yzwu/Desktop/matrix_vec/matrix_vec/src/kernels/vitis_single_node_templates.cc",
+    "KernelSourcePath": "/home/yzwu/Desktop/matrix_vec/matrix_vec/src/kernels/vitis_single_node_templates.cc",
+    "UseCases": [
+        {
+            "Index": 0,
+            "KernelFunction": "matrix256",
+            "InitializationFunction": "",
+            "KernelClassCtor": "",
+            "Instances": [
+                "i3"
+            ]
+        }
+    ],
+    "AccessRecords": [],
+    "ControlRegsUsage": {
+        "RndRecords": {
+            "matrix256": {
+                "SetKind": 1,
+                "SetValue": -1,
+                "GetBeforeSet": 1
+            }
+        },
+        "SatRecords": {
+            "matrix256": {
+                "SetKind": 1,
+                "SetValue": -1,
+                "GetBeforeSet": 1
+            }
+        },
+        "SymSatRecords": {
+            "matrix256": {
+                "SetKind": 1,
+                "SetValue": -1,
+                "GetBeforeSet": 1
+            }
+        }
+    }
+}
