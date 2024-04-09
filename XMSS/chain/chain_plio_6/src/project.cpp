@@ -7,7 +7,6 @@ simpleGraph mygraph;
 
 
 
-
 #define run_num 1
 #if defined(__AIESIM__) || defined(__X86SIM__)
 int main(int argc, char **argv) 
