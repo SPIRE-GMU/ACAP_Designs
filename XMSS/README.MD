@@ -10,7 +10,9 @@ There remains space to improve the performance:
 
 **Tools:**
 
-Hardware: VCK190 kit, including SD card, power, and wire for uart.
+Hardware: 
+
+    VCK190 kit, including SD card, power, and wire for uart.
 
 Software: 
     
