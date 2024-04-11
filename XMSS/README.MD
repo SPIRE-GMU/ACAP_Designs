@@ -9,16 +9,18 @@ There remains space to improve the performance:
 
 **Tools:**
 
-Hardware: VCK190 kit, including SD card, power, and uart.
-Software: Vitis 2023.2 IDE. PDM. Putty 
+Hardware: VCK190 kit, including SD card, power, and wire for uart.
+
+Software: 
+    Vitis 2023.2 (work with IDE). 
+    PDM. (power estimation)
+    Putty (communication with board)
+    Balenaetcher (flash SD card)
+    Others: Sometimes you may encounter the situation of missing lib., please install that. 
     
 
-**Files：**
+**Folds：**
 
-1. /aie_gmio includes the AIE graph.
-2. /aie_plio includes the AIE graph, which accesses data through DMA.
-3. /mm2s and s2mm are HLS codes
-4. /host contains code and reference data.
 
 **How To Reproduce:**
 
