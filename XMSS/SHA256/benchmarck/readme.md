@@ -1,6 +1,11 @@
-This fold contains a host of sha256 and a original version of sha256-aie to verify the accuracy in graph.
+Folds **ps, aie, src** contain host code, aie graph, and xmss source code respectively. 
 
-To run the host, you may
- need to add application and import host code.
+To run the **host**, you are supposed to add **application** and import the host code. Then add system project.
 
+To run the **source code** on your local terminal, go to direction **src** and type
 
+     make TARGET=x86 PROJ=sha256 run
+
+To run the **aie**, add and import graph and build straightly.
+
+If there is any issue, feel free to contact me.
