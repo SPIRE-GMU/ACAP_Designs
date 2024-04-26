@@ -14,7 +14,7 @@ There remains space to improve the performance:
 
 Hardware: 
 
-    VCK190 kit, including SD card, power, and wire for uart.
+    VCK190 kit, including SD card, power supply, and wire for uart.
 
 Software: 
     
@@ -31,6 +31,15 @@ Software:
 
 **Folds：**
 
+    I build the XMSS bottom up, ie, form SHA256, thash_f, chain, leaf, keygen, as a record.
+    
 
 **How To Reproduce:**
 
+    1. From project SHA256 to leaf, you may build and run AIE graph straightly. Vitis will reports the performance and trace.
+
+    2. For keygen, it takes almost 4-5 days to do hardware emulation (x86 simulation is OK). I recommend building the system and running on the board to save time.  I provide the host, aie, HLS source codes. As for how to make the project, please refer to:    https://github.com/Xilinx/Vitis-Tutorials/blob/2023.2/AI_Engine_Development/AIE/Feature_Tutorials/05-AI-engine-versal-integration/unified-ide.md 
+    
+    3. If there is any issue, feel free to contact me: ywu42@gmu.edu 
+
+ 
