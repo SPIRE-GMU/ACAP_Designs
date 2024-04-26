@@ -27,7 +27,6 @@ inline uint32_t parafill(unsigned char * __restrict input, uint32_t *__restrict 
 }
 /*************************************************/
 
-// GMIO 送进来的数据必须是32的整数倍，否则会导致无法全部读取而死锁，所以决定在外面打包全部的sha数据后再送进来
 void thash_f(input_stream<uint32> * __restrict data, input_stream<uint32> * __restrict addr, 
                 /*unsigned char (&Pubseed)[32],*/ output_stream<uint32>* __restrict dout1, output_stream<uint32>* __restrict dout2)
 {
@@ -47,26 +46,6 @@ while(run_num <3){ // we suppose to run 2 times
     }
         
     
-    //parafill(Pubseed,temp_pub);
-    //printf("\nthash_f_pubseedin\n");
-    //for(int i=0;i<8;i++){
-    //    printf("%02x",temp_pub[i]);
-    //}
-    //printf("\n");
-
-
-    //printf("\nthash_f_datain\n");
-    //for(int i=0;i<8;i++){
-    //    printf("%02x",datain[i]);
-    //}
-    //printf("\n");
-
-    //printf("\nthash_f_addr\n");
-    //for(int i=0;i<8;i++){
-    //    printf("%02x",temp_addr[i]);
-    //}
-    //printf("\n");
-
  
     for(int i=0;i<8;i++){
         writeincr(dout1, prf[i]); 

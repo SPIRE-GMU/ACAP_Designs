@@ -11,7 +11,7 @@
 
 #define rightrotate(w,n) ((w>>n) | (w)<< (32-(n)))
 #if __BYTE_ORDER__ == __ORDER_LITTLE_ENDIAN__
-#define copy_uint32(p, val) *((uint32_t *)p) = __builtin_bswap32((val))//gcc 内建函数__builtin_bswap32，
+#define copy_uint32(p, val) *((uint32_t *)p) = __builtin_bswap32((val))//gcc __builtin_bswap32，
 #elif __BYTE_ORDER__ == __ORDER_BIG_ENDIAN__
 #define copy_uint32(p, val) *((uint32_t *)p) = (val)
 #else
@@ -43,7 +43,7 @@ inline uint32_t fill(unsigned char * __restrict input){
     return output;
 }
 
-//this function generate w[0] to w[15] in pipeline
+//this function generate w[0] to w[15] in pipeline, which declines cycles from 900 to 170
 inline uint32_t parafill(unsigned char * __restrict input, uint32_t *__restrict output){
       
         for(int i=0;i<16;i++)chess_prepare_for_pipelining{
@@ -88,7 +88,6 @@ inline uint32_t gen_2w(uint32_t * __restrict input,uint32_t * __restrict output)
 
 /*************************************************/
 
-// GMIO 送进来的数据必须是32的整数倍，否则会导致无法全部读取而死锁，所以决定在外面打包全部的sha数据后再送进来
 void sha256(input_stream<uint32> * __restrict bufin, output_stream<uint32>* __restrict bufout)
 {
     int run_num =0;
@@ -111,34 +110,33 @@ void sha256(input_stream<uint32> * __restrict bufin, output_stream<uint32>* __re
 
     int r = (int)((len * 8) & 0x1ff); //rest number of data  // original is mod 512, here change to bit operate
     int append = ((r < 448) ? (448 - r) : (448 + 512 - r)) / 8;    
-    size_t new_len = len + append + 8;// 原始数据+填充+64bit位数 
+    size_t new_len = len + append + 8;
     
-    unsigned char buf[new_len];//; 
+    unsigned char buf[new_len]; 
     
-    memset(buf + len,0,append); //padding清零<string.h>
+    memset(buf + len,0,append); 
     
 
-    uint32_t temp[len/4]; //we read 32-bit in one cycle， while len infer the length of char
+    uint32_t temp[len/4]; 
    
-    for(int j=0;j<((len-1)/4)+1;j++)//I don't know why function ceil() doesn't work in AIE, so just manually extract the int. //wyz add in 2024.2.23
+    for(int j=0;j<((len-1)/4)+1;j++)
     
         chess_prepare_for_pipelining
         chess_loop_range(2, )
         {  
         
-           temp[j]=readincr(bufin);  // important !! every instruction reads 32bit data, so DDR must instore the data in mltiple of 32-bit, or it causes deadlock!! //wyz add in 2024.2.23   	
-           //printf("\ntemp=%02x\n",temp[j]);
+           temp[j]=readincr(bufin);  
            
     }
     
 
     if (len > 0) {
-        memcpy(buf, temp, len); //      readincr 有大小端问题，但是在这里又被纠正了                                                                 
+        memcpy(buf, temp, len);                                                                     
     }
    
     buf[len] = (unsigned char)0x80;
     
-    uint64_t bits_len = len * 8; //wyz change  
+    uint64_t bits_len = len * 8;  
     for (int i = 0; i < 8; i++) 
     chess_prepare_for_pipelining
     chess_loop_range(8, 8)
@@ -146,29 +144,18 @@ void sha256(input_stream<uint32> * __restrict bufin, output_stream<uint32>* __re
         buf[len + append + i] = (bits_len >> ((7 - i) * 8)) & 0xff;
     }
     
-    //printf("\nsha256 buf[]=");
-    //for (int j=0;j<new_len;j++){
-    //    printf("%02x",buf[j]);
-    //}
-    //printf("\n");
-
-    /******************************************************************/
-    //above process input data, read and package 
-    /******************************************************************/
-    //following process hash function, compress and write back
-    /******************************************************************/
+    
     uint32_t w[64];
     uint32_t temp_w[2];
-    //memset(w ,0,64); //change bzero to memset
    
-    size_t chunk_len = new_len / 64; //分512bit区块
+    size_t chunk_len = new_len / 64; 
        
     for (int idx = 0; idx < chunk_len; idx++) {
         
                
-        parafill(buf+idx*64,w);  //  generate W[0]...W[15] with pipeline, pipeling insert declines cycles from 900 to 170,wyz add in 2024.2.26
+        parafill(buf+idx*64,w);  
 
-        for (int i = 0; i < 48; i=i+2)chess_prepare_for_pipelining{ //this paragraph generate w[16]...w[63] with pile line, decline cycles from 1500 to 1239
+        for (int i = 0; i < 48; i=i+2)chess_prepare_for_pipelining{ 
             gen_2w(w+i,temp_w);           
         }
         
@@ -205,7 +192,7 @@ void sha256(input_stream<uint32> * __restrict bufin, output_stream<uint32>* __re
             a = temp1 + temp2;
                     
         }
-        //printf("\na=%02x",a);
+
     
         h0 += a;
         h1 += b;
@@ -224,9 +211,7 @@ void sha256(input_stream<uint32> * __restrict bufin, output_stream<uint32>* __re
     //unsigned long long time2=tile.cycles();
     //printf("\n&cycles=%lld",time2-time1);
 
-    //printf("\nhash without mask=%02x\n",h0);
     
-    //Reverse happens when transfer data from AIE to PS through DDR, thats,  ABCD -> DCBA， so I reverse it before sending
     writeincr(bufout, swap32(h0));
     writeincr(bufout, swap32(h1));
     writeincr(bufout, swap32(h2));

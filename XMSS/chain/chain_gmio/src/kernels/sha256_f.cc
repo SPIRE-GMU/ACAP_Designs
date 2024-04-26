@@ -112,23 +112,23 @@ output_stream<uint32>* __restrict addr_out)
 
     int r = (int)((len * 8) & 0x1ff); //rest number of data  // original is mod 512, here change to bit operate
     int append = ((r < 448) ? (448 - r) : (448 + 512 - r)) / 8;    
-    size_t new_len = len + append + 8;// 原始数据+填充+64bit位数 
+    size_t new_len = len + append + 8; 
     
-    unsigned char buf[new_len];//; 
+    unsigned char buf[new_len]; 
     
-    memset(buf + len,0,append); //padding清零<string.h>
+    memset(buf + len,0,append); 
     
 
-    uint32_t temp[16]; //we read 32-bit in one cycle， while len infer the length of char
+    uint32_t temp[16]; 
    
-    for(int j=0;j<16;j++)//I don't know why function ceil() doesn't work in AIE, so just manually extract the int. //wyz add in 2024.2.23
+    for(int j=0;j<16;j++)
     
         chess_prepare_for_pipelining
         chess_loop_range(2, )
         {  
         
-           temp[j]=readincr(prf_in);  // 读out和addr   	
-           //printf("\ntemp=%02x\n",temp[j]);
+           temp[j]=readincr(prf_in);     	
+           
            
     }
     
@@ -144,15 +144,15 @@ output_stream<uint32>* __restrict addr_out)
 
     if (len > 0) {
         memset(buf,0,32);// padding_f
-        memcpy(buf+32, temp, 32); //      写入prf 
-        memcpy(buf+64, temp_mask, 32); // 写入mask                                                           
+        memcpy(buf+32, temp, 32); //      prf 
+        memcpy(buf+64, temp_mask, 32); // mask                                                           
     }
 
 
    
     buf[len] = (unsigned char)0x80;
     
-    uint64_t bits_len = len * 8; //wyz change  
+    uint64_t bits_len = len * 8;  
     for (int i = 0; i < 8; i++) 
     chess_prepare_for_pipelining
     chess_loop_range(8, 8)
@@ -160,29 +160,18 @@ output_stream<uint32>* __restrict addr_out)
         buf[len + append + i] = (bits_len >> ((7 - i) * 8)) & 0xff;
     }
     
-    //printf("\nsha256_f buf[]=");
-    //for (int j=0;j<new_len;j++){
-    //    printf("%02x",buf[j]);
-    //}
-    //printf("\n");
-
-    /******************************************************************/
-    //above process input data, read and package 
-    /******************************************************************/
-    //following process hash function, compress and write back
-    /******************************************************************/
+   
     uint32_t w[64];
     uint32_t temp_w[2];
-    //memset(w ,0,64); //change bzero to memset
    
-    size_t chunk_len = new_len / 64; //分512bit区块
+    size_t chunk_len = new_len / 64; 
        
     for (int idx = 0; idx < chunk_len; idx++) {
         
                
-        parafill(buf+idx*64,w);  //  generate W[0]...W[15] with pipeline, pipeling insert declines cycles from 900 to 170,wyz add in 2024.2.26
+        parafill(buf+idx*64,w);  
 
-        for (int i = 0; i < 48; i=i+2)chess_prepare_for_pipelining{ //this paragraph generate w[16]...w[63] with pile line, decline cycles from 1500 to 1239
+        for (int i = 0; i < 48; i=i+2)chess_prepare_for_pipelining{ 
             gen_2w(w+i,temp_w);           
         }
         
@@ -219,7 +208,6 @@ output_stream<uint32>* __restrict addr_out)
             a = temp1 + temp2;
                     
         }
-        //printf("\na=%02x",a);
     
         h0 += a;
         h1 += b;
@@ -232,14 +220,10 @@ output_stream<uint32>* __restrict addr_out)
         
     }
 
-
-    
-
     //unsigned long long time2=tile.cycles();
     //printf("\n&cycles=%lld",time2-time1);
 
-    //printf("\nhash without mask=%02x\n",h0);
-    
+
     //Reverse happens when transfer data from AIE to PS through DDR, thats,  ABCD -> DCBA， so I reverse it before sending
     writeincr(dout, swap32(h0));
     writeincr(dout, swap32(h1));
@@ -250,9 +234,8 @@ output_stream<uint32>* __restrict addr_out)
     writeincr(dout, swap32(h6));
     writeincr(dout, swap32(h7));
 
-    //在这里是反的32bit，所以 从00000000 变成01000000 要加16^7,所以先直接加一后左移...此时默认twmp是从0开始的！！  
-    //printf("\naddtr[6]=\n");   
-    temp[14]=(temp[14] & 0xff000000 )+ ((temp[14] +1) <<24); //保留高位，然后传递低位
+  
+    temp[14]=(temp[14] & 0xff000000 )+ ((temp[14] +1) <<24); 
     
     //output addr
     for(int i=8;i<16;i++){

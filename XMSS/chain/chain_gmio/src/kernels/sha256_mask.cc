@@ -127,9 +127,7 @@ void sha256_mask(input_stream<uint32> * __restrict bufin, /*int len , */ output_
         chess_loop_range(2, )
         {  
         
-           temp[j]=readincr(bufin);  // 	
-           //printf("\ntemp=%02x\n",temp[j]);
-           
+           temp[j]=readincr(bufin);  // 	           
     }
     
 
@@ -139,7 +137,7 @@ void sha256_mask(input_stream<uint32> * __restrict bufin, /*int len , */ output_
    
     buf[len] = (unsigned char)0x80;
     
-    uint64_t bits_len = len * 8; //wyz change  
+    uint64_t bits_len = len * 8;   
     for (int i = 0; i < 8; i++) 
     chess_prepare_for_pipelining
     chess_loop_range(8, 8)
@@ -147,29 +145,18 @@ void sha256_mask(input_stream<uint32> * __restrict bufin, /*int len , */ output_
         buf[len + append + i] = (bits_len >> ((7 - i) * 8)) & 0xff;
     }
     
-    //printf("\nmask buf[]=");
-    //for (int j=0;j<new_len;j++){
-    //    printf("%02x",buf[j]);
-    //}
-    //printf("\n");
-
-    /******************************************************************/
-    //above process input data, read and package 
-    /******************************************************************/
-    //following process hash function, compress and write back
-    /******************************************************************/
+   
     uint32_t w[64];
     uint32_t temp_w[2];
-    //memset(w ,0,64); //change bzero to memset
    
     size_t chunk_len = new_len / 64; //
        
     for (int idx = 0; idx < chunk_len; idx++) {
         
                
-        parafill(buf+idx*64,w);  //  generate W[0]...W[15] with pipeline, pipeling insert declines cycles from 900 to 170,wyz add in 2024.2.26
+        parafill(buf+idx*64,w);  
 
-        for (int i = 0; i < 48; i=i+2)chess_prepare_for_pipelining{ //this paragraph generate w[16]...w[63] with pile line, decline cycles from 1500 to 1239
+        for (int i = 0; i < 48; i=i+2)chess_prepare_for_pipelining{ 
             gen_2w(w+i,temp_w);           
         }
         
@@ -206,7 +193,6 @@ void sha256_mask(input_stream<uint32> * __restrict bufin, /*int len , */ output_
             a = temp1 + temp2;
                     
         }
-        //printf("\na=%02x",a);
     
         h0 += a;
         h1 += b;
@@ -220,22 +206,14 @@ void sha256_mask(input_stream<uint32> * __restrict bufin, /*int len , */ output_
     }
 
 
-    
-
     //unsigned long long time2=tile.cycles();
     //printf("\n&cycles=%lld",time2-time1);
 
-    //read in data
     for(int i=0;i<8;i++){
         temp[i]=readincr(bufin);
         
     }
 
-
-
-    
-   // printf("\n");
-    // 
     h0 = swap32(h0) ^ temp[0];
     h1 = swap32(h1) ^ temp[1];
     h2 = swap32(h2) ^ temp[2];
