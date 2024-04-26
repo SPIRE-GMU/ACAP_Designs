@@ -138,9 +138,9 @@ inline void sha256(const unsigned char *__restrict data, size_t len, unsigned ch
     
     size_t chunk_len = new_len / 64; //512bit
     for (int idx = 0; idx < chunk_len; idx++) {
-        parafill(buf+idx*64,w);  //  generate W[0]...W[15] with pipeline, pipeling insert declines cycles from 900 to 170,wyz add in 2024.2.26
+        parafill(buf+idx*64,w); 
 
-        for (int i = 0; i < 48; i=i+2)chess_prepare_for_pipelining{ //this paragraph generate w[16]...w[63] with pile line, decline cycles from 1500 to 1239
+        for (int i = 0; i < 48; i=i+2)chess_prepare_for_pipelining{ 
             gen_2w(w+i,temp_w);           
         }
         
@@ -168,9 +168,7 @@ inline void sha256(const unsigned char *__restrict data, size_t len, unsigned ch
             b = a;
             a = temp1 + temp2;
         }
-        
-         //printf("\tidx=%d,a=%02x",idx,a);   
-         
+                 
         h0 += a;
         h1 += b;
         h2 += c;
@@ -208,16 +206,11 @@ output_stream<uint32>* __restrict addr_out)
     
     int len=96;
     unsigned char out[32];
-    unsigned char buf[len];//;
+    unsigned char buf[len];
     
+    uint32_t temp[16]; 
     
-
-   
-    
-
-    uint32_t temp[16]; //we read 32-bit in one cycle， while len infer the length of char
-    
-    for(int j=0;j<16;j++)//
+    for(int j=0;j<16;j++)
     
         chess_prepare_for_pipelining
         chess_loop_range(2, )
@@ -225,7 +218,6 @@ output_stream<uint32>* __restrict addr_out)
         
            temp[j]=readincr(prf_in);  // dout and addr
 
-           //printf("\ntemp=%02x\n",temp[j]);
            
     }
     
@@ -250,11 +242,7 @@ output_stream<uint32>* __restrict addr_out)
         copy_u32_u8(buf+64+i*4,temp_mask[i]); //prf ^datain
     }
    
-//    printf("\nbuf_in_prff[]=");
-//     for (int j=0;j<96;j++){
-//         printf("%02x",buf[j]);
-//     }
-//     printf("\n");
+
     sha256(buf,len,out); 
 
     for(int i=0;i<8;i++){
