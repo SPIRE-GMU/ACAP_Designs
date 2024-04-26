@@ -10,7 +10,7 @@ void thash_f_prf_1(input_stream<uint32> *bufin,  output_stream<uint32>* bufout);
 void thash_f(input_stream<uint32> *  data, input_stream<uint32> * addr,  output_stream<uint32>*  dout1, output_stream<uint32>*  dout2);
 void thash_f_prf_2(input_stream<uint32> * bufin, /*int len , */ output_stream<uint32>*  bufout );
 void thash_f_prf_f(input_stream<uint32> *  prf_in, input_stream<uint32> * mask_in,  output_stream<uint32>*  dout, output_stream<uint32>*  addr_out);
-//uint32_t swap32(uint32_t data);
+
 
 
 #endif

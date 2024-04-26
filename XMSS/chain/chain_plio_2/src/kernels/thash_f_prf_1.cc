@@ -11,7 +11,7 @@
 
 #define rightrotate(w,n) ((w>>n) | (w)<< (32-(n)))
 #if __BYTE_ORDER__ == __ORDER_LITTLE_ENDIAN__
-#define copy_uint32(p, val) *((uint32_t *)p) = __builtin_bswap32((val))//gcc __builtin_bswap32，
+#define copy_uint32(p, val) *((uint32_t *)p) = __builtin_bswap32((val))//gcc _builtin_bswap32，
 #elif __BYTE_ORDER__ == __ORDER_BIG_ENDIAN__
 #define copy_uint32(p, val) *((uint32_t *)p) = (val)
 #else
@@ -136,9 +136,9 @@ inline void sha256(const unsigned char *__restrict data, size_t len, unsigned ch
     
     size_t chunk_len = new_len / 64; //512bit
     for (int idx = 0; idx < chunk_len; idx++) {
-        parafill(buf+idx*64,w);  //  generate W[0]...W[15] with pipeline, pipeling insert declines cycles from 900 to 170,wyz add in 2024.2.26
+        parafill(buf+idx*64,w);  
 
-        for (int i = 0; i < 48; i=i+2)chess_prepare_for_pipelining{ //this paragraph generate w[16]...w[63] with pile line, decline cycles from 1500 to 1239
+        for (int i = 0; i < 48; i=i+2)chess_prepare_for_pipelining{ 
             gen_2w(w+i,temp_w);           
         }
         
@@ -167,7 +167,6 @@ inline void sha256(const unsigned char *__restrict data, size_t len, unsigned ch
             a = temp1 + temp2;
         }
         
-         //printf("\tidx=%d,a=%02x",idx,a);   
          
         h0 += a;
         h1 += b;
@@ -196,12 +195,12 @@ inline void sha256(const unsigned char *__restrict data, size_t len, unsigned ch
 void thash_f_prf_1(input_stream<uint32> * __restrict bufin, output_stream<uint32>* __restrict bufout)
 {
     int run_num =0;
-    while(run_num < 60){
+    while(run_num < 120){
     
     int len=96; 
     unsigned char buf[len];// prf || pubseed || addr
     unsigned char out[32];
-    uint32_t temp[len/4]; // read 32-bit in one cycle
+    uint32_t temp[len/4]; 
    
     for(int j=0;j<((len-1)/4)+1;j++)//
     
@@ -209,16 +208,11 @@ void thash_f_prf_1(input_stream<uint32> * __restrict bufin, output_stream<uint32
         chess_loop_range(2, )
         {  
         
-           temp[j]=readincr(bufin);  //  	
+           temp[j]=readincr(bufin);  // 
            copy_u32_u8(buf+j*4,temp[j]);
-           //printf("\ntemp=%02x\n",temp[j]);
            
     }
-    // printf("\nbuf_in_prf1[]=");
-    // for (int j=0;j<96;j++){
-    //     printf("%02x",buf[j]);
-    // }
-    // printf("\n");
+
     sha256(buf,len,out);
     
   

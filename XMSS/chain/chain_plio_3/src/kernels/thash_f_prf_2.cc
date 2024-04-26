@@ -12,7 +12,7 @@
 
 #define rightrotate(w,n) ((w>>n) | (w)<< (32-(n)))
 #if __BYTE_ORDER__ == __ORDER_LITTLE_ENDIAN__
-#define copy_uint32(p, val) *((uint32_t *)p) = __builtin_bswap32((val))//gcc 内建函数__builtin_bswap32，
+#define copy_uint32(p, val) *((uint32_t *)p) = __builtin_bswap32((val))//gcc __builtin_bswap32，
 #elif __BYTE_ORDER__ == __ORDER_BIG_ENDIAN__
 #define copy_uint32(p, val) *((uint32_t *)p) = (val)
 #else
@@ -136,11 +136,11 @@ inline void sha256(const unsigned char *__restrict data, size_t len, unsigned ch
     uint32_t w[64];
     uint32_t temp_w[2];
     
-    size_t chunk_len = new_len / 64; //分512bit区块
+    size_t chunk_len = new_len / 64; //512bit
     for (int idx = 0; idx < chunk_len; idx++) {
-        parafill(buf+idx*64,w);  //  generate W[0]...W[15] with pipeline, pipeling insert declines cycles from 900 to 170,wyz add in 2024.2.26
+        parafill(buf+idx*64,w);   
 
-        for (int i = 0; i < 48; i=i+2)chess_prepare_for_pipelining{ //this paragraph generate w[16]...w[63] with pile line, decline cycles from 1500 to 1239
+        for (int i = 0; i < 48; i=i+2)chess_prepare_for_pipelining{ 
             gen_2w(w+i,temp_w);           
         }
         
@@ -168,9 +168,7 @@ inline void sha256(const unsigned char *__restrict data, size_t len, unsigned ch
             b = a;
             a = temp1 + temp2;
         }
-        
-         //printf("\tidx=%d,a=%02x",idx,a);   
-         
+                 
         h0 += a;
         h1 += b;
         h2 += c;
@@ -203,13 +201,13 @@ void thash_f_prf_2(input_stream<uint32> * __restrict bufin, /*int len , */ outpu
 {
     int run_num =0;
 
-    while(run_num <40){ 
+    while(run_num <120){ 
     
 
     int len=96;
     unsigned char buf[len];// prf || pubseed || addr
     unsigned char out[32];
-    uint32_t temp[32]; //we read 32-bit in one cycle to store : prf || pubseed || addr || data_in
+    uint32_t temp[32]; // read 32-bit in one cycle to store : prf || pubseed || addr || data_in
 
    //aie::tile tile=aie::tile::current();
    //unsigned long long time1=tile.cycles();
@@ -219,7 +217,7 @@ void thash_f_prf_2(input_stream<uint32> * __restrict bufin, /*int len , */ outpu
         chess_loop_range(2, )
         {  
         
-           temp[j]=readincr(bufin);  //   	
+           temp[j]=readincr(bufin);  // 	
            copy_u32_u8(buf+j*4,temp[j]);
            //printf("\ntemp=%02x\n",temp[j]);
            
@@ -229,17 +227,8 @@ void thash_f_prf_2(input_stream<uint32> * __restrict bufin, /*int len , */ outpu
         temp[i]=readincr(bufin);//read data_in into temp
     }
 
-    // printf("\nbuf_in_prf2[]=");
-    // for (int j=0;j<96;j++){
-    //     printf("%02x",buf[j]);
-    // }
-    // printf("\n");
+
     sha256(buf,len,out); 
-
-
-
-    
-
 
     
     for(int i=0;i<8;i++){

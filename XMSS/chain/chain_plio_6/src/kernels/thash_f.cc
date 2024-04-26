@@ -38,7 +38,7 @@ void thash_f(input_stream<uint32> * __restrict data, input_stream<uint32> * __re
     const uint32_t prf[8] = {0,0,0,0,0,0,0,0x00000003};
 
     int run_num =0;
-while(run_num <20){ // we suppose to run 2 times
+while(run_num <120){ // we suppose to run 2 times
     
     for(int i=0;i<8;i++){
         datain[i] = readincr(data); //din
