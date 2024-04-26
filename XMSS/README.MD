@@ -31,7 +31,7 @@ Software:
 
 **Folds：**
 
-    I build the XMSS bottom up, ie, form SHA256, thash_f, chain, leaf, keygen, as a record.
+    I build the XMSS bottom up, ie, form SHA256, thash_f, chain, leaf, to keygen, as a record.
     
 
 **How To Reproduce:**
