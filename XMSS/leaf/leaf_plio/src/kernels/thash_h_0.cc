@@ -59,19 +59,6 @@ void thash_h_0(input_stream<uint32> * __restrict data, input_stream<uint32> * __
         temp_addr[6]= index; // 
     
 
-    // if(wots_pk_num==1){
-    //  printf("\nthash_h_datain\n");
-    //  for(int i=0;i<8;i++){
-    //      printf("%02x",datain[i]);
-    //  }
-    //  printf("\n");
-
-    //  printf("\nthash_h_addr\n");
-    //  for(int i=0;i<8;i++){
-    //      printf("%02x",temp_addr[i]);
-    //  }
-    //  printf("\n");
-    // }
 
     //output the stream
         if(wots_pk_num &1 ) {//if an odd node from chian, send to mask2

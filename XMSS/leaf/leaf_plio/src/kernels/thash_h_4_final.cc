@@ -11,7 +11,7 @@
 
 #define rightrotate(w,n) ((w>>n) | (w)<< (32-(n)))
 #if __BYTE_ORDER__ == __ORDER_LITTLE_ENDIAN__
-#define copy_uint32(p, val) *((uint32_t *)p) = __builtin_bswap32((val))//gcc 内建函数__builtin_bswap32，
+#define copy_uint32(p, val) *((uint32_t *)p) = __builtin_bswap32((val))//gcc __builtin_bswap32，
 #elif __BYTE_ORDER__ == __ORDER_BIG_ENDIAN__
 #define copy_uint32(p, val) *((uint32_t *)p) = (val)
 #else
@@ -80,7 +80,6 @@ inline uint32_t gen_2w(uint32_t * __restrict input,uint32_t * __restrict output)
         //*(input+16) = gen_w(input);  //this paragraph takes 1489 cycles
         //*(input+17) = gen_w(input+1);
 
-        //according to the ug-1079,it seems previous paragraph the because in this way, we operate data in two buffer
     return 0;
 }
 
@@ -118,12 +117,11 @@ inline void sha256(const unsigned char *__restrict data, size_t len, unsigned ch
     uint32_t h5 = 0x9b05688c;
     uint32_t h6 = 0x1f83d9ab;
     uint32_t h7 = 0x5be0cd19;
-    int r = (int)(len * 8  & 0x1ff); // devided by 512, change to bit operation
+    int r = (int)(len * 8  & 0x1ff); 
     int append = ((r < 448) ? (448 - r) : (448 + 512 - r)) / 8;
     size_t new_len = len + append + 8;// origin + padding + 64-bit length
     unsigned char buf[new_len];
     
-    //memset(buf + len,0,append); //zero
     zero(buf+len,append);
     if (len > 0) {
         copy_u8_u8(buf, data, len);
@@ -138,9 +136,9 @@ inline void sha256(const unsigned char *__restrict data, size_t len, unsigned ch
     
     size_t chunk_len = new_len / 64; //512bit
     for (int idx = 0; idx < chunk_len; idx++) {
-        parafill(buf+idx*64,w);  //  generate W[0]...W[15] with pipeline, pipeling insert declines cycles from 900 to 170,wyz add in 2024.2.26
+        parafill(buf+idx*64,w);  
 
-        for (int i = 0; i < 48; i=i+2)chess_prepare_for_pipelining{ //this paragraph generate w[16]...w[63] with pile line, decline cycles from 1500 to 1239
+        for (int i = 0; i < 48; i=i+2)chess_prepare_for_pipelining{ 
             gen_2w(w+i,temp_w);           
         }
         
@@ -168,9 +166,7 @@ inline void sha256(const unsigned char *__restrict data, size_t len, unsigned ch
             b = a;
             a = temp1 + temp2;
         }
-        
-         //printf("\tidx=%d,a=%02x",idx,a);   
-         
+
         h0 += a;
         h1 += b;
         h2 += c;
@@ -282,7 +278,6 @@ void thash_h_4_final(input_stream<uint32> * __restrict mask1_in, input_stream<ui
         for(int i=8;i<16;i++){
             writeincr(dout, temp_mask[i]);
         }
-        //temp_mask[21]=(temp_mask[21] & 0xff000000 )+ ((temp_mask[21] +1) <<24); //
 
         //output addr
         for(int i=16;i<24;i++){

@@ -30,4 +30,4 @@
 
 
 
-pubseed || secseed ||addr
+// pubseed || secseed ||addr

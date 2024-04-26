@@ -56,20 +56,6 @@ void thash_h_2(input_stream<uint32> * __restrict data, input_stream<uint32> * __
         int index = wots_pk_num >>1; //
         
         temp_addr[6]= index;
-   
-//    if(wots_pk_num==1){
-//      printf("\nthash_h_l2_datain\n");
-//      for(int i=0;i<8;i++){
-//          printf("%02x",datain[i]);
-//      }
-//      printf("\n");
-
-//      printf("\nthash_h_addr\n");
-//      for(int i=0;i<8;i++){
-//          printf("%02x",temp_addr[i]);
-//      }
-//      printf("\n");
-//     }
 
 
     //output the stream

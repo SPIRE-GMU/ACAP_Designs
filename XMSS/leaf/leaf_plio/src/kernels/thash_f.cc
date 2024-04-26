@@ -41,7 +41,6 @@ while(pk_num <67){ // totally 67 cahin in a leaf
     uint32_t datain[8]; //256bit in
     uint32_t temp_addr[8]; // 256bit addr
     uint32_t temp_pub[8];
-    //const uint32_t prf[8] = {0,0,0,0,0,0,0,0x03000000};
     
     
     for(int i=0;i<8;i++){
@@ -53,20 +52,6 @@ while(pk_num <67){ // totally 67 cahin in a leaf
         temp_pub[i] = readincr(data);          
     }
         
-    // if(pk_num==1){
-    //     printf("\nthash_f_datain\n");
-    //     for(int i=0;i<8;i++){
-    //        printf("%02x",datain[i]);
-    //     }
-    //     printf("\n");
-
-    //     printf("\nthash_f_addr\n");
-    //     for(int i=0;i<8;i++){
-    //       printf("%02x",temp_addr[i]);
-    //     }
-    //     printf("\n");
-    // }
-    
  
     for(int i=0;i<8;i++){
         writeincr(dout1, prf[i]); 
