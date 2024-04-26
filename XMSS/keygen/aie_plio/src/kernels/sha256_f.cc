@@ -11,7 +11,7 @@
 
 #define rightrotate(w,n) ((w>>n) | (w)<< (32-(n)))
 #if __BYTE_ORDER__ == __ORDER_LITTLE_ENDIAN__
-#define copy_uint32(p, val) *((uint32_t *)p) = __builtin_bswap32((val))//gcc 内建函数__builtin_bswap32，
+#define copy_uint32(p, val) *((uint32_t *)p) = __builtin_bswap32((val))//gcc __builtin_bswap32，
 #elif __BYTE_ORDER__ == __ORDER_BIG_ENDIAN__
 #define copy_uint32(p, val) *((uint32_t *)p) = (val)
 #else
@@ -110,26 +110,24 @@ void sha256_f(input_stream<uint32> * __restrict prf_in, input_stream<uint32> * _
         uint32_t h7 = 0x5be0cd19;
     
 
-        int r = (int)((len * 8) & 0x1ff); //rest number of data  // original is mod 512, here change to bit operate
+        int r = (int)((len * 8) & 0x1ff); 
         int append = ((r < 448) ? (448 - r) : (448 + 512 - r)) / 8;    
-        size_t new_len = len + append + 8;// original+padding+length  
+        size_t new_len = len + append + 8;
+        unsigned char buf[new_len];
     
-        unsigned char buf[new_len];//; 
-    
-        memset(buf + len,0,append); //zero
+        memset(buf + len,0,append); 
     
 
-        uint32_t temp[16]; //we read 32-bit in one cycle， while len infer the length of char
+        uint32_t temp[16]; 
    
-        for(int j=0;j<16;j++)//I don't know why function ceil() doesn't work in AIE, so just manually extract the int. //wyz add in 2024.2.23
+        for(int j=0;j<16;j++)
     
             chess_prepare_for_pipelining
             chess_loop_range(2, )
             {  
         
-                temp[j]=readincr(prf_in);  // read din and addr  	
-                //printf("\ntemp=%02x\n",temp[j]);
-           
+                temp[j]=readincr(prf_in); 
+        
             }
     
         uint32_t temp_mask[8];
@@ -173,14 +171,13 @@ void sha256_f(input_stream<uint32> * __restrict prf_in, input_stream<uint32> * _
         for (int idx = 0; idx < chunk_len; idx++) {
         
                
-        parafill(buf+idx*64,w);  //  generate W[0]...W[15] with pipeline, pipeling insert declines cycles from 900 to 170,wyz add in 2024.2.26
+        parafill(buf+idx*64,w); 
 
-        for (int i = 0; i < 48; i=i+2)chess_prepare_for_pipelining{ //this paragraph generate w[16]...w[63] with pile line, decline cycles from 1500 to 1239
+        for (int i = 0; i < 48; i=i+2)chess_prepare_for_pipelining{ 
             gen_2w(w+i,temp_w);           
         }
         
-        
-        
+
         // start mapping
      
         uint32_t a = h0;
@@ -212,8 +209,7 @@ void sha256_f(input_stream<uint32> * __restrict prf_in, input_stream<uint32> * _
             a = temp1 + temp2;
                     
         }
-        //printf("\na=%02x",a);
-    
+
         h0 += a;
         h1 += b;
         h2 += c;
@@ -224,8 +220,7 @@ void sha256_f(input_stream<uint32> * __restrict prf_in, input_stream<uint32> * _
         h7 += h;
         
         }
-    
-        //Reverse happens when transfer data from AIE to PS through DDR, thats,  ABCD -> DCBA， so I reverse it before sending
+
         writeincr(dout, swap32(h0));
         writeincr(dout, swap32(h1));
         writeincr(dout, swap32(h2));
@@ -235,8 +230,6 @@ void sha256_f(input_stream<uint32> * __restrict prf_in, input_stream<uint32> * _
         writeincr(dout, swap32(h6));
         writeincr(dout, swap32(h7));
 
-        //there is a converse, we want to add one but digit falls in 00000000 to 01000000 ！！  
-        //printf("\naddtr[6]=\n");   
         temp[14]=(temp[14] & 0xff000000 )+ ((temp[14] +1) <<24); //
     
         //output addr

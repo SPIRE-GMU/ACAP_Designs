@@ -11,7 +11,7 @@
 
 #define rightrotate(w,n) ((w>>n) | (w)<< (32-(n)))
 #if __BYTE_ORDER__ == __ORDER_LITTLE_ENDIAN__
-#define copy_uint32(p, val) *((uint32_t *)p) = __builtin_bswap32((val))//gcc 内建函数__builtin_bswap32，
+#define copy_uint32(p, val) *((uint32_t *)p) = __builtin_bswap32((val))//gcc __builtin_bswap32，
 #elif __BYTE_ORDER__ == __ORDER_BIG_ENDIAN__
 #define copy_uint32(p, val) *((uint32_t *)p) = (val)
 #else
@@ -80,7 +80,6 @@ inline uint32_t gen_2w(uint32_t * __restrict input,uint32_t * __restrict output)
         //*(input+16) = gen_w(input);  //this paragraph takes 1489 cycles
         //*(input+17) = gen_w(input+1);
 
-        //according to the ug-1079,it seems previous paragraph the because in this way, we operate data in two buffer
     return 0;
 }
 
@@ -116,18 +115,18 @@ void thash_h_1_final(input_stream<uint32> * __restrict mask1_in, input_stream<ui
         uint32_t h7 = 0x5be0cd19;
 
 
-        int r = (int)((len * 8) & 0x1ff); //rest number of data  // original is mod 512, here change to bit operate
+        int r = (int)((len * 8) & 0x1ff); 
         int append = ((r < 448) ? (448 - r) : (448 + 512 - r)) / 8;    
         size_t new_len = len + append + 8;// original+padding+length
     
-        unsigned char buf[new_len];//; 
+        unsigned char buf[new_len];
     
-        memset(buf + len,0,append); //padding清零<string.h>
+        memset(buf + len,0,append); 
     
 
-        uint32_t temp[16]; //we read 32-bit in one cycle， while len infer the length of char
+        uint32_t temp[16]; 
    
-        for(int j=0;j<16;j++)//I don't know why function ceil() doesn't work in AIE, so just manually extract the int. //wyz add in 2024.2.23
+        for(int j=0;j<16;j++)
     
         chess_prepare_for_pipelining
         chess_loop_range(2, )
@@ -173,14 +172,14 @@ void thash_h_1_final(input_stream<uint32> * __restrict mask1_in, input_stream<ui
         uint32_t w[64];
         uint32_t temp_w[2];
     
-        size_t chunk_len = new_len / 64; //分512bit区块
+        size_t chunk_len = new_len / 64; 
        
         for (int idx = 0; idx < chunk_len; idx++) {
         
                
-        parafill(buf+idx*64,w);  //  generate W[0]...W[15] with pipeline, pipeling insert declines cycles from 900 to 170,wyz add in 2024.2.26
+        parafill(buf+idx*64,w);  
 
-        for (int i = 0; i < 48; i=i+2)chess_prepare_for_pipelining{ //this paragraph generate w[16]...w[63] with pile line, decline cycles from 1500 to 1239
+        for (int i = 0; i < 48; i=i+2)chess_prepare_for_pipelining{ 
             gen_2w(w+i,temp_w);           
         }
         
@@ -217,8 +216,7 @@ void thash_h_1_final(input_stream<uint32> * __restrict mask1_in, input_stream<ui
             a = temp1 + temp2;
                     
         }
-        //printf("\na=%02x",a);
-    
+     
         h0 += a;
         h1 += b;
         h2 += c;
@@ -229,7 +227,7 @@ void thash_h_1_final(input_stream<uint32> * __restrict mask1_in, input_stream<ui
         h7 += h;
         
         }
-        //Reverse happens when transfer data from AIE to PS through DDR, thats,  ABCD -> DCBA， so I reverse it before sending
+        
         writeincr(dout, swap32(h0));
         writeincr(dout, swap32(h1));
         writeincr(dout, swap32(h2));

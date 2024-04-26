@@ -11,7 +11,7 @@
 
 #define rightrotate(w,n) ((w>>n) | (w)<< (32-(n)))
 #if __BYTE_ORDER__ == __ORDER_LITTLE_ENDIAN__
-#define copy_uint32(p, val) *((uint32_t *)p) = __builtin_bswap32((val))//gcc 内建函数__builtin_bswap32，
+#define copy_uint32(p, val) *((uint32_t *)p) = __builtin_bswap32((val))//gcc __builtin_bswap32，
 #elif __BYTE_ORDER__ == __ORDER_BIG_ENDIAN__
 #define copy_uint32(p, val) *((uint32_t *)p) = (val)
 #else
@@ -111,11 +111,11 @@ inline void sha256(const unsigned char *data, size_t len, unsigned char *out) {
     uint32_t w[64];
     uint32_t temp_w[2];
 
-    size_t chunk_len = new_len / 64; //512-bit block
+    size_t chunk_len = new_len / 64; 
     for (int idx = 0; idx < chunk_len; idx++) {
-        parafill(buf+idx*64,w);  //  generate W[0]...W[15] with pipeline, pipeling insert declines cycles from 900 to 170,wyz add in 2024.2.26
+        parafill(buf+idx*64,w); 
 
-        for (int i = 0; i < 48; i=i+2)chess_prepare_for_pipelining{ //this paragraph generate w[16]...w[63] with pile line, decline cycles from 1500 to 1239
+        for (int i = 0; i < 48; i=i+2)chess_prepare_for_pipelining{ 
             gen_2w(w+i,temp_w);           
         }
         
@@ -143,9 +143,7 @@ inline void sha256(const unsigned char *data, size_t len, unsigned char *out) {
             b = a;
             a = temp1 + temp2;
         }
-        
-            //printf("\na=%02x",a);
-         
+
         h0 += a;
         h1 += b;
         h2 += c;
@@ -155,7 +153,6 @@ inline void sha256(const unsigned char *data, size_t len, unsigned char *out) {
         h6 += g;
         h7 += h;
     }
-	//printf("The ho is %x\n",h0);
     copy_uint32(out, h0);
     copy_uint32(out + 1, h1);
     copy_uint32(out + 2, h2);
@@ -165,10 +162,7 @@ inline void sha256(const unsigned char *data, size_t len, unsigned char *out) {
     copy_uint32(out + 6, h6);
     copy_uint32(out + 7, h7);
 	
-    /*for(int i=0;i<32;i++)
-	{
-		printf("%x",out[i]);	
-	}*/
+
 }
 /******************************************************************************************************************/
 
@@ -204,12 +198,12 @@ void merkel_2(input_stream<uint32> * __restrict data_in1,  output_stream<uint32>
 
         uint32_t temp1[16];
         uint32_t temp2[16];
-        for(int j=0;j<16;j++)//
+        for(int j=0;j<16;j++)
     
         chess_prepare_for_pipelining
         chess_loop_range(2, )
         {         
-           temp1[j]=readincr(data_in1);  // read    din || pub_seed	,here is a converse ABCD -> DCBA
+           temp1[j]=readincr(data_in1);  // read    din || pub_seed	
         }
 
         for(int j=0;j<16;j++)//
@@ -224,7 +218,7 @@ void merkel_2(input_stream<uint32> * __restrict data_in1,  output_stream<uint32>
         memset(buf,0,128);//zeor
         buf[31]=0x03;
 
-        memcpy(buf+32, temp1+8, 32); //pubseed   here is a converse ABCD -> DCBA
+        memcpy(buf+32, temp1+8, 32); //pubseed   
         memcpy(buf+64, addr, 32); 
 
         // printf("\nbuf = ");
@@ -265,12 +259,7 @@ void merkel_2(input_stream<uint32> * __restrict data_in1,  output_stream<uint32>
 
         sha256(buf,128,result);//result
    
-        // printf("result 2:");
-        // for(int i=0;i<32;i++){
-        //         printf("%02x",result[i]);
-        // }
-        // printf("\n");
-    
+  
         //output pubseed
 
         writeincr(dout, swap32(fill(result   )));//converse happens here

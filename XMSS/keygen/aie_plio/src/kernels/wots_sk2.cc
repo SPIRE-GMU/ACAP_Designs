@@ -12,7 +12,7 @@
 
 #define rightrotate(w,n) ((w>>n) | (w)<< (32-(n)))
 #if __BYTE_ORDER__ == __ORDER_LITTLE_ENDIAN__
-#define copy_uint32(p, val) *((uint32_t *)p) = __builtin_bswap32((val))//gcc 内建函数__builtin_bswap32，
+#define copy_uint32(p, val) *((uint32_t *)p) = __builtin_bswap32((val))//gcc _builtin_bswap32，
 #elif __BYTE_ORDER__ == __ORDER_BIG_ENDIAN__
 #define copy_uint32(p, val) *((uint32_t *)p) = (val)
 #else
@@ -91,7 +91,6 @@ inline uint32_t gen_2w(uint32_t * __restrict input,uint32_t * __restrict output)
         //*(input+16) = gen_w(input);  //this paragraph takes 1489 cycles
         //*(input+17) = gen_w(input+1);
 
-        //according to the ug-1079,it seems previous paragraph the because in this way, we operate data in two buffer
     return 0;
 }
 
@@ -134,7 +133,7 @@ void wots_sk_gen2(input_stream<uint32> * __restrict bufin, output_stream<uint32>
         chess_loop_range(2, )
         {  
         
-           temp[j]=readincr(bufin);  // readincr converses here: ABCD -> DCBA  //wyz add in 2024.2.23   	          
+           temp[j]=readincr(bufin);  	          
            
     }
     
@@ -189,14 +188,14 @@ void wots_sk_gen2(input_stream<uint32> * __restrict bufin, output_stream<uint32>
             uint32_t temp_w[2];
             
    
-            size_t chunk_len = new_len / 64; //divided by 512-bit
+            size_t chunk_len = new_len / 64; 
        
             for (int idx = 0; idx < chunk_len; idx++) {
             
                
-                parafill(buf+idx*64,w);  //  generate W[0]...W[15] with pipeline, pipeling insert declines cycles from 900 to 170,wyz add in 2024.2.26
+                parafill(buf+idx*64,w); 
 
-                for (int i = 0; i < 48; i=i+2)chess_prepare_for_pipelining{ //this paragraph generate w[16]...w[63] with pile line, decline cycles from 1500 to 1239
+                for (int i = 0; i < 48; i=i+2)chess_prepare_for_pipelining{
                     gen_2w(w+i,temp_w);           
                 }
             
@@ -233,8 +232,7 @@ void wots_sk_gen2(input_stream<uint32> * __restrict bufin, output_stream<uint32>
                     a = temp1 + temp2;
                     
                 }
-                //printf("\na=%02x",a);
-    
+               
                 h0 += a;
                 h1 += b;
                 h2 += c;
@@ -263,7 +261,6 @@ void wots_sk_gen2(input_stream<uint32> * __restrict bufin, output_stream<uint32>
             }else{//run number 1-67
     
 
-                //Reverse happens when transfer data from AIE to PS through DDR, thats,  ABCD -> DCBA， so I reverse it before sending
                 writeincr(bufout, swap32(h0));
                 writeincr(bufout, swap32(h1));
                 writeincr(bufout, swap32(h2));
@@ -283,7 +280,6 @@ void wots_sk_gen2(input_stream<uint32> * __restrict bufin, output_stream<uint32>
                     writeincr(addr_out, temp[i]);
                 }
 
-                //update chain address and output，the information of WOTS address is in temp[20]
                 temp[21]=(temp[21] & 0xff000000 )+ ((temp[21] +1) <<24);
                 buf[95]+= 1; // ctr for seed expand
             }

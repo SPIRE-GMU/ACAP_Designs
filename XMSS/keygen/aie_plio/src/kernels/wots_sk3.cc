@@ -12,7 +12,7 @@
 
 #define rightrotate(w,n) ((w>>n) | (w)<< (32-(n)))
 #if __BYTE_ORDER__ == __ORDER_LITTLE_ENDIAN__
-#define copy_uint32(p, val) *((uint32_t *)p) = __builtin_bswap32((val))//gcc 内建函数__builtin_bswap32，
+#define copy_uint32(p, val) *((uint32_t *)p) = __builtin_bswap32((val))//gcc __builtin_bswap32，
 #elif __BYTE_ORDER__ == __ORDER_BIG_ENDIAN__
 #define copy_uint32(p, val) *((uint32_t *)p) = (val)
 #else
@@ -91,7 +91,6 @@ inline uint32_t gen_2w(uint32_t * __restrict input,uint32_t * __restrict output)
         //*(input+16) = gen_w(input);  //this paragraph takes 1489 cycles
         //*(input+17) = gen_w(input+1);
 
-        //according to the ug-1079,it seems previous paragraph the because in this way, we operate data in two buffer
     return 0;
 }
 
@@ -134,7 +133,7 @@ void wots_sk_gen3(input_stream<uint32> * __restrict bufin, output_stream<uint32>
         chess_loop_range(2, )
         {  
         
-           temp[j]=readincr(bufin);  // readincr converses here: ABCD -> DCBA  //wyz add in 2024.2.23   	          
+           temp[j]=readincr(bufin);         
            
     }
     
@@ -263,7 +262,6 @@ void wots_sk_gen3(input_stream<uint32> * __restrict bufin, output_stream<uint32>
             }else{//run number 1-67
     
 
-                //Reverse happens when transfer data from AIE to PS through DDR, thats,  ABCD -> DCBA， so I reverse it before sending
                 writeincr(bufout, swap32(h0));
                 writeincr(bufout, swap32(h1));
                 writeincr(bufout, swap32(h2));

@@ -12,7 +12,7 @@
 
 #define rightrotate(w,n) ((w>>n) | (w)<< (32-(n)))
 #if __BYTE_ORDER__ == __ORDER_LITTLE_ENDIAN__
-#define copy_uint32(p, val) *((uint32_t *)p) = __builtin_bswap32((val))//gcc 内建函数__builtin_bswap32，
+#define copy_uint32(p, val) *((uint32_t *)p) = __builtin_bswap32((val))//gcc _builtin_bswap32，
 #elif __BYTE_ORDER__ == __ORDER_BIG_ENDIAN__
 #define copy_uint32(p, val) *((uint32_t *)p) = (val)
 #else
@@ -91,7 +91,6 @@ inline uint32_t gen_2w(uint32_t * __restrict input,uint32_t * __restrict output)
         //*(input+16) = gen_w(input);  //this paragraph takes 1489 cycles
         //*(input+17) = gen_w(input+1);
 
-        //according to the ug-1079,it seems previous paragraph the because in this way, we operate data in two buffer
     return 0;
 }
 
@@ -114,7 +113,7 @@ void wots_sk_gen0(input_stream<uint32> * __restrict bufin, output_stream<uint32>
     
 
 
-   printf("start sk gen");
+  
     //package the sha256. we fixed the length of input to be 768-bit (96-B) according to XMSS thash_f
 
     int r = (int)((len * 8) & 0x1ff); //rest number of data  // original is mod 512, here change to bit operate
@@ -134,10 +133,10 @@ void wots_sk_gen0(input_stream<uint32> * __restrict bufin, output_stream<uint32>
         chess_loop_range(2, )
         {  
         
-           temp[j]=readincr(bufin);  // readincr converses here: ABCD -> DCBA  //wyz add in 2024.2.23   	          
+           temp[j]=readincr(bufin);  // readincr converses here: ABCD -> DCBA  	          
            
     }
-    printf("first block = %02x",temp[0]);
+
     buf[31]= 0x03; // prf padding (0x00_00_00_00....00_03)
 
     if (len > 0) {
@@ -148,7 +147,7 @@ void wots_sk_gen0(input_stream<uint32> * __restrict bufin, output_stream<uint32>
 
     
 
-    uint64_t bits_len = len * 8; //wyz change  
+    uint64_t bits_len = len * 8;  
     for (int i = 0; i < 8; i++) 
     chess_prepare_for_pipelining
     chess_loop_range(8, 8)
@@ -194,9 +193,9 @@ void wots_sk_gen0(input_stream<uint32> * __restrict bufin, output_stream<uint32>
             for (int idx = 0; idx < chunk_len; idx++) {
             
                
-                parafill(buf+idx*64,w);  //  generate W[0]...W[15] with pipeline, pipeling insert declines cycles from 900 to 170,wyz add in 2024.2.26
+                parafill(buf+idx*64,w);  //
 
-                for (int i = 0; i < 48; i=i+2)chess_prepare_for_pipelining{ //this paragraph generate w[16]...w[63] with pile line, decline cycles from 1500 to 1239
+                for (int i = 0; i < 48; i=i+2)chess_prepare_for_pipelining{ 
                     gen_2w(w+i,temp_w);           
                 }
             
