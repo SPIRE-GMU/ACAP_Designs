@@ -1,4 +1,0 @@
-/home/yzwu/Desktop/soc_test/vadd_host/build/x86sim/CMakeFiles/vadd_host.dir
-/home/yzwu/Desktop/soc_test/vadd_host/build/x86sim/CMakeFiles/GenerateEmulationConfig.dir
-/home/yzwu/Desktop/soc_test/vadd_host/build/x86sim/CMakeFiles/edit_cache.dir
-/home/yzwu/Desktop/soc_test/vadd_host/build/x86sim/CMakeFiles/rebuild_cache.dir

@@ -1,6 +1,0 @@
-
-Stream Report
-portinst: i3_pi0 idx[0] datatype:strm<int32> stream in bw_utlization = 1 (variable name:  first.in[0]) : ss0
-portinst: i3_pi1 idx[1] datatype:strm<int32> stream in bw_utlization = 1 (variable name:  first.in[1]) : ss1
-portinst: i3_po0 idx[2] datatype:strm<int32> stream out bw_utlization = 1 (variable name:  first.out[0]) : ms0
-

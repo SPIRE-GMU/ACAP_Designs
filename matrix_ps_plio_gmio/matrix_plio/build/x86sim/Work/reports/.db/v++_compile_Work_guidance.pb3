@@ -1,3 +1,0 @@
-
-Á
-v++_compile_Work$b82b0225-0361-4915-af00-d0ded2aee1af"†/tools/Xilinx/Vitis/2023.2/bin/unwrapped/lnx64.o/v++  -c --mode aie --target x86sim --config /home/yzwu/Desktop/soc_test/matrix_plio/aiecompiler.cfg --platform /tools/Xilinx/Vitis/2023.2/base_platforms/xilinx_vck190_base_202320_1/xilinx_vck190_base_202320_1.xpfm --work_dir /home/yzwu/Desktop/soc_test/matrix_plio/build/x86sim/./Work /home/yzwu/Desktop/soc_test/matrix_plio/src/project.cpp 

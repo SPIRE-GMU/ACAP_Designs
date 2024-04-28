@@ -1,3 +1,0 @@
-
-º
-v++_compile_Work$aefccd84-7759-48e8-926c-c157d37882a3"Å/tools/Xilinx/Vitis/2023.2/bin/unwrapped/lnx64.o/v++  -c --mode aie --target hw --config /home/yzwu/Desktop/matrix_vec/matrix_vec/aiecompiler.cfg --platform /tools/Xilinx/Vitis/2023.2/base_platforms/xilinx_vck190_base_202320_1/xilinx_vck190_base_202320_1.xpfm --work_dir /home/yzwu/Desktop/matrix_vec/matrix_vec/build/hw/./Work /home/yzwu/Desktop/matrix_vec/matrix_vec/src/project.cpp 

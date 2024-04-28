@@ -1,9 +1,0 @@
-AIE_PKG_DIR=/home/yzwu/Desktop/matrix_vec/matrix_vec/build/hw/./Work
-AIE_DUMP_VCD_STREAM_SWITCH=true
-AIE_DUMP_VCD_SHIM=true
-AIE_DUMP_VCD_CORE=true
-AIE_DUMP_VCD_IO=true
-=
-AIE_DUMP_VCD_DMA=true
-AIE_PROFILE=All
-AIE_DUMP_VCD_PIPE=/tmp/vcd_fifo_e6e97857-ca97-4ca1-8cd5-c62a372230e2

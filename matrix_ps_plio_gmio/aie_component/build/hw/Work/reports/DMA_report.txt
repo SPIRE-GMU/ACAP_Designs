@@ -1,9 +1,0 @@
-DMA Analysis Report 
-
-DMA Report: S2MM
-portinst: i2_pi0 idx[-1] datatype:int32 gmem in bw_utlization = 1 (variable name:  dataout.in[0]): SHIM(26) : channel=0, startBD=2
-
-DMA Report: MM2S
-portinst: i0_po0 idx[-1] datatype:int32 gmem out bw_utlization = 1 (variable name:  datain1.out[0]): SHIM(26) : channel=0, startBD=0
-portinst: i1_po0 idx[-1] datatype:int32 gmem out bw_utlization = 1 (variable name:  datain2.out[0]): SHIM(26) : channel=1, startBD=1
-
