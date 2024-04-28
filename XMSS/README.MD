@@ -40,6 +40,6 @@ Software:
 
     2. For keygen, it takes almost 4-5 days to do hardware emulation (x86 simulation is OK). I recommend building the system and running on the board to save time.  I provide the host, aie, HLS source codes. As for how to make the project, please refer to:    https://github.com/Xilinx/Vitis-Tutorials/blob/2023.2/AI_Engine_Development/AIE/Feature_Tutorials/05-AI-engine-versal-integration/unified-ide.md 
     
-    3. If there is any issue, feel free to contact me: ywu42@gmu.edu 
+    3. If there is any issue, feel free to contact me: xxxxxxxx  
 
  
