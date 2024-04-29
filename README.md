@@ -32,8 +32,8 @@ It prints cycles and execution times (s) in the terminal. You may change **PROJ=
 
 3.6 Build Hardware, create sd_card.img in **system_pro/build/hw/package/sd_card.img**. 
 
-3.7 Flash SD card, choose boot configuration to SD card, open putty, and launch the board. You should get the same result as **3.6** does.
+3.7 Flash SD card, choose boot configuration to SD card, open putty, and launch the board. You should get the same result as **3.6** prints.
 
-To configure the components in the system, please refer to  (https://github.com/Xilinx/Vitis-Tutorials/blob/2023.2/AI_Engine_Development/AIE/Feature_Tutorials/05-AI-engine-versal-integration/unified-ide.md)
+The setting up includes too many details but I condensed them into steps. To configure the components of the real-time system, please refer to  (https://github.com/Xilinx/Vitis-Tutorials/blob/2023.2/AI_Engine_Development/AIE/Feature_Tutorials/05-AI-engine-versal-integration/unified-ide.md)
 
 
