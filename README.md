@@ -7,7 +7,7 @@
 It prints cycles and execution times (s) in the terminal. You may change project **chian** to other testbench such as **sha256**, **leaf**, or **XMSS**.  
 
 
-## 2. Hardware evaluation on Vitis 2023.2:
+## 2. X86 simulation on Vitis 2023.2:
 
 
 2.1 Open Vitis 2023.2 IDE.
@@ -16,4 +16,6 @@ It prints cycles and execution times (s) in the terminal. You may change project
    
 2.3 Choose x86 software emulation in **Flow Navigation**, build and run
 
-2.4 Unless you except to get the waveform, not recommend to run hardware emulation since it takes too much time. For **keygen**, it takes 4-5 day to do hardware emulation, but less than 1 second evaluated on board.
+2.4 Unless you expect to get the waveform, do not try hardware emulation since it takes too much time. For **keygen**, it takes 4-5 day to do hardware emulation, but less than 1 second evaluated on board.
+
+## 3. Set up the board:
