@@ -4,7 +4,7 @@
         cd XMSS/xmss-src/kyber&xmss/xmss
         make TARGET=x86 PROJ=chain run
 
-It prints cycles and execution times (s) in the terminal. You may change **project=chain** to another testbench such as **sha256**, **leaf**, or **XMSS**.  
+It prints cycles and execution times (s) in the terminal. You may change **PROJ=chain** to another testbench such as **sha256**, **leaf**, or **XMSS**.  
 
 
 ## 2. X86 simulation on Vitis 2023.2:
